@@ -21,7 +21,6 @@ st.markdown("""
     .user-response {font-size: 24px; font-weight: bold; color: #333;}
     div[data-testid="stForm"] button {width: 100%;}
     
-    /* Estilo para la tarjeta de resultados final */
     .resultado-box {
         padding: 20px;
         border-radius: 10px;
@@ -30,6 +29,15 @@ st.markdown("""
         margin-bottom: 20px;
     }
     .nota-final { font-size: 50px; font-weight: bold; color: #2E86C1; }
+    
+    /* Estilo para la caja de error/solución */
+    .fail-box {
+        padding: 15px;
+        border-radius: 8px;
+        background-color: #FFEBEE;
+        border: 1px solid #FFCDD2;
+        margin-bottom: 15px;
+    }
     </style>
     """, unsafe_allow_html=True)
 
@@ -68,9 +76,16 @@ def cargar_datos():
 df = cargar_datos()
 if df.empty: st.stop()
 
-# --- GESTIÓN DE ESTADÍSTICAS ---
+# --- GESTIÓN DE VARIABLES DE ESTADO ---
 if 'stats_familia' not in st.session_state:
     st.session_state.stats_familia = {} 
+if 'contador_preguntas' not in st.session_state:
+    st.session_state.contador_preguntas = 0
+# Estado de la pregunta actual: 'respondiendo' o 'mostrar_fallo'
+if 'estado_fase' not in st.session_state:
+    st.session_state.estado_fase = 'respondiendo' 
+if 'datos_fallo' not in st.session_state:
+    st.session_state.datos_fallo = {}
 
 def actualizar_stats(familia, es_acierto):
     if familia not in st.session_state.stats_familia:
@@ -83,6 +98,8 @@ def reiniciar_todo():
     st.session_state.aciertos = 0
     st.session_state.fallos = 0
     st.session_state.stats_familia = {}
+    st.session_state.contador_preguntas = 0
+    st.session_state.estado_fase = 'respondiendo'
     st.rerun()
 
 # --- INTERFAZ PRINCIPAL ---
@@ -97,7 +114,6 @@ with st.sidebar:
     fallos = st.session_state.get('fallos', 0)
     total_intentos = aciertos + fallos
     
-    # Visualización Global
     if total_intentos > 0:
         porcentaje = (aciertos / total_intentos)
         st.progress(porcentaje)
@@ -107,7 +123,6 @@ with st.sidebar:
 
     st.divider()
 
-    # Desglose
     with st.expander("Ver desglose por temas", expanded=False):
         if not st.session_state.stats_familia:
             st.caption("Aún no hay datos.")
@@ -128,7 +143,6 @@ with st.sidebar:
 
 # --- 1. CONFIGURACIÓN DEL JUEGO ---
 
-# A) FAMILIA
 st.write("**1. Elige el contenido:**")
 orden = ["Óxidos", "Hidruros", "Hidróxidos", "Compuestos Binarios", "Sales Dobles", "Oxoácidos", "Oxosales", "Sales Ácidas", "Oxosales Ácidas"]
 cat_csv = df['COMPUESTO'].unique()
@@ -147,38 +161,42 @@ for real in cat_csv:
         mapa[real] = real
 
 opciones_menu = ["🔀 Mezclar Prueba"] + cat_display
-seleccion = st.pills("Familia", options=opciones_menu, selection_mode="single", default=opciones_menu[0], key="pills_familia")
+seleccion = st.pills("Familia", options=opciones_menu, selection_mode="single", default=None, key="pills_familia")
+
+if not seleccion:
+    st.info("👆 Por favor, selecciona primero un tipo de compuesto.")
+    st.stop()
 
 if seleccion == "🔀 Mezclar Prueba":
     mix = st.multiselect("Familias:", options=cat_display, default=cat_display[:3], label_visibility="collapsed")
-    if not mix: st.stop()
+    if not mix: 
+        st.warning("Selecciona al menos una familia.")
+        st.stop()
     filtros = [mapa[x] for x in mix]
     df_juego = df[df['COMPUESTO'].isin(filtros)]
     clave_cat = f"MIX_{'-'.join(mix)}"
 else:
-    if not seleccion: st.stop()
     filtro = mapa.get(seleccion, seleccion)
     df_juego = df[df['COMPUESTO'] == filtro]
     clave_cat = f"CAT_{seleccion}"
 
-# B) MODO Y CANTIDAD (NUEVO)
 st.write("**2. Configura tu práctica:**")
 col_modo, col_cant = st.columns([2, 1])
-
 with col_modo:
     modos = ["Nombrar (Fórmula ➡️ Nombre)", "Formular (Nombre ➡️ Fórmula)"]
-    modos_activos = st.pills("Modo", options=modos, selection_mode="multi", default=modos, key="pills_modo")
+    modos_activos = st.pills("Modo", options=modos, selection_mode="multi", default=[], key="pills_modo")
 
 with col_cant:
     opciones_cantidad = [5, 10, 15, 20, 25, "Sin fin"]
-    limite_preguntas = st.selectbox("¿Cuántos ejercicios?", options=opciones_cantidad, index=1) # Default 10
+    limite_preguntas = st.selectbox("¿Cuántos ejercicios?", options=opciones_cantidad, index=1) 
 
-if not modos_activos: st.warning("Selecciona un modo"); st.stop()
+if not modos_activos: 
+    st.info("👆 Selecciona el modo de juego.")
+    st.stop()
 
 st.markdown("---")
 
-# --- CONTROL DE CAMBIOS Y RESET ---
-# Si cambia la familia o el límite, reiniciamos el contador interno de esta "partida"
+# --- CONTROL DE CAMBIOS ---
 clave_config_actual = f"{clave_cat}_{limite_preguntas}"
 if 'config_prev' not in st.session_state: st.session_state.config_prev = clave_config_actual
 
@@ -187,31 +205,26 @@ if st.session_state.config_prev != clave_config_actual:
     st.session_state.fallos = 0
     st.session_state.stats_familia = {}
     st.session_state.config_prev = clave_config_actual
-    # Forzar nueva pregunta
     if 'pregunta' in st.session_state: del st.session_state['pregunta']
+    st.session_state.estado_fase = 'respondiendo'
 
 
-# --- LÓGICA DE FINALIZACIÓN DE JUEGO (GAME OVER) ---
-
+# --- GAME OVER LOGIC ---
 total_actual = st.session_state.get('aciertos', 0) + st.session_state.get('fallos', 0)
 juego_terminado = False
 
+# Solo comprobamos fin de juego si estamos en fase de respuesta (para dejar ver el último fallo)
 if isinstance(limite_preguntas, int):
-    # Si hay límite numérico
     st.caption(f"📝 Pregunta {total_actual + 1} de {limite_preguntas}")
     st.progress(min(total_actual / limite_preguntas, 1.0))
-    
-    if total_actual >= limite_preguntas:
+    # Si ya hemos llegado al límite y NO estamos viendo un fallo pendiente
+    if total_actual >= limite_preguntas and st.session_state.estado_fase == 'respondiendo':
         juego_terminado = True
 else:
-    # Modo sin fin
     st.caption(f"♾️ Modo Sin Fin | Llevas {total_actual} ejercicios")
 
-
 if juego_terminado:
-    # === PANTALLA DE RESULTADOS ===
     st.balloons()
-    
     nota_final = int((aciertos / total_actual) * 10) if total_actual > 0 else 0
     
     if nota_final >= 9: mensaje = "🏆 ¡EXCELENTE!"
@@ -230,21 +243,21 @@ if juego_terminado:
     
     if st.button("🔄 Volver a Jugar (Reiniciar)"):
         reiniciar_todo()
-    
-    st.stop() # Detiene la ejecución para no mostrar más preguntas
+    st.stop() 
 
-# --- GENERACIÓN DE PREGUNTA ---
-
+# --- FUNCIONES DE LÓGICA ---
 def nueva_pregunta():
     row = df_juego.sample(1).iloc[0]
     st.session_state.pregunta = row
     st.session_state.modo = random.choice(modos_activos)
+    st.session_state.contador_preguntas += 1
+    # Reseteamos fase
+    st.session_state.estado_fase = 'respondiendo'
     
     sistemas = [('Nomenclatura Tradicional', 'Tradicional'), ('Nomenclatura de Stock', 'Stock'), ('Nomenclatura Sistemática', 'Sistemática')]
     validos = [s for s in sistemas if pd.notna(row[s[0]]) and len(row[s[0]].strip()) > 1]
     
     if not validos: nueva_pregunta(); return
-
     st.session_state.sis_elegido = random.choice(validos)
 
 if 'pregunta' not in st.session_state:
@@ -252,104 +265,131 @@ if 'pregunta' not in st.session_state:
     st.session_state.fallos = 0
     nueva_pregunta()
 
-# --- JUEGO ACTIVO ---
-row = st.session_state.pregunta
-familia_actual = row['COMPUESTO']
-modo = st.session_state.modo
-col_sis, nom_sis = st.session_state.sis_elegido
+# --- LÓGICA DE PANTALLA ---
 
-c1, c2 = st.columns([4, 1])
-with c2:
-    if st.button("⏭️ Saltar"): nueva_pregunta(); st.rerun()
-
-# === FORMULAR ===
-if modo == "Formular (Nombre ➡️ Fórmula)":
-    nombre_preg = row[col_sis]
+# Si estamos viendo el resultado de un fallo anterior
+if st.session_state.estado_fase == 'mostrar_fallo':
+    datos = st.session_state.datos_fallo
     
-    with c1:
-        st.subheader("📝 Escribe la fórmula:")
-        if "MIX" in clave_cat: st.caption(f"Familia: {familia_actual}")
-        st.markdown(f"<div class='big-formula'>{nombre_preg}</div>", unsafe_allow_html=True)
-        st.info(f"Sistema: **{nom_sis}**")
-        st.caption("Escribe números normales (ej: H2O)")
+    st.subheader("❌ Respuesta Incorrecta")
+    st.markdown(f"La pregunta era: <span class='big-formula'>{datos['pregunta']}</span>", unsafe_allow_html=True)
+    
+    st.markdown(f"""
+    <div class='fail-box'>
+        <p><b>Tu respuesta:</b> {datos['usuario']}</p>
+        <p><b>Solución Correcta:</b> {datos['solucion']}</p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    # Botón único para avanzar
+    if st.button("➡️ Siguiente Pregunta", type="primary"):
+        nueva_pregunta()
+        st.rerun()
 
-    with st.form("f1"):
-        user_input = st.text_input("Respuesta:", autocomplete="off")
-        check = st.form_submit_button("Comprobar")
+# Si estamos respondiendo (Fase normal)
+else:
+    row = st.session_state.pregunta
+    familia_actual = row['COMPUESTO']
+    modo = st.session_state.modo
+    col_sis, nom_sis = st.session_state.sis_elegido
+    input_key = f"resp_{st.session_state.contador_preguntas}"
+
+    c1, c2 = st.columns([4, 1])
+    with c2:
+        if st.button("⏭️ Saltar"): nueva_pregunta(); st.rerun()
+
+    # === FORMULAR ===
+    if modo == "Formular (Nombre ➡️ Fórmula)":
+        nombre_preg = row[col_sis]
         
-        if check:
-            raw = user_input.strip()
-            visual_user = embellecer_formula(raw)
-            correcta_orig = str(row['Fórmula']).strip()
-            correcta_clean = limpiar_subindices(correcta_orig)
+        with c1:
+            st.subheader("📝 Escribe la fórmula:")
+            if "MIX" in clave_cat: st.caption(f"Familia: {familia_actual}")
+            st.markdown(f"<div class='big-formula'>{nombre_preg}</div>", unsafe_allow_html=True)
+            st.info(f"Sistema: **{nom_sis}**")
+            st.caption("Escribe números normales (ej: H2O)")
+
+        with st.form("f1"):
+            user_input = st.text_input("Respuesta:", autocomplete="off", key=input_key)
+            check = st.form_submit_button("Comprobar")
             
-            if raw == correcta_clean or raw == correcta_orig:
-                st.balloons()
-                st.success(f"¡CORRECTO! 🎉")
-                st.markdown(f"Interpretado como: **{visual_user}**")
+            if check:
+                raw = user_input.strip()
+                visual_user = embellecer_formula(raw)
+                correcta_orig = str(row['Fórmula']).strip()
+                correcta_clean = limpiar_subindices(correcta_orig)
                 
-                st.session_state.aciertos += 1
-                actualizar_stats(familia_actual, True)
-                
-                msg = st.toast("Siguiente...", icon="⏭️")
-                time.sleep(1.5)
-                nueva_pregunta()
-                st.rerun()
-            else:
-                st.error("Incorrecto")
-                st.markdown(f"Tú: **{visual_user}** | Solución: **{correcta_orig}**")
-                
-                st.session_state.fallos += 1
-                actualizar_stats(familia_actual, False)
-                
-                if st.form_submit_button("Siguiente"): # Cambiado de "Reintentar" a Siguiente para fluidez en modo examen
-                    nueva_pregunta()
-                    st.rerun()
-
-# === NOMBRAR ===
-else: 
-    form_preg = row['Fórmula']
-    with c1:
-        st.subheader("🗣️ Nombra el compuesto:")
-        if "MIX" in clave_cat: st.caption(f"Familia: {familia_actual}")
-        st.markdown(f"<div class='big-formula'>{form_preg}</div>", unsafe_allow_html=True)
-        st.warning(f"Indica el nombre en **{nom_sis}**")
-
-    with st.form("f2"):
-        user_input = st.text_input("Respuesta:", autocomplete="off")
-        check = st.form_submit_button("Comprobar")
-        panico = st.checkbox("No sé escribirlo / Ver solución")
-
-        if check:
-            if panico:
-                st.info(f"Solución: **{row[col_sis]}**")
-                st.session_state.fallos += 1
-                actualizar_stats(familia_actual, False)
-                if st.form_submit_button("Siguiente"): nueva_pregunta(); st.rerun()
-            else:
-                u_norm = normalizar_texto(user_input)
-                c_norm = normalizar_texto(str(row[col_sis]))
-                
-                if u_norm == c_norm:
+                if raw == correcta_clean or raw == correcta_orig:
+                    # ACIERTO
                     st.balloons()
                     st.success(f"¡CORRECTO! 🎉")
-                    st.write(f"Exacto: **{row[col_sis]}**")
-                    
                     st.session_state.aciertos += 1
                     actualizar_stats(familia_actual, True)
-                    
-                    msg = st.toast("Siguiente...", icon="✅")
+                    msg = st.toast("Siguiente...", icon="⏭️")
                     time.sleep(1.5)
                     nueva_pregunta()
                     st.rerun()
                 else:
-                    st.error("Incorrecto")
-                    st.write(f"Tú: {user_input}")
-                    st.write(f"Solución: **{row[col_sis]}**")
-                    
+                    # FALLO (Modo estricto)
                     st.session_state.fallos += 1
                     actualizar_stats(familia_actual, False)
+                    # Guardamos datos para la pantalla de error
+                    st.session_state.datos_fallo = {
+                        "pregunta": nombre_preg,
+                        "usuario": visual_user if visual_user else "(Vacío)",
+                        "solucion": correcta_orig
+                    }
+                    st.session_state.estado_fase = 'mostrar_fallo'
+                    st.rerun()
+
+    # === NOMBRAR ===
+    else: 
+        form_preg = row['Fórmula']
+        with c1:
+            st.subheader("🗣️ Nombra el compuesto:")
+            if "MIX" in clave_cat: st.caption(f"Familia: {familia_actual}")
+            st.markdown(f"<div class='big-formula'>{form_preg}</div>", unsafe_allow_html=True)
+            st.warning(f"Indica el nombre en **{nom_sis}**")
+
+        with st.form("f2"):
+            user_input = st.text_input("Respuesta:", autocomplete="off", key=input_key)
+            check = st.form_submit_button("Comprobar")
+            panico = st.checkbox("No sé escribirlo / Ver solución")
+
+            if check:
+                if panico:
+                    # Se rinde -> Cuenta como fallo y muestra solución
+                    st.session_state.fallos += 1
+                    actualizar_stats(familia_actual, False)
+                    st.session_state.datos_fallo = {
+                        "pregunta": form_preg,
+                        "usuario": "Me he rendido 🏳️",
+                        "solucion": row[col_sis]
+                    }
+                    st.session_state.estado_fase = 'mostrar_fallo'
+                    st.rerun()
+                else:
+                    u_norm = normalizar_texto(user_input)
+                    c_norm = normalizar_texto(str(row[col_sis]))
                     
-                    if st.form_submit_button("Siguiente"):
+                    if u_norm == c_norm:
+                        # ACIERTO
+                        st.balloons()
+                        st.success(f"¡CORRECTO! 🎉")
+                        st.session_state.aciertos += 1
+                        actualizar_stats(familia_actual, True)
+                        msg = st.toast("Siguiente...", icon="✅")
+                        time.sleep(1.5)
                         nueva_pregunta()
+                        st.rerun()
+                    else:
+                        # FALLO (Modo estricto)
+                        st.session_state.fallos += 1
+                        actualizar_stats(familia_actual, False)
+                        st.session_state.datos_fallo = {
+                            "pregunta": form_preg,
+                            "usuario": user_input if user_input else "(Vacío)",
+                            "solucion": row[col_sis]
+                        }
+                        st.session_state.estado_fase = 'mostrar_fallo'
                         st.rerun()
