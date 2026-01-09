@@ -103,8 +103,7 @@ def cargar_datos():
 df = cargar_datos()
 if df.empty: st.stop()
 
-# --- GESTIÓN DE VARIABLES DE ESTADO (CORREGIDO) ---
-# Inicializamos TODO aquí para evitar AttributeError
+# --- GESTIÓN DE VARIABLES DE ESTADO ---
 if 'aciertos' not in st.session_state: st.session_state.aciertos = 0
 if 'fallos' not in st.session_state: st.session_state.fallos = 0
 if 'stats_familia' not in st.session_state: st.session_state.stats_familia = {} 
@@ -129,12 +128,31 @@ def reiniciar_todo():
     if 'pregunta' in st.session_state: del st.session_state['pregunta']
     st.rerun()
 
+# --- FUNCIÓN AUXILIAR: TABLA EN TIEMPO REAL ---
+def mostrar_tabla_progreso():
+    if st.session_state.stats_familia:
+        st.markdown("---")
+        st.caption("📊 Estadísticas en tiempo real:")
+        
+        datos_tabla = []
+        for fam, datos in st.session_state.stats_familia.items():
+            fallos_fam = datos['total'] - datos['aciertos']
+            datos_tabla.append({
+                "Compuesto": fam,
+                "✅ Aciertos": datos['aciertos'],
+                "❌ Fallos": fallos_fam
+            })
+        
+        # Mostramos la tabla limpia sin índice
+        df_prog = pd.DataFrame(datos_tabla)
+        st.dataframe(df_prog, hide_index=True, use_container_width=True)
+
 # --- INTERFAZ PRINCIPAL ---
 st.title("🧪 Entrenador de Formulación")
 
 # --- BARRA LATERAL ---
 with st.sidebar:
-    st.header("📊 Tu Progreso")
+    st.header("Progreso Global")
     aciertos = st.session_state.aciertos
     fallos = st.session_state.fallos
     total_intentos = aciertos + fallos
@@ -142,9 +160,9 @@ with st.sidebar:
     if total_intentos > 0:
         porcentaje = (aciertos / total_intentos)
         st.progress(porcentaje)
-        st.write(f"**Nota Global:** {aciertos}/{total_intentos} ({int(porcentaje*100)}%)")
+        st.write(f"**Nota:** {aciertos}/{total_intentos} ({int(porcentaje*100)}%)")
     else:
-        st.info("Responde para ver tu nota.")
+        st.info("Sin datos aún.")
     
     st.divider()
     if st.button("🗑️ Reiniciar Sesión"):
@@ -205,9 +223,7 @@ if not modos_activos:
 st.markdown("---")
 
 # --- CONTROL DE CAMBIOS ---
-# Si cambia la configuración, reseteamos contadores
 clave_config_actual = f"{clave_cat}_{limite_preguntas}"
-
 if st.session_state.config_prev != clave_config_actual:
     st.session_state.aciertos = 0
     st.session_state.fallos = 0
@@ -217,7 +233,7 @@ if st.session_state.config_prev != clave_config_actual:
     st.session_state.estado_fase = 'respondiendo'
 
 
-# --- GAME OVER LOGIC ---
+# --- GAME OVER LOGIC (PANTALLA FINAL) ---
 aciertos = st.session_state.aciertos
 fallos = st.session_state.fallos
 total_actual = aciertos + fallos
@@ -226,7 +242,6 @@ juego_terminado = False
 if isinstance(limite_preguntas, int):
     st.caption(f"📝 Pregunta {total_actual + 1} de {limite_preguntas}")
     st.progress(min(total_actual / limite_preguntas, 1.0))
-    # Si ya hemos llegado al límite y NO estamos viendo un fallo pendiente
     if total_actual >= limite_preguntas and st.session_state.estado_fase == 'respondiendo':
         juego_terminado = True
 else:
@@ -250,33 +265,18 @@ if juego_terminado:
     </div>
     """, unsafe_allow_html=True)
     
-    st.subheader("📋 Desglose por Tipo")
-    if st.session_state.stats_familia:
-        datos_finales = []
-        for fam, datos in st.session_state.stats_familia.items():
-            pct = int((datos['aciertos'] / datos['total']) * 100) if datos['total'] > 0 else 0
-            datos_finales.append({
-                "Tipo": fam,
-                "✅ Aciertos": datos['aciertos'],
-                "📝 Intentos": datos['total'],
-                "% Éxito": f"{pct}%"
-            })
-        st.dataframe(pd.DataFrame(datos_finales), hide_index=True, use_container_width=True)
+    mostrar_tabla_progreso() # Mostramos la tabla también al final
 
     if st.button("🔄 Jugar de nuevo", type="primary"):
         reiniciar_todo()
     st.stop() 
 
-# --- FUNCIONES DE LÓGICA ---
+# --- FUNCIONES DE LÓGICA (CON EQUILIBRADO) ---
 def nueva_pregunta():
     try:
-        # --- MODIFICACIÓN PARA EQUILIBRAR MIX ---
-        # En lugar de elegir una fila al azar de todo el montón (que favorece a las familias grandes),
-        # primero elegimos una familia al azar de las disponibles en la mezcla.
+        # --- Lógica de Equilibrado (Balanceo) ---
         familias_disponibles = df_juego['COMPUESTO'].unique()
         familia_azar = random.choice(familias_disponibles)
-        
-        # Ahora elegimos una pregunta SOLO de esa familia
         row = df_juego[df_juego['COMPUESTO'] == familia_azar].sample(1).iloc[0]
         # ----------------------------------------
         
@@ -298,6 +298,7 @@ def nueva_pregunta():
         
     except Exception as e:
         st.error(f"Error generando pregunta: {e}")
+
 # --- INICIALIZACIÓN SEGURA ---
 if 'pregunta' not in st.session_state or 'sis_elegido' not in st.session_state:
     nueva_pregunta()
@@ -328,6 +329,9 @@ if st.session_state.estado_fase == 'mostrar_fallo':
     if st.button("➡️ Siguiente Pregunta", type="primary"):
         nueva_pregunta()
         st.rerun()
+
+    # AQUÍ INSERTAMOS LA TABLA EN LA PANTALLA DE ERROR
+    mostrar_tabla_progreso()
 
 # B) MOSTRAR PREGUNTA (Juego)
 else:
@@ -382,7 +386,7 @@ else:
                     nueva_pregunta()
                     st.rerun()
                 else:
-                    st.session_state.fallos += 1  # Aquí daba el error, ahora ya no.
+                    st.session_state.fallos += 1
                     actualizar_stats(familia_actual, False)
                     st.session_state.datos_fallo = {
                         "pregunta": nombre_preg,
@@ -444,3 +448,6 @@ else:
                         }
                         st.session_state.estado_fase = 'mostrar_fallo'
                         st.rerun()
+
+    # AQUÍ INSERTAMOS LA TABLA EN LA PANTALLA DE JUEGO NORMAL
+    mostrar_tabla_progreso()
