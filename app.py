@@ -123,7 +123,7 @@ with st.sidebar:
 
     st.divider()
 
-    with st.expander("Ver desglose por temas", expanded=False):
+    with st.expander("Ver desglose en vivo", expanded=False):
         if not st.session_state.stats_familia:
             st.caption("Aún no hay datos.")
         else:
@@ -209,11 +209,11 @@ if st.session_state.config_prev != clave_config_actual:
     st.session_state.estado_fase = 'respondiendo'
 
 
-# --- GAME OVER LOGIC ---
+# --- GAME OVER LOGIC (PANTALLA FINAL) ---
 total_actual = st.session_state.get('aciertos', 0) + st.session_state.get('fallos', 0)
 juego_terminado = False
 
-# Solo comprobamos fin de juego si estamos en fase de respuesta (para dejar ver el último fallo)
+# Solo comprobamos fin de juego si estamos en fase de respuesta
 if isinstance(limite_preguntas, int):
     st.caption(f"📝 Pregunta {total_actual + 1} de {limite_preguntas}")
     st.progress(min(total_actual / limite_preguntas, 1.0))
@@ -232,17 +232,40 @@ if juego_terminado:
     elif nota_final >= 5: mensaje = "👍 APROBADO"
     else: mensaje = "💪 ¡A SEGUIR PRACTICANDO!"
 
+    # 1. Caja de Resultados Principal
     st.markdown(f"""
     <div class='resultado-box'>
         <h2>🏁 ¡Prueba Finalizada!</h2>
         <div class='nota-final'>{nota_final}/10</div>
         <p>{mensaje}</p>
-        <p>Has acertado <b>{aciertos}</b> de <b>{total_actual}</b> preguntas.</p>
+        <p>Total Aciertos: <b>{aciertos}</b> / {total_actual}</p>
     </div>
     """, unsafe_allow_html=True)
     
-    if st.button("🔄 Volver a Jugar (Reiniciar)"):
+    # 2. Desglose Detallado por Tipo (NUEVO)
+    st.subheader("📋 Desglose por Tipo de Compuesto")
+    if st.session_state.stats_familia:
+        datos_finales = []
+        for fam, datos in st.session_state.stats_familia.items():
+            # Calculamos porcentaje por familia para que quede más pro
+            pct = int((datos['aciertos'] / datos['total']) * 100) if datos['total'] > 0 else 0
+            datos_finales.append({
+                "Tipo de Compuesto": fam,
+                "✅ Aciertos": datos['aciertos'],
+                "📝 Intentos": datos['total'],
+                "% Éxito": f"{pct}%"
+            })
+        
+        df_fin = pd.DataFrame(datos_finales)
+        st.dataframe(df_fin, hide_index=True, use_container_width=True)
+    else:
+        st.write("No hay datos suficientes.")
+
+    st.markdown("---")
+    
+    if st.button("🔄 Volver a Jugar (Reiniciar)", type="primary"):
         reiniciar_todo()
+    
     st.stop() 
 
 # --- FUNCIONES DE LÓGICA ---
@@ -281,7 +304,6 @@ if st.session_state.estado_fase == 'mostrar_fallo':
     </div>
     """, unsafe_allow_html=True)
     
-    # Botón único para avanzar
     if st.button("➡️ Siguiente Pregunta", type="primary"):
         nueva_pregunta()
         st.rerun()
@@ -330,10 +352,9 @@ else:
                     nueva_pregunta()
                     st.rerun()
                 else:
-                    # FALLO (Modo estricto)
+                    # FALLO
                     st.session_state.fallos += 1
                     actualizar_stats(familia_actual, False)
-                    # Guardamos datos para la pantalla de error
                     st.session_state.datos_fallo = {
                         "pregunta": nombre_preg,
                         "usuario": visual_user if visual_user else "(Vacío)",
@@ -348,48 +369,3 @@ else:
         with c1:
             st.subheader("🗣️ Nombra el compuesto:")
             if "MIX" in clave_cat: st.caption(f"Familia: {familia_actual}")
-            st.markdown(f"<div class='big-formula'>{form_preg}</div>", unsafe_allow_html=True)
-            st.warning(f"Indica el nombre en **{nom_sis}**")
-
-        with st.form("f2"):
-            user_input = st.text_input("Respuesta:", autocomplete="off", key=input_key)
-            check = st.form_submit_button("Comprobar")
-            panico = st.checkbox("No sé escribirlo / Ver solución")
-
-            if check:
-                if panico:
-                    # Se rinde -> Cuenta como fallo y muestra solución
-                    st.session_state.fallos += 1
-                    actualizar_stats(familia_actual, False)
-                    st.session_state.datos_fallo = {
-                        "pregunta": form_preg,
-                        "usuario": "Me he rendido 🏳️",
-                        "solucion": row[col_sis]
-                    }
-                    st.session_state.estado_fase = 'mostrar_fallo'
-                    st.rerun()
-                else:
-                    u_norm = normalizar_texto(user_input)
-                    c_norm = normalizar_texto(str(row[col_sis]))
-                    
-                    if u_norm == c_norm:
-                        # ACIERTO
-                        st.balloons()
-                        st.success(f"¡CORRECTO! 🎉")
-                        st.session_state.aciertos += 1
-                        actualizar_stats(familia_actual, True)
-                        msg = st.toast("Siguiente...", icon="✅")
-                        time.sleep(1.5)
-                        nueva_pregunta()
-                        st.rerun()
-                    else:
-                        # FALLO (Modo estricto)
-                        st.session_state.fallos += 1
-                        actualizar_stats(familia_actual, False)
-                        st.session_state.datos_fallo = {
-                            "pregunta": form_preg,
-                            "usuario": user_input if user_input else "(Vacío)",
-                            "solucion": row[col_sis]
-                        }
-                        st.session_state.estado_fase = 'mostrar_fallo'
-                        st.rerun()
