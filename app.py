@@ -1,156 +1,262 @@
 import streamlit as st
 import pandas as pd
 import random
+import unicodedata
 
-# Configuración de la página
-st.set_page_config(page_title="Repaso Formulación", page_icon="🧪")
+# --- CONFIGURACIÓN DE PÁGINA ---
+st.set_page_config(
+    page_title="Formulación Inorgánica",
+    page_icon="⚗️",
+    layout="centered"
+)
 
-# Título y descripción
-st.title("🧪 Entrenador de Formulación Inorgánica")
-st.markdown("Pon a prueba tus conocimientos. Elige el tipo de ejercicio en el menú de la izquierda.")
+# --- ESTILOS CSS ---
+st.markdown("""
+    <style>
+    .stApp header {visibility: hidden;} 
+    .stMultiSelect {margin-top: -10px;}
+    div[data-testid="stPills"] {margin-bottom: 20px;}
+    /* Hacemos que la fórmula se vea grande */
+    .big-formula {font-size: 40px; font-weight: bold; color: #4F8BF9; text-align: center;}
+    </style>
+    """, unsafe_allow_html=True)
 
-# --- CARGA DE DATOS ---
+# --- FUNCIONES AUXILIARES ---
+
+# Función para normalizar texto (quitar tildes y minúsculas) para comparar respuestas
+def normalizar(texto):
+    if not isinstance(texto, str): return ""
+    texto = texto.lower().strip()
+    # Descomposición unicode para separar tildes de letras
+    texto = ''.join(c for c in unicodedata.normalize('NFD', texto) if unicodedata.category(c) != 'Mn')
+    return texto
+
 @st.cache_data
 def cargar_datos():
     try:
-        # Cargamos el CSV. Asumimos que el separador es coma (,) estándar.
-        # Si tu excel usa punto y coma (;), cambia sep=',' por sep=';'
         df = pd.read_csv("formulacion.csv", sep=',') 
-        
-        # Limpiamos columnas clave para evitar errores
+        # Limpieza básica
         cols_necesarias = ['Fórmula', 'Nomenclatura Tradicional', 'Nomenclatura de Stock', 'Nomenclatura Sistemática', 'COMPUESTO']
         df = df.dropna(subset=cols_necesarias)
+        df['COMPUESTO'] = df['COMPUESTO'].str.strip()
+        # Convertimos todo a string para evitar errores
+        for col in cols_necesarias:
+            df[col] = df[col].astype(str)
         return df
     except Exception as e:
         st.error(f"Error al cargar el archivo: {e}")
         return pd.DataFrame()
 
 df = cargar_datos()
+if df.empty: st.stop()
 
-if df.empty:
+# --- 2. LÓGICA DE SELECCIÓN DE CONTENIDO ---
+
+st.title("🧪 Entrenador de Formulación")
+
+# --- A) SELECCIÓN DE FAMILIA ---
+st.write("**1. Elige el contenido:**")
+
+orden_preferido = [
+    "Óxidos", "Hidruros", "Hidróxidos", "Compuestos Binarios", 
+    "Sales Dobles", "Oxoácidos", "Oxosales", "Sales Ácidas", "Oxosales Ácidas"
+]
+categorias_en_csv = df['COMPUESTO'].unique()
+mapa_categorias = {}
+categorias_display = []
+
+for cat_deseada in orden_preferido:
+    for cat_real in categorias_en_csv:
+        if cat_deseada.lower()[:4] in cat_real.lower()[:4]: 
+            mapa_categorias[cat_deseada] = cat_real
+            categorias_display.append(cat_deseada)
+            break
+            
+for cat_real in categorias_en_csv:
+    if cat_real not in mapa_categorias.values():
+        categorias_display.append(cat_real)
+        mapa_categorias[cat_real] = cat_real
+
+opciones_menu = ["🔀 Mezclar Prueba"] + categorias_display
+
+seleccion_pill = st.pills("Familia", options=opciones_menu, selection_mode="single", default=opciones_menu[0], key="pills_familia")
+
+# Lógica de filtrado
+if seleccion_pill == "🔀 Mezclar Prueba":
+    seleccion_mix = st.multiselect("Familias a mezclar:", options=categorias_display, default=categorias_display[:3], label_visibility="collapsed")
+    if not seleccion_mix:
+        st.warning("Selecciona al menos una familia.")
+        st.stop()
+    filtros_reales = [mapa_categorias[x] for x in seleccion_mix]
+    df_juego = df[df['COMPUESTO'].isin(filtros_reales)]
+    clave_categoria_actual = f"MIX_{'-'.join(seleccion_mix)}"
+else:
+    if not seleccion_pill: st.stop()
+    filtro_real = mapa_categorias.get(seleccion_pill, seleccion_pill)
+    df_juego = df[df['COMPUESTO'] == filtro_real]
+    clave_categoria_actual = f"CAT_{seleccion_pill}"
+
+# --- B) SELECCIÓN DE MODO ---
+st.write("**2. ¿Qué quieres practicar?**")
+opciones_modo = ["Nombrar (Fórmula ➡️ Nombre)", "Formular (Nombre ➡️ Fórmula)"]
+modos_activos = st.pills("Modo", options=opciones_modo, selection_mode="multi", default=opciones_modo, key="pills_modo")
+
+if not modos_activos:
+    st.warning("⚠️ Selecciona al menos un modo.")
     st.stop()
 
-# --- BARRA LATERAL (FILTROS) ---
-st.sidebar.header("Configuración")
+st.markdown("---")
 
-# 1. Elegir Modo de Juego
-modo = st.sidebar.radio(
-    "¿Qué quieres practicar?",
-    ["Nombrar (Ver Fórmula -> Escribir Nombre)", 
-     "Formular (Ver Nombre -> Escribir Fórmula)"]
-)
+# --- 3. GESTIÓN DEL ESTADO ---
 
-# 2. Filtro por Tipo de Compuesto (Usando tu columna 'COMPUESTO')
-tipos_disponibles = list(df['COMPUESTO'].unique())
-seleccion_tipos = st.sidebar.multiselect(
-    "Filtrar por familia:",
-    options=tipos_disponibles,
-    default=tipos_disponibles # Por defecto selecciona todos
-)
+if 'config_anterior' not in st.session_state:
+    st.session_state.config_anterior = clave_categoria_actual
 
-# Filtrar el DataFrame según la selección
-df_juego = df[df['COMPUESTO'].isin(seleccion_tipos)]
-
-if df_juego.empty:
-    st.warning("No hay compuestos seleccionados. Marca al menos una familia en la barra lateral.")
-    st.stop()
-
-# --- LÓGICA DEL EJERCICIO ---
-
-# Inicializar estado de la pregunta si no existe
-if 'pregunta' not in st.session_state:
-    st.session_state.pregunta = df_juego.sample(1).iloc[0]
-    st.session_state.mostrar_solucion = False
-    st.session_state.contador_aciertos = 0
-
-# Botón para siguiente pregunta
-col1, col2 = st.columns([1, 4])
-with col1:
-    if st.button("🔄 Siguiente"):
-        st.session_state.pregunta = df_juego.sample(1).iloc[0]
-        st.session_state.mostrar_solucion = False
-
-# Mostrar contador (Gamificación simple)
-st.sidebar.metric("Racha de Aciertos", st.session_state.contador_aciertos)
-
-# --- MODO 1: FORMULAR (Te dan el nombre -> Escribes la fórmula) ---
-if modo == "Formular (Ver Nombre -> Escribir Fórmula)":
-    row = st.session_state.pregunta
+# Función para generar NUEVA pregunta
+def nueva_pregunta():
+    # 1. Elegir fila
+    row = df_juego.sample(1).iloc[0]
+    st.session_state.pregunta = row
     
-    # Elegimos al azar uno de los 3 sistemas de nomenclatura disponibles en tu CSV
+    # 2. Elegir Modo (Formular o Nombrar)
+    st.session_state.modo_actual = random.choice(modos_activos)
+    
+    # 3. Elegir Sistema de Nomenclatura VÁLIDO para esa fila
     sistemas = [
         ('Nomenclatura Tradicional', 'Tradicional'),
         ('Nomenclatura de Stock', 'Stock'),
         ('Nomenclatura Sistemática', 'Sistemática')
     ]
-    # Filtramos sistemas que no tengan datos (por si hay celdas vacías)
-    sistemas_validos = [s for s in sistemas if pd.notna(row[s[0]]) and str(row[s[0]]).strip() != '']
+    # Solo nos quedamos con sistemas que tengan texto en esa celda
+    sistemas_validos = [s for s in sistemas if pd.notna(row[s[0]]) and len(row[s[0]].strip()) > 1]
     
     if not sistemas_validos:
-        st.error("Este compuesto no tiene nomenclaturas válidas.")
-    else:
-        col_sistema, nombre_sistema = random.choice(sistemas_validos)
-        nombre_pregunta = row[col_sistema]
+        # Si la fila está rota, intentamos otra vez (recursivo)
+        nueva_pregunta()
+        return
 
-        st.subheader(f"Escribe la fórmula de:")
-        st.markdown(f"### {nombre_pregunta}")
-        st.caption(f"Sistema: {nombre_sistema} | Familia: {row['COMPUESTO']}")
+    st.session_state.sistema_elegido = random.choice(sistemas_validos)
+    st.session_state.mostrar_solucion = False
 
-        # Input del usuario
-        respuesta = st.text_input("Tu respuesta (Ej: H2SO4):", key="input_formular")
+# Si cambia la categoría, reseteamos
+if st.session_state.config_anterior != clave_categoria_actual:
+    nueva_pregunta()
+    st.session_state.config_anterior = clave_categoria_actual
 
-        if respuesta:
-            # Normalización básica (quitar espacios y mayúsculas)
+if 'pregunta' not in st.session_state:
+    st.session_state.contador_aciertos = 0
+    st.session_state.contador_fallos = 0
+    nueva_pregunta()
+
+# BARRA LATERAL (Puntuación)
+if st.sidebar.button("🗑️ Reiniciar Puntuación"):
+    st.session_state.contador_aciertos = 0
+    st.session_state.contador_fallos = 0
+    st.rerun()
+st.sidebar.metric("✅ Aciertos", st.session_state.contador_aciertos)
+st.sidebar.metric("❌ Fallos", st.session_state.contador_fallos)
+
+
+# --- 4. RENDERIZADO DEL JUEGO ---
+
+row = st.session_state.pregunta
+modo_juego = st.session_state.modo_actual 
+col_sistema, nombre_sistema = st.session_state.sistema_elegido
+
+# Cabecera común con botón saltar
+c1, c2 = st.columns([4, 1])
+with c2:
+    if st.button("⏭️ Saltar"):
+        nueva_pregunta()
+        st.rerun()
+
+# === CASO A: FORMULAR (Te dan nombre -> Escribes fórmula) ===
+if modo_juego == "Formular (Nombre ➡️ Fórmula)":
+    
+    nombre_pregunta = row[col_sistema]
+
+    with c1:
+        st.subheader("📝 Escribe la fórmula:")
+        if "MIX" in clave_categoria_actual:
+            st.caption(f"Familia: {row['COMPUESTO']}")
+        
+        # Mostramos el nombre centrado y grande
+        st.markdown(f"<div class='big-formula'>{nombre_pregunta}</div>", unsafe_allow_html=True)
+        st.info(f"Sistema pedido: **{nombre_sistema}**")
+
+    with st.form("form_formular"):
+        respuesta = st.text_input("Tu respuesta (ej: H2SO4):", autocomplete="off")
+        submitted = st.form_submit_button("Comprobar")
+        
+        if submitted:
+            # Normalización (ignoramos mayúsculas en la respuesta del usuario para ser amables, 
+            # aunque en química importa, para una app móvil es mejor ser flexible).
+            # Si quieres ser estricto, quita el .lower()
             resp_user = respuesta.strip()
             resp_correcta = str(row['Fórmula']).strip()
             
-            # Comparación (Intentamos ser flexibles con mayúsculas/minúsculas si quieres)
-            # Aquí comparamos exacto respetando mayúsculas de símbolos químicos (H != h)
-            if resp_user == resp_correcta:
-                st.success("¡Correcto! ✅")
-                if st.button("Sumar punto y Seguir"):
-                     st.session_state.contador_aciertos += 1
-                     st.session_state.pregunta = df_juego.sample(1).iloc[0]
-                     st.session_state.mostrar_solucion = False
-                     st.rerun()
+            if resp_user == resp_correcta: # Comparación exacta (case-sensitive)
+                st.success("¡CORRECTO! 🎉")
+                st.session_state.contador_aciertos += 1
+                if st.form_submit_button("Siguiente ➡️"): pass
+                nueva_pregunta()
+                st.rerun()
+            elif resp_user.lower() == resp_correcta.lower(): # Comparación flexible
+                st.warning(f"¡Bien! Pero cuidado con las mayúsculas: **{resp_correcta}**")
+                st.session_state.contador_aciertos += 1
+                if st.form_submit_button("Siguiente ➡️"): pass
+                nueva_pregunta()
+                st.rerun()
             else:
-                st.error(f"Incorrecto. La solución es: {resp_correcta}")
+                st.error("Incorrecto.")
+                st.session_state.contador_fallos += 1
+                st.markdown(f"Solución: **{resp_correcta}**")
+                if st.form_submit_button("Intentar otro"):
+                    nueva_pregunta()
+                    st.rerun()
 
-# --- MODO 2: NOMBRAR (Te dan la fórmula -> Piensas el nombre) ---
-else:
-    row = st.session_state.pregunta
+# === CASO B: NOMBRAR (Te dan fórmula -> ESCRIBES nombre específico) ===
+else: 
+    formula_pregunta = row['Fórmula']
     
-    st.subheader("Nombra este compuesto:")
-    st.markdown(f"## {row['Fórmula']}")
-    st.caption(f"Familia: {row['COMPUESTO']}")
-    
-    st.info("Piensa el nombre en los diferentes sistemas y luego pulsa 'Ver Solución'.")
-    
-    if st.button("👁️ Ver Solución"):
-        st.session_state.mostrar_solucion = True
+    with c1:
+        st.subheader("🗣️ Nombra el compuesto:")
+        if "MIX" in clave_categoria_actual:
+            st.caption(f"Familia: {row['COMPUESTO']}")
+            
+        st.markdown(f"<div class='big-formula'>{formula_pregunta}</div>", unsafe_allow_html=True)
+        # AQUÍ ESTÁ EL CAMBIO: Pedimos un sistema concreto
+        st.warning(f"Indica el nombre en **{nombre_sistema}**")
 
-    if st.session_state.mostrar_solucion:
-        st.markdown("---")
-        c1, c2, c3 = st.columns(3)
-        with c1:
-            st.markdown("**Tradicional**")
-            st.write(row['Nomenclatura Tradicional'])
-        with c2:
-            st.markdown("**Stock**")
-            st.write(row['Nomenclatura de Stock'])
-        with c3:
-            st.markdown("**Sistemática**")
-            st.write(row['Nomenclatura Sistemática'])
+    with st.form("form_nombrar"):
+        respuesta = st.text_input("Tu respuesta:", autocomplete="off")
+        submitted = st.form_submit_button("Comprobar")
         
-        st.write("")
-        st.markdown("*¿Acertaste?*")
-        col_si, col_no = st.columns(2)
-        if col_si.button("¡Sí, acerté! 👍"):
-            st.session_state.contador_aciertos += 1
-            st.session_state.pregunta = df_juego.sample(1).iloc[0]
-            st.session_state.mostrar_solucion = False
-            st.rerun()
-        if col_no.button("No, necesito repasar 👎"):
-            st.session_state.pregunta = df_juego.sample(1).iloc[0]
-            st.session_state.mostrar_solucion = False
-            st.rerun()
+        # Botón de pánico por si no saben escribirlo
+        ver_solucion = st.checkbox("No sé escribirlo, prefiero ver la solución")
+
+        if submitted:
+            if ver_solucion:
+                st.info(f"La respuesta era: **{row[col_sistema]}**")
+                if st.form_submit_button("Siguiente"): 
+                    nueva_pregunta()
+                    st.rerun()
+            else:
+                # Usamos la función normalizar para ignorar tildes y mayúsculas
+                resp_user_norm = normalizar(respuesta)
+                resp_correcta_norm = normalizar(str(row[col_sistema]))
+                
+                if resp_user_norm == resp_correcta_norm:
+                    st.success(f"¡CORRECTO! 🎉 ({row[col_sistema]})")
+                    st.session_state.contador_aciertos += 1
+                    if st.form_submit_button("Siguiente ➡️"): pass
+                    nueva_pregunta()
+                    st.rerun()
+                else:
+                    st.error("Incorrecto o mal escrito.")
+                    st.markdown(f"Tú escribiste: {respuesta}")
+                    st.markdown(f"La solución exacta es: **{row[col_sistema]}**")
+                    st.session_state.contador_fallos += 1
+                    if st.form_submit_button("Intentar otro"):
+                        nueva_pregunta()
+                        st.rerun()
