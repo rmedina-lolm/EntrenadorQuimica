@@ -53,7 +53,8 @@ st.markdown("""
         text-align: center;
         margin-bottom: 20px;
     }
-    .nota-final { font-size: 60px; font-weight: bold; color: #15803d; }
+    .nota-final { font-size: 50px; font-weight: bold; color: #15803d; }
+    .mensaje-final { font-size: 24px; font-weight: bold; color: #166534; margin-top: 10px; }
     
     /* Caja de Fallo */
     .fail-box {
@@ -143,7 +144,6 @@ def mostrar_tabla_progreso():
                 "❌ Fallos": fallos_fam
             })
         
-        # Mostramos la tabla limpia sin índice
         df_prog = pd.DataFrame(datos_tabla)
         st.dataframe(df_prog, hide_index=True, use_container_width=True)
 
@@ -249,23 +249,31 @@ else:
 
 if juego_terminado:
     st.balloons()
-    nota_final = int((aciertos / total_actual) * 10) if total_actual > 0 else 0
     
-    if nota_final >= 9: mensaje = "🏆 ¡EXCELENTE!"
-    elif nota_final >= 7: mensaje = "👏 ¡MUY BIEN!"
-    elif nota_final >= 5: mensaje = "👍 APROBADO"
-    else: mensaje = "💪 ¡A SEGUIR PRACTICANDO!"
+    # CÁLCULO DE FEEDBACK PERSONALIZADO
+    porcentaje_final = (aciertos / total_actual * 100) if total_actual > 0 else 0
+    
+    if porcentaje_final >= 90:
+        mensaje = "🌟 ¡Muy Bien!"
+    elif porcentaje_final >= 80:
+        mensaje = "👍 Bien"
+    elif porcentaje_final >= 70:
+        mensaje = "🎯 ¡Cerca del logro!"
+    elif porcentaje_final >= 50:
+        mensaje = "🛠️ Aún en proceso"
+    else:
+        mensaje = "📚 Necesitas practicar más"
 
     st.markdown(f"""
     <div class='resultado-box'>
         <h2>🏁 ¡Prueba Finalizada!</h2>
-        <div class='nota-final'>{nota_final}/10</div>
-        <p>{mensaje}</p>
-        <p>Total Aciertos: <b>{aciertos}</b> / {total_actual}</p>
+        <div class='nota-final'>{int(porcentaje_final)}%</div>
+        <div class='mensaje-final'>{mensaje}</div>
+        <p style='margin-top:10px;'>Total Aciertos: <b>{aciertos}</b> / {total_actual}</p>
     </div>
     """, unsafe_allow_html=True)
     
-    mostrar_tabla_progreso() # Mostramos la tabla también al final
+    mostrar_tabla_progreso()
 
     if st.button("🔄 Jugar de nuevo", type="primary"):
         reiniciar_todo()
@@ -274,11 +282,10 @@ if juego_terminado:
 # --- FUNCIONES DE LÓGICA (CON EQUILIBRADO) ---
 def nueva_pregunta():
     try:
-        # --- Lógica de Equilibrado (Balanceo) ---
+        # Equilibrado de familias
         familias_disponibles = df_juego['COMPUESTO'].unique()
         familia_azar = random.choice(familias_disponibles)
         row = df_juego[df_juego['COMPUESTO'] == familia_azar].sample(1).iloc[0]
-        # ----------------------------------------
         
         sistemas = [('Nomenclatura Tradicional', 'Tradicional'), ('Nomenclatura de Stock', 'Stock'), ('Nomenclatura Sistemática', 'Sistemática')]
         validos = []
@@ -330,7 +337,6 @@ if st.session_state.estado_fase == 'mostrar_fallo':
         nueva_pregunta()
         st.rerun()
 
-    # AQUÍ INSERTAMOS LA TABLA EN LA PANTALLA DE ERROR
     mostrar_tabla_progreso()
 
 # B) MOSTRAR PREGUNTA (Juego)
@@ -449,5 +455,4 @@ else:
                         st.session_state.estado_fase = 'mostrar_fallo'
                         st.rerun()
 
-    # AQUÍ INSERTAMOS LA TABLA EN LA PANTALLA DE JUEGO NORMAL
     mostrar_tabla_progreso()
