@@ -1,0 +1,1475 @@
+COMPUESTO,Fórmula,Nomenclatura Tradicional,Nomenclatura de Stock,Nomenclatura Sistemática
+Compuestos Binarios,BrCl,Cloruro hipobromoso,Cloruro de bromo (I),Monocloruro de bromo
+Compuestos Binarios,BrF,Fluoruro hipobromoso,Fluoruro de bromo (I),Monofluoruro de bromo
+Compuestos Binarios,ClF,Fluoruro hipocloroso,Fluoruro de cloro (I),Monofluoruro de cloro
+Compuestos Binarios,IBr,Bromuro hipoyodoso,Bromuro de yodo (I),Monobromuro de yodo
+Compuestos Binarios,ICl,Cloruro hipoyodoso,Cloruro de yodo (I),Monocloruro de yodo
+Compuestos Binarios,IF,Fluoruro hipoyodoso,Fluoruro de yodo (I),Monofluoruro de yodo
+Compuestos Binarios,S₂I₂,Yoduro hiposulfuroso,Yoduro de azufre (II),Diyoduro de diazufre
+Compuestos Binarios,S₂Br₂,Bromuro hiposulfuroso,Bromuro de azufre (II),Dibromuro de diazufre
+Compuestos Binarios,SCl₂,Cloruro hiposulfuroso,Cloruro de azufre (II),Dicloruro de azufre
+Compuestos Binarios,SF₂,Fluoruro hiposulfuroso,Fluoruro de azufre (II),Difluoruro de azufre
+Compuestos Binarios,AsI₃,Yoduro arsenioso,Yoduro de arsénico (III),Triyoduro de arsénico
+Compuestos Binarios,AsBr₃,Bromuro arsenioso,Bromuro de arsénico (III),Tribromuro de arsénico
+Compuestos Binarios,AsCl₃,Cloruro arsenioso,Cloruro de arsénico (III),Tricloruro de arsénico
+Compuestos Binarios,AsF₃,Fluoruro arsenioso,Fluoruro de arsénico (III),Trifluoruro de arsénico
+Compuestos Binarios,BI₃,Yoduro bórico,Yoduro de boro (III),Triyoduro de boro
+Compuestos Binarios,BBr₃,Bromuro bórico,Bromuro de boro (III),Tribromuro de boro
+Compuestos Binarios,BCl₃,Cloruro bórico,Cloruro de boro (III),Tricloruro de boro
+Compuestos Binarios,BF₃,Fluoruro bórico,Fluoruro de boro (III),Trifluoruro de boro
+Compuestos Binarios,NI₃,Yoduro nitroso,Yoduro de nitrógeno (III),Triyoduro de nitrógeno
+Compuestos Binarios,NBr₃,Bromuro nitroso,Bromuro de nitrógeno (III),Tribromuro de nitrógeno
+Compuestos Binarios,NCl₃,Cloruro nitroso,Cloruro de nitrógeno (III),Tricloruro de nitrógeno
+Compuestos Binarios,NF₃,Fluoruro nitroso,Fluoruro de nitrógeno (III),Trifluoruro de nitrógeno
+Compuestos Binarios,PI₃,Yoduro fosforoso,Yoduro de fósforo (III),Triyoduro de fósforo
+Compuestos Binarios,PBr₃,Bromuro fosforoso,Bromuro de fósforo (III),Tribromuro de fósforo
+Compuestos Binarios,PCl₃,Cloruro fosforoso,Cloruro de fósforo (III),Tricloruro de fósforo
+Compuestos Binarios,PF₃,Fluoruro fosforoso,Fluoruro de fósforo (III),Trifluoruro de fósforo
+Compuestos Binarios,SbI₃,Yoduro antimonioso,Yoduro de antimonio (III),Triyoduro de antimonio
+Compuestos Binarios,SbBr₃,Bromuro antimonioso,Bromuro de antimonio (III),Tribromuro de antimonio
+Compuestos Binarios,SbCl₃,Cloruro antimonioso,Cloruro de antimonio (III),Tricloruro de antimonio
+Compuestos Binarios,SbF₃,Fluoruro antimonioso,Fluoruro de antimonio (III),Trifluoruro de antimonio
+Compuestos Binarios,CI₄,Yoduro carbónico,Yoduro de carbono (IV),Tetrayoduro de carbono
+Compuestos Binarios,CBr₄,Bromuro carbónico,Bromuro de carbono (IV),Tetrabromuro de carbono
+Compuestos Binarios,CCl₄,Cloruro carbónico,Cloruro de carbono (IV),Tetracloruro de carbono
+Compuestos Binarios,CF₄,Fluoruro carbónico,Fluoruro de carbono (IV),Tetrafluoruro de carbono
+Compuestos Binarios,SeI₄,Yoduro selenioso,Yoduro de selenio (IV),Tetrayoduro de selenio
+Compuestos Binarios,SeBr₄,Bromuro selenioso,Bromuro de selenio (IV),Tetrabromuro de selenio
+Compuestos Binarios,SeCl₄,Cloruro selenioso,Cloruro de selenio (IV),Tetracloruro de selenio
+Compuestos Binarios,SeF₄,Fluoruro selenioso,Fluoruro de selenio (IV),Tetrafluoruro de selenio
+Compuestos Binarios,SiI₄,Yoduro silícico,Yoduro de silicio (IV),Tetrayoduro de silicio
+Compuestos Binarios,SiBr₄,Bromuro silícico,Bromuro de silicio (IV),Tetrabromuro de silicio
+Compuestos Binarios,SiCl₄,Cloruro silícico,Cloruro de silicio (IV),Tetracloruro de silicio
+Compuestos Binarios,SiF₄,Fluoruro silícico,Fluoruro de silicio (IV),Tetrafluoruro de silicio
+Compuestos Binarios,TeI₄,Yoduro teluroso,Yoduro de Teluro (IV),Tetrayoduro de Teluro
+Compuestos Binarios,TeBr₄,Bromuro teluroso,Bromuro de Teluro (IV),Tetrabromuro de Teluro
+Compuestos Binarios,TeCl₄,Cloruro teluroso,Cloruro de Teluro (IV),Tetracloruro de Teluro
+Compuestos Binarios,TeF₄,Fluoruro teluroso,Fluoruro de Teluro (IV),Tetrafluoruro de Teluro
+Compuestos Binarios,As₂Te₃,Telururo arsenioso,Telururo de arsénico (III),Tritelururo de diarsénico
+Compuestos Binarios,As₂Se₃,Seleniuro arsenioso,Seleniuro de arsénico (III),Triseleniuro de diarsénico
+Compuestos Binarios,As₂S₃,Sulfuro arsenioso,Sulfuro de arsénico (III),Trisulfuro de diarsénico
+Compuestos Binarios,B₂Te₃,Telururo bórico,Telururo de boro (III),Tritelururo de diboro
+Compuestos Binarios,B₂Se₃,Seleniuro bórico,Seleniuro de boro (III),Triseleniuro de diboro
+Compuestos Binarios,B₂S₃,Sulfuro bórico,Sulfuro de boro (III),Trisulfuro de diboro
+Compuestos Binarios,N₂Te₃,Telururo nitroso,Telururo de nitrógeno (III),Tritelururo de dinitrógeno
+Compuestos Binarios,N₂Se₃,Seleniuro nitroso,Seleniuro de nitrógeno (III),Triseleniuro de dinitrógeno
+Compuestos Binarios,N₂S₃,Sulfuro nitroso,Sulfuro de nitrógeno (III),Trisulfuro de dinitrógeno
+Compuestos Binarios,P₂Te₃,Telururo fosforoso,Telururo de fósforo (III),Tritelururo de difósforo
+Compuestos Binarios,P₂Se₃,Seleniuro fosforoso,Seleniuro de fósforo (III),Triseleniuro de difósforo
+Compuestos Binarios,P₂S₃,Sulfuro fosforoso,Sulfuro de fósforo (III),Trisulfuro de difósforo
+Compuestos Binarios,Sb₂Te₃,Telururo antimonioso,Telururo de antimonio (III),Tritelururo de diantimonio
+Compuestos Binarios,Sb₂Se₃,Seleniuro antimonioso,Seleniuro de antimonio (III),Triseleniuro de diantimonio
+Compuestos Binarios,Sb₂S₃,Sulfuro antimonioso,Sulfuro de antimonio (III),Trisulfuro de diantimonio
+Compuestos Binarios,CTe₂,Telururo carbónico,Telururo de carbono (IV),Ditelururo de carbono
+Compuestos Binarios,CSe₂,Seleniuro carbónico,Seleniuro de carbono (IV),Diseleniuro de carbono
+Compuestos Binarios,CS₂,Sulfuro carbónico,Sulfuro de carbono (IV),Disulfuro de carbono
+Compuestos Binarios,SeS₂,Sulfuro selenioso,Sulfuro de selenio (IV),Disulfuro de selenio
+Compuestos Binarios,SiTe₂,Telururo silícico,Telururo de silicio (IV),Ditelururo de silicio
+Compuestos Binarios,SiSe₂,Seleniuro silícico,Seleniuro de silicio (IV),Diseleniuro de silicio
+Compuestos Binarios,SiS₂,Sulfuro silícico,Sulfuro de silicio (IV),Disulfuro de silicio
+Compuestos Binarios,TeSe₂,Seleniuro teluroso,Seleniuro de Teluro (IV),Diseleniuro de Teluro
+Compuestos Binarios,TeS₂,Sulfuro teluroso,Sulfuro de Teluro (IV),Disulfuro de Teluro
+Compuestos Binarios,AsP,Fosfuro arsenioso,Fosfuro de arsénico (III),Monofosfuro de arsénico
+Compuestos Binarios,AsN,Nitruro arsenioso,Nitruro de arsénico (III),Mononitruro de arsénico
+Compuestos Binarios,BSb,Antimoniuro bórico,Antimoniuro de boro (III),Monoantimoniuro de boro
+Compuestos Binarios,BAs,Arsenuro bórico,Arsenuro de boro (III),Monoarsenuro de boro
+Compuestos Binarios,BP,Fosfuro bórico,Fosfuro de boro (III),Monofosfuro de boro
+Compuestos Binarios,BN,Nitruro bórico,Nitruro de boro (III),Mononitruro de boro
+Compuestos Binarios,PN,Nitruro fosforoso,Nitruro de fósforo (III),Mononitruro de fósforo
+Compuestos Binarios,SbAs,Arsenuro antimonioso,Arsenuro de antimonio (III),Monoarsenuro de antimonio
+Compuestos Binarios,SbP,Fosfuro antimonioso,Fosfuro de antimonio (III),Monofosfuro de antimonio
+Compuestos Binarios,SbN,Nitruro antimonioso,Nitruro de antimonio (III),Mononitruro de antimonio
+Compuestos Binarios,C₃Sb₄,Antimoniuro carbónico,Antimoniuro de carbono (IV),Tetraantimoniuro de tricarbono
+Compuestos Binarios,C₃As₄,Arsenuro carbónico,Arsenuro de carbono (IV),Tetraarsenuro de tricarbono
+Compuestos Binarios,C₃P₄,Fosfuro carbónico,Fosfuro de carbono (IV),Tetrafosfuro de tricarbono
+Compuestos Binarios,C₃N₄,Nitruro carbónico,Nitruro de carbono (IV),Tetranitruro de tricarbono
+Compuestos Binarios,Si₃Sb₄,Antimoniuro silícico,Antimoniuro de silicio (IV),Tetraantimoniuro de trisilicio
+Compuestos Binarios,Si₃As₄,Arsenuro silícico,Arsenuro de silicio (IV),Tetraarsenuro de trisilicio
+Compuestos Binarios,Si₃P₄,Fosfuro silícico,Fosfuro de silicio (IV),Tetrafosfuro de trisilicio
+Compuestos Binarios,Si₃N₄,Nitruro silícico,Nitruro de silicio (IV),Tetranitruro de trisilicio
+Compuestos Binarios,B₄Si₃,Siliciuro bórico,Siliciuro de boro (III),Trisiliciuro de tetraboro
+Compuestos Binarios,B₄C₃,Carburo bórico,Carburo de boro (III),Tricarburo de tetraboro
+Compuestos Binarios,SiC,Carburo silícico,Carburo de silicio (IV),Monocarburo de silicio
+Hidróxidos,AgOH,Hidróxido argéntico,Hidróxido de plata,Monohidróxido de plata
+Hidróxidos,AuOH,Hidróxido auroso,Hidróxido de oro (I),Monohidróxido de oro
+Hidróxidos,CsOH,Hidróxido césico,Hidróxido de cesio,Monohidróxido de cesio
+Hidróxidos,CuOH,Hidróxido cuproso,Hidróxido de cobre (I),Monohidróxido de cobre
+Hidróxidos,FrOH,Hidróxido fráncico,Hidróxido de francio,Monohidróxido de francio
+Hidróxidos,HgOH,Hidróxido mercurioso,Hidróxido de mercurio (I),Monohidróxido de mercurio
+Hidróxidos,KOH,Hidróxido potásico,Hidróxido de potasio,Monohidróxido de potasio
+Hidróxidos,LiOH,Hidróxido lítico,Hidróxido de litio,Monohidróxido de litio
+Hidróxidos,NaOH,Hidróxido sódico,Hidróxido de sodio,Monohidróxido de sodio
+Hidróxidos,RbOH,Hidróxido rubídico,Hidróxido de rubidio,Monohidróxido de rubidio
+Hidróxidos,TlOH,Hidróxido talioso,Hidróxido de talio (I),Monohidróxido de talio
+Hidróxidos,Ba(OH)₂,Hidróxido bárico,Hidróxido de bario,Dihidróxido de bario
+Hidróxidos,Be(OH)₂,Hidróxido berílico,Hidróxido de berilio,Dihidróxido de berilio
+Hidróxidos,Ca(OH)₂,Hidróxido cálcico,Hidróxido de calcio,Dihidróxido de calcio
+Hidróxidos,Cd(OH)₂,Hidróxido cádmico,Hidróxido de cadmio,Dihidróxido de cadmio
+Hidróxidos,Co(OH)₂,Hidróxido cobaltoso,Hidróxido de cobalto (II),Dihidróxido de cobalto
+Hidróxidos,Cr(OH)₂,Hidróxido cromoso,Hidróxido de cromo (II),Dihidróxido de cromo
+Hidróxidos,Cu(OH)₂,Hidróxido cúprico,Hidróxido de cobre (II),Dihidróxido de cobre
+Hidróxidos,Fe(OH)₂,Hidróxido ferroso,Hidróxido de hierro (II),Dihidróxido de hierro
+Hidróxidos,Hg(OH)₂,Hidróxido mercúrico,Hidróxido de mercurio (II),Dihidróxido de mercurio
+Hidróxidos,Mg(OH)₂,Hidróxido magnésico,Hidróxido de magnesio,Dihidróxido de magnesio
+Hidróxidos,Mn(OH)₂,Hidróxido manganoso,Hidróxido de manganeso (II),Dihidróxido de manganeso
+Hidróxidos,Ni(OH)₂,Hidróxido niqueloso,Hidróxido de níquel (II),Dihidróxido de níquel
+Hidróxidos,Pb(OH)₂,Hidróxido plumboso,Hidróxido de plomo (II),Dihidróxido de plomo
+Hidróxidos,Pd(OH)₂,Hidróxido paladioso,Hidróxido de paladio (II),Dihidróxido de paladio
+Hidróxidos,Pt(OH)₂,Hidróxido platinoso,Hidróxido de platino (II),Dihidróxido de platino
+Hidróxidos,Ra(OH)₂,Hidróxido radico,Hidróxido de radio,Dihidróxido de radio
+Hidróxidos,Sn(OH)₂,Hidróxido estannoso,Hidróxido de estaño (II),Dihidróxido de estaño
+Hidróxidos,Sr(OH)₂,Hidróxido estróncico,Hidróxido de estroncio,Dihidróxido de estroncio
+Hidróxidos,Ti(OH)₂,Hidróxido titanoso,Hidróxido de titanio (II),Dihidróxido de titanio
+Hidróxidos,V(OH)₂,Hidróxido hipovanadoso,Hidróxido de vanadio (II),Dihidróxido de vanadio
+Hidróxidos,Zn(OH)₂,Hidróxido cíncico,Hidróxido de cinc,Dihidróxido de cinc
+Hidróxidos,Al(OH)₃,Hidróxido alumínico,Hidróxido de aluminio,Trihidróxido de aluminio
+Hidróxidos,Au(OH)₃,Hidróxido áurico,Hidróxido de oro (III),Trihidróxido de oro
+Hidróxidos,Co(OH)₃,Hidróxido cobáltico,Hidróxido de cobalto (III),Trihidróxido de cobalto
+Hidróxidos,Cr(OH)₃,Hidróxido crómico,Hidróxido de cromo (III),Trihidróxido de cromo
+Hidróxidos,Fe(OH)₃,Hidróxido férrico,Hidróxido de hierro (III),Trihidróxido de hierro
+Hidróxidos,Ga(OH)₃,Hidróxido gálico,Hidróxido de galio (III),Trihidróxido de galio
+Hidróxidos,In(OH)₃,Hidróxido índico,Hidróxido de indio (III),Trihidróxido de indio
+Hidróxidos,Mn(OH)₃,Hidróxido mangánico,Hidróxido de manganeso (III),Trihidróxido de manganeso
+Hidróxidos,Ni(OH)₃,Hidróxido niquélico,Hidróxido de níquel (III),Trihidróxido de diníquel
+Hidróxidos,Sc(OH)₃,Hidróxido escándico,Hidróxido de escandio,Trihidróxido de escandio
+Hidróxidos,Tl(OH)₃,Hidróxido tálico,Hidróxido de talio (III),Trihidróxido de talio
+Hidróxidos,V(OH)₃,Hidróxido vanadoso,Hidróxido de vanadio (III),Trihidróxido de vanadio
+Hidróxidos,Pb(OH)₄,Hidróxido plúmbico,Hidróxido de plomo (IV),Tetrahidróxido de plomo
+Hidróxidos,Pd(OH)₄,Hidróxido paládico,Hidróxido de paladio (IV),Tetrahidróxido de paladio
+Hidróxidos,Pt(OH)₄,Hidróxido platínico,Hidróxido de platino (IV),Tetrahidróxido de platino
+Hidróxidos,Sn(OH)₄,Hidróxido estánnico,Hidróxido de estaño (IV),Tetrahidróxido de estaño
+Hidróxidos,V(OH)₄,Hidróxido vanádico,Hidróxido de vanadio (IV),Tetrahidróxido de vanadio
+Hidróxidos,Ti(OH)₄,Hidróxido per-titánico,Hidróxido de titanio (IV),Tetrahidróxido de titanio
+Hidruros,CH₄,Metano,Hidruro de carbono (IV),Tetrahidruro de carbono
+Hidruros,SiH₄,Silano,Hidruro de silicio (IV),Tetrahidruro de silicio
+Hidruros,AsH₃,Arsano,Hidruro de arsénico (III),Trihidruro de arsénico
+Hidruros,BH₃,Borano,Hidruro de boro (III),Trihidruro de boro
+Hidruros,NH₃,Amoniaco,Hidruro de nitrógeno (III),Trihidruro de nitrógeno
+Hidruros,PH₃,Fosfano,Hidruro de fósforo (III),Trihidruro de fósforo
+Hidruros,SbH₃,Estibano,Hidruro de antimonio (III),Trihidruro de antimonio
+Hidruros,H₂S,Ácido sulfhídrico (ac.),Sulfuro de hidrógeno,Dihidruro de azufre
+Hidruros,H₂Se,Ácido selenhídrico (en disolución),Seleniuro de hidrógeno,Dihidruro de selenio
+Hidruros,H₂Te,Ácido telurhídrico (en disolución),Telururo de hidrógeno,Dihidruro de teluro
+Hidruros,AuH,Hidruro auroso,Hidruro de oro (I),Monohidruro de oro
+Hidruros,HBr,Ácido bromhídrico,Bromuro de hidrógeno,Monobromuro de hidrógeno
+Hidruros,HCl,Ácido clorhídrico,Cloruro de hidrógeno,Monocloruro de hidrógeno
+Hidruros,CuH,Hidruro cuproso,Hidruro de cobre (I),Monohidruro de cobre
+Hidruros,Hg₂H₂,Hidruro mercurioso,Hidruro de mercurio (I),Dihidruro de dimercurio
+Hidruros,HI,Ácido yodhídrico,Yoduro de hidrógeno,Monoyoduro de hidrógeno
+Hidruros,KH,Hidruro potásico,Hidruro de potasio,Monohidruro de potasio
+Hidruros,LiH,Hidruro lítico,Hidruro de litio,Monohidruro de litio
+Hidruros,NaH,Hidruro sódico,Hidruro de sodio,Monohidruro de sodio
+Hidruros,CaH₂,Hidruro cálcico,Hidruro de calcio,Dihidruro de calcio
+Hidruros,CuH₂,Hidruro cúprico,Hidruro de cobre (II),Dihidruro de cobre
+Hidruros,HgH₂,Hidruro mercúrico,Hidruro de mercurio (II),Dihidruro de mercurio
+Hidruros,MgH₂,Hidruro magnésico,Hidruro de magnesio,Dihidruro de magnesio
+Hidruros,PbH₂,Hidruro plumboso,Hidruro de plomo (II),Dihidruro de plomo
+Hidruros,SnH₂,Hidruro estannoso,Hidruro de estaño (II),Dihidruro de estaño
+Hidruros,ZnH₂,Hidruro cíncico,Hidruro de cinc,Dihidruro de cinc
+Hidruros,AlH₃,Hidruro alumínico,Hidruro de aluminio,Trihidruro de aluminio
+Hidruros,AuH₃,Hidruro áurico,Hidruro de oro (III),Trihidruro de oro
+Hidruros,PbH₄,Hidruro plúmbico,Hidruro de plomo (IV),Tetrahidruro de plomo
+Hidruros,SnH₄,Hidruro estánnico,Hidruro de estaño (IV),Tetrahidruro de estaño
+Óxidos,TiO,Óxido titanoso,Óxido de titanio (II),Monóxido de titanio
+Óxidos,Ag₂O,Óxido argéntico,Óxido de plata,Monóxido de diplata
+Óxidos,Au₂O,Óxido auroso,Óxido de oro (I),Monóxido de dioro
+Óxidos,Br₂O,Anhídrido hipobromoso,Óxido de bromo (I),Monóxido de dibromo
+Óxidos,Cl₂O,Anhídrido hipocloroso,Óxido de cloro (I),Monóxido de dicloro
+Óxidos,Cs₂O,Óxido césico,Óxido de cesio,Monóxido de dicesio
+Óxidos,Cu₂O,Óxido cuproso,Óxido de cobre (I),Monóxido de dicobre
+Óxidos,Fr₂O,Óxido fráncico,Óxido de francio,Monóxido de difrancio
+Óxidos,Hg₂O,Óxido mercurioso,Óxido de mercurio (I),Monóxido de dimercurio
+Óxidos,I₂O,Anhídrido hipoyodoso,Óxido de yodo (I),Monóxido de diyodo
+Óxidos,K₂O,Óxido potásico,Óxido de potasio,Monóxido de dipotasio
+Óxidos,Li₂O,Óxido lítico,Óxido de litio,Monóxido de dilitio
+Óxidos,N₂O,Óxido nitroso (o Hipo-oso),Óxido de nitrógeno (I),Monóxido de dinitrógeno
+Óxidos,Na₂O,Óxido sódico,Óxido de sodio,Monóxido de disodio
+Óxidos,Rb₂O,Óxido rubídico,Óxido de rubidio,Monóxido de dirubidio
+Óxidos,Tl₂O,Óxido talioso,Óxido de talio (I),Monóxido de ditalio
+Óxidos,BaO,Óxido bárico,Óxido de bario,Monóxido de bario
+Óxidos,BeO,Óxido berílico,Óxido de berilio,Monóxido de berilio
+Óxidos,CO,Anhídrido carbonoso,Óxido de carbono (II),Monóxido de carbono
+Óxidos,CaO,Óxido cálcico,Óxido de calcio,Monóxido de calcio
+Óxidos,CdO,Óxido cádmico,Óxido de cadmio,Monóxido de cadmio
+Óxidos,CoO,Óxido cobaltoso,Óxido de cobalto (II),Monóxido de cobalto
+Óxidos,CrO,Óxido cromoso,Óxido de cromo (II),Monóxido de cromo
+Óxidos,CuO,Óxido cúprico,Óxido de cobre (II),Monóxido de cobre
+Óxidos,FeO,Óxido ferroso,Óxido de hierro (II),Monóxido de hierro
+Óxidos,HgO,Óxido mercúrico,Óxido de mercurio (II),Monóxido de mercurio
+Óxidos,MgO,Óxido magnésico,Óxido de magnesio,Monóxido de magnesio
+Óxidos,MnO,Óxido manganoso,Óxido de manganeso (II),Monóxido de manganeso
+Óxidos,NO,Óxido nítrico,Óxido de nitrógeno (II),Monóxido de nitrógeno
+Óxidos,NiO,Óxido niqueloso,Óxido de níquel (II),Monóxido de níquel
+Óxidos,PbO,Óxido plumboso,Óxido de plomo (II),Monóxido de plomo
+Óxidos,PdO,Óxido paladioso,Óxido de paladio (II),Monóxido de paladio
+Óxidos,PtO,Óxido platinoso,Óxido de platino (II),Monóxido de platino
+Óxidos,RaO,Óxido radico,Óxido de radio,Monóxido de radio
+Óxidos,SO,Anhídrido hiposulfuroso,Óxido de azufre (II),Monóxido de azufre
+Óxidos,SeO,Anhídrido hiposelenioso,Óxido de selenio (II),Monóxido de selenio
+Óxidos,SnO,Óxido estannoso,Óxido de estaño (II),Monóxido de estaño
+Óxidos,SrO,Óxido estróncico,Óxido de estroncio,Monóxido de estroncio
+Óxidos,TeO,Anhídrido hipoteluroso,Óxido de teluro (II),Monóxido de teluro
+Óxidos,VO,Óxido hipovanadoso,Óxido de vanadio (II),Monóxido de vanadio
+Óxidos,ZnO,Óxido cíncico,Óxido de cinc,Monóxido de cinc
+Óxidos,Al₂O₃,Óxido alumínico,Óxido de aluminio,Trióxido de dialuminio
+Óxidos,As₂O₃,Anhídrido arsenioso,Óxido de arsénico (III),Trióxido de diarsénico
+Óxidos,Au₂O₃,Óxido áurico,Óxido de oro (III),Trióxido de dioro
+Óxidos,B₂O₃,Anhídrido bórico,Óxido de boro,Trióxido de diboro
+Óxidos,Br₂O₃,Anhídrido bromoso,Óxido de bromo (III),Trióxido de dibromo
+Óxidos,Cl₂O₃,Anhídrido cloroso,Óxido de cloro (III),Trióxido de dicloro
+Óxidos,Co₂O₃,Óxido cobáltico,Óxido de cobalto (III),Trióxido de dicobalto
+Óxidos,Cr₂O₃,Óxido crómico,Óxido de cromo (III),Trióxido de dicromo
+Óxidos,Fe₂O₃,Óxido férrico,Óxido de hierro (III),Trióxido de dihierro
+Óxidos,Ga₂O₃,Óxido gálico,Óxido de galio,Trióxido de digalio
+Óxidos,I₂O₃,Anhídrido yodoso,Óxido de yodo (III),Trióxido de diyodo
+Óxidos,In₂O₃,Óxido índico,Óxido de indio,Trióxido de diindio
+Óxidos,Mn₂O₃,Óxido mangánico,Óxido de manganeso (III),Trióxido de dimanganeso
+Óxidos,N₂O₃,Anhídrido nitroso,Óxido de nitrógeno (III),Trióxido de dinitrógeno
+Óxidos,Ni₂O₃,Óxido niquélico,Óxido de níquel (III),Trióxido de diníquel
+Óxidos,P₂O₃,Anhídrido fosforoso,Óxido de fósforo (III),Trióxido de difósforo
+Óxidos,Sb₂O₃,Anhídrido antimonioso,Óxido de antimonio (III),Trióxido de diantimonio
+Óxidos,Sc₂O₃,Óxido escándico,Óxido de escandio,Trióxido de diescandio
+Óxidos,Tl₂O₃,Óxido tálico,Óxido de talio (III),Trióxido de ditalio
+Óxidos,V₂O₃,Óxido vanadoso,Óxido de vanadio (III),Trióxido de divanadio
+Óxidos,CO₂,Anhídrido carbónico,Óxido de carbono (IV),Dióxido de carbono
+Óxidos,MnO₂,Dióxido de manganeso,Óxido de manganeso (IV),Dióxido de manganeso
+Óxidos,PbO₂,Óxido plúmbico,Óxido de plomo (IV),Dióxido de plomo
+Óxidos,PdO₂,Óxido paládico,Óxido de paladio (IV),Dióxido de paladio
+Óxidos,PtO₂,Óxido platínico,Óxido de platino (IV),Dióxido de platino
+Óxidos,SO₂,Anhídrido sulfuroso,Óxido de azufre (IV),Dióxido de azufre
+Óxidos,SeO₂,Anhídrido selenioso,Óxido de selenio (IV),Dióxido de selenio
+Óxidos,SiO₂,Anhídrido silícico,Óxido de silicio (IV),Dióxido de silicio
+Óxidos,SnO₂,Óxido estannico,Óxido de estaño (IV),Dióxido de estaño
+Óxidos,TeO₂,Anhídrido teluroso,Óxido de teluro (IV),Dióxido de teluro
+Óxidos,VO₂,Óxido vanádico,Óxido de vanadio (IV),Dióxido de vanadio
+Óxidos,As₂O₅,Anhídrido arsénico,Óxido de arsénico (V),Pentóxido de diarsénico
+Óxidos,Br₂O₅,Anhídrido brómico,Óxido de bromo (V),Pentóxido de dibromo
+Óxidos,Cl₂O₅,Anhídrido clórico,Óxido de cloro (V),Pentóxido de dicloro
+Óxidos,I₂O₅,Anhídrido yódico,Óxido de yodo (V),Pentóxido de diyodo
+Óxidos,N₂O₅,Anhídrido nítrico,Óxido de nitrógeno (V),Pentóxido de dinitrógeno
+Óxidos,P₂O₅,Anhídrido fosfórico,Óxido de fósforo (V),Pentóxido de difósforo
+Óxidos,Sb₂O₅,Anhídrido antimónico,Óxido de antimonio (V),Pentóxido de diantimonio
+Óxidos,V₂O₅,Anhídrido pervanádico,Óxido de vanadio (V),Pentóxido de divanadio
+Óxidos,CrO₃,Anhídrido crómico,Óxido de cromo (VI),Trióxido de cromo
+Óxidos,MnO₃,Anhídrido mangánico,Óxido de manganeso (VI),Trióxido de manganeso
+Óxidos,SO₃,Anhídrido sulfúrico,Óxido de azufre (VI),Trióxido de azufre
+Óxidos,SeO₃,Anhídrido selénico,Óxido de selenio (VI),Trióxido de selenio
+Óxidos,TeO₃,Anhídrido telúrico,Óxido de teluro (VI),Trióxido de teluro
+Óxidos,Br₂O₇,Anhídrido perbrómico,Óxido de bromo (VII),Heptóxido de dibromo
+Óxidos,Cl₂O₇,Anhídrido perclórico,Óxido de cloro (VII),Heptóxido de dicloro
+Óxidos,I₂O₇,Anhídrido peryódico,Óxido de yodo (VII),Heptóxido de diyodo
+Óxidos,Mn₂O₇,Anhídrido permangánico,Óxido de manganeso (VII),Heptóxido de dimanganeso
+Óxidos,TiO₂,Óxido titánico / bióxido,Óxido de titanio (IV),Dióxido de titanio
+Oxoácidos,HClO,Ácido hipocloroso,Ácido oxoclórico (I),Oxoclorato (I) de hidrógeno
+Oxoácidos,HClO₂,Ácido cloroso,Ácido dioxoclórico (III),Dioxoclorato (III) de hidrógeno
+Oxoácidos,HClO₃,Ácido clórico,Ácido trioxoclórico (V),Trioxoclorato (V) de hidrógeno
+Oxoácidos,HClO₄,Ácido perclórico,Ácido tetraoxoclórico (VII),Tetraoxoclorato (VII) de hidrógeno
+Oxoácidos,HBrO,Ácido hipobromoso,Ácido oxobromico (I),Oxobromato (I) de hidrógeno
+Oxoácidos,HBrO₂,Ácido bromoso,Ácido dioxobromico (III),Dioxobromato (III) de hidrógeno
+Oxoácidos,HBrO₃,Ácido brómico,Ácido trioxobromico (V),Trioxobromato (V) de hidrógeno
+Oxoácidos,HBrO₄,Ácido perbrómico,Ácido tetraoxobromico (VII),Tetraoxobromato (VII) de hidrógeno
+Oxoácidos,HIO,Ácido hipoyodoso,Ácido oxoyodico (I),Oxoyodato (I) de hidrógeno
+Oxoácidos,HIO₂,Ácido yodoso,Ácido dioxoyodico (III),Dioxoyodato (III) de hidrógeno
+Oxoácidos,HIO₃,Ácido yódico,Ácido trioxoyodico (V),Trioxoyodato (V) de hidrógeno
+Oxoácidos,HIO₄,Ácido peryódico,Ácido tetraoxoyodico (VII),Tetraoxoyodato (VII) de hidrógeno
+Oxoácidos,H₂SO₃,Ácido sulfuroso,Ácido trioxosulfúrico (IV),Trioxosulfato (IV) de hidrógeno
+Oxoácidos,H₂SO₄,Ácido sulfúrico,Ácido tetraoxosulfúrico (VI),Tetraoxosulfato (VI) de hidrógeno
+Oxoácidos,H₂SeO₃,Ácido selenioso,Ácido trioxoselénico (IV),Trioxoseleniato (IV) de hidrógeno
+Oxoácidos,H₂SeO₄,Ácido selénico,Ácido tetraoxoselénico (VI),Tetraoxoseleniato (VI) de hidrógeno
+Oxoácidos,H₂TeO₃,Ácido teluroso,Ácido trioxotelúrico (IV),Trioxotelurato (IV) de hidrógeno
+Oxoácidos,H₂TeO₄,Ácido telúrico,Ácido tetraoxotelúrico (VI),Tetraoxotelurato (VI) de hidrógeno
+Oxoácidos,HNO₂,Ácido nitroso,Ácido dioxonítrico (III),Dioxonitrato (III) de hidrógeno
+Oxoácidos,HNO₃,Ácido nítrico,Ácido trioxonítrico (V),Trioxonitrato (V) de hidrógeno
+Oxoácidos,HPO₂,Ácido metafosforoso,Ácido dioxofosfórico (III),Dioxofosfato (III) de hidrógeno
+Oxoácidos,H₄P₂O₅,Ácido pirofosforoso,Ácido pentaoxodifosfórico (III),Pentaoxodifosfato (III) de hidrógeno
+Oxoácidos,H₃PO₃,Ácido fosforoso (orto),Ácido trioxofosfórico (III),Trioxofosfato (III) de hidrógeno
+Oxoácidos,HPO₃,Ácido metafosfórico,Ácido trioxofosfórico (V),Trioxofosfato (V) de hidrógeno
+Oxoácidos,H₄P₂O₇,Ácido pirofosfórico,Ácido heptaoxodifosfórico (V),Heptaoxodifosfato (V) de hidrógeno
+Oxoácidos,H₃PO₄,Ácido fosfórico (orto),Ácido tetraoxofosfórico (V),Tetraoxofosfato (V) de hidrógeno
+Oxoácidos,HAsO₂,Ácido metaarsenioso,Ácido dioxoarsénico (III),Dioxoarseniato (III) de hidrógeno
+Oxoácidos,H₄As₂O₅,Ácido piroarsenioso,Ácido pentaoxodiarsénico (III),Pentaoxodiarseniato (III) de hidrógeno
+Oxoácidos,H₃AsO₃,Ácido arsenioso (orto),Ácido trioxoarsénico (III),Trioxoarseniato (III) de hidrógeno
+Oxoácidos,HAsO₃,Ácido metaarsénico,Ácido trioxoarsénico (V),Trioxoarseniato (V) de hidrógeno
+Oxoácidos,H₄As₂O₇,Ácido piroarsénico,Ácido heptaoxodiarsénico (V),Heptaoxodiarseniato (V) de hidrógeno
+Oxoácidos,H₃AsO₄,Ácido arsénico (orto),Ácido tetraoxoarsénico (V),Tetraoxoarseniato (V) de hidrógeno
+Oxoácidos,HSbO₂,Ácido metaantimonioso,Ácido dioxoantimónico (III),Dioxoantimoniato (III) de hidrógeno
+Oxoácidos,H₄Sb₂O₅,Ácido piroantimonioso,Ácido pentaoxodiantimónico (III),Pentaoxodiantimoniato (III) de hidrógeno
+Oxoácidos,H₃SbO₃,Ácido antimonioso (orto),Ácido trioxoantimónico (III),Trioxoantimoniato (III) de hidrógeno
+Oxoácidos,HSbO₃,Ácido metaantimónico,Ácido trioxoantimónico (V),Trioxoantimoniato (V) de hidrógeno
+Oxoácidos,H₄Sb₂O₇,Ácido piroantimónico,Ácido heptaoxodiantimónico (V),Heptaoxodiantimoniato (V) de hidrógeno
+Oxoácidos,H₃SbO₄,Ácido antimónico (orto),Ácido tetraoxoantimónico (V),Tetraoxoadantimoniato (V) de hidrógeno
+Oxoácidos,H₂CO₃,Ácido carbónico,Ácido trioxocarbónico (IV),Trioxocarbonato (IV) de hidrógeno
+Oxoácidos,H₂SiO₃,Ácido metasilícico,Ácido trioxosilícico (IV),Trioxosilicato (IV) de hidrógeno
+Oxoácidos,H₄SiO₄,Ácido ortosilícico,Ácido tetraoxosilícico (IV),Tetraoxosilicato (IV) de hidrógeno
+Oxoácidos,HBO₂,Ácido metabórico,Ácido dioxobórico (III),Dioxoborato (III) de hidrógeno
+Oxoácidos,H₃BO₃,Ácido bórico (orto),Ácido trioxobórico (III),Trioxoborato (III) de hidrógeno
+Oxoácidos,H₂CrO₄,Ácido crómico,Ácido tetraoxocrómico (VI),Tetraoxocromato (VI) de hidrógeno
+Oxoácidos,H₂Cr₂O₇,Ácido dicrómico,Ácido heptaoxodicrómico (VI),Heptaoxodicromato (VI) de hidrógeno
+Oxoácidos,H₂MnO₄,Ácido mangánico,Ácido tetraoxomangánico (VI),Tetraoxomanganato (VI) de hidrógeno
+Oxoácidos,HMnO₄,Ácido permangánico,Ácido tetraoxomangánico (VII),Tetraoxomanganato (VII) de hidrógeno
+Oxoácidos,HVO₃,Ácido metavanádico,Ácido trioxovanádico (V),Trioxovanadato (V) de hidrógeno
+Oxoácidos,H₄V₂O₇,Ácido pirovanádico,Ácido heptaoxodivanádico (V),Heptaoxodivanadato (V) de hidrógeno
+Oxoácidos,H₃VO₄,Ácido ortovanádico,Ácido tetraoxovanádico (V),Tetraoxovanadato (V) de hidrógeno
+Oxosales,H₂SO₃,Sulfito de aluminio,Sulfito de aluminio,Tetraoxocromato (VI) de hidrógeno
+Oxosales,H₂SO₄,Sulfato de aluminio,Sulfato de aluminio,Heptaoxodicromato (VI) de hidrógeno
+Oxosales,HNO₂,Nitrito de aluminio,Nitrito de aluminio,Tetraoxomanganato (VI) de hidrógeno
+Oxosales,HNO₃,Nitrato de aluminio,Nitrato de aluminio,Tetraoxomanganato (VII) de hidrógeno
+Oxosales,H₂CO₃,Carbonato de aluminio,Carbonato de aluminio,Trioxovanadato (V) de hidrógeno
+Oxosales,H₂SO₃,Sulfito de bario,Sulfito de bario,Heptaoxodivanadato (V) de hidrógeno
+Oxosales,H₂SO₄,Sulfato de bario,Sulfato de bario,Tetraoxovanadato (V) de hidrógeno
+Oxosales,Ba(NO₂)₂,Nitrito de bario,Nitrito de bario,Bis[dioxonitrato (III)] de bario
+Oxosales,Ba(NO₃)₂,Nitrato de bario,Nitrato de bario,Bis[trioxonitrato (V)] de bario
+Oxosales,BaCO₃,Carbonato de bario,Carbonato de bario,Trioxocarbonato (IV) de bario
+Oxosales,BeSO₄,Sulfato de berilio,Sulfato de berilio,Tetraoxosulfato (VI) de berilio
+Oxosales,Be(NO₃)₂,Nitrato de berilio,Nitrato de berilio,Bis[trioxonitrato (V)] de berilio
+Oxosales,BeCO₃,Carbonato de berilio,Carbonato de berilio,Trioxocarbonato (IV) de berilio
+Oxosales,CdSO₄,Sulfato de cadmio,Sulfato de cadmio,Tetraoxosulfato (VI) de cadmio
+Oxosales,Cd(NO₃)₂,Nitrato de cadmio,Nitrato de cadmio,Bis[trioxonitrato (V)] de cadmio
+Oxosales,CaSO₃,Sulfito de calcio,Sulfito de calcio,Trioxosulfato (IV) de calcio
+Oxosales,CaSO₄,Sulfato de calcio,Sulfato de calcio,Tetraoxosulfato (VI) de calcio
+Oxosales,Ca(NO₃)₂,Nitrato de calcio,Nitrato de calcio,Bis[trioxonitrato (V)] de calcio
+Oxosales,CaCO₃,Carbonato de calcio,Carbonato de calcio,Trioxocarbonato (IV) de calcio
+Oxosales,Cs₂SO₄,Sulfato de cesio,Sulfato de cesio,Tetraoxosulfato (VI) de dicesio
+Oxosales,CsNO₃,Nitrato de cesio,Nitrato de cesio,Trioxonitrato (V) de cesio
+Oxosales,Cs₂CO₃,Carbonato de cesio,Carbonato de cesio,Trioxocarbonato (IV) de dicesio
+Oxosales,ZnSO₄,Sulfato de cinc,Sulfato de cinc,Tetraoxosulfato (VI) de zinc
+Oxosales,Zn(NO₃)₂,Nitrato de cinc,Nitrato de cinc,Bis[trioxonitrato (V)] de zinc
+Oxosales,ZnCO₃,Carbonato de cinc,Carbonato de cinc,Trioxocarbonato (IV) de zinc
+Oxosales,CoSO₃,Sulfito cobaltoso,Sulfito de cobalto (II),Trioxosulfato (IV) de cobalto
+Oxosales,CoSO₄,Sulfato cobaltoso,Sulfato de cobalto (II),Tetraoxosulfato (VI) de cobalto
+Oxosales,Co(NO₃)₂,Nitrato cobaltoso,Nitrato de cobalto (II),Bis[trioxonitrato (V)] de cobalto
+Oxosales,CoCO₃,Carbonato cobaltoso,Carbonato de cobalto (II),Trioxocarbonato (IV) de cobalto
+Oxosales,Co₂(SO₃)₃,Sulfito cobáltico,Sulfito de cobalto (III),Tris[trioxosulfato (IV)] de dicobalto
+Oxosales,Co₂(SO₄)₃,Sulfato cobáltico,Sulfato de cobalto (III),Tris[tetraoxosulfato (VI)] de dicobalto
+Oxosales,Co(NO₃)₃,Nitrato cobáltico,Nitrato de cobalto (III),Tris[trioxonitrato (V)] de cobalto
+Oxosales,Cu₂SO₃,Sulfito cuproso,Sulfito de cobre (I),Trioxosulfato (IV) de dicobre
+Oxosales,Cu₂SO₄,Sulfato cuproso,Sulfato de cobre (I),Tetraoxosulfato (VI) de dicobre
+Oxosales,CuNO₃,Nitrato cuproso,Nitrato de cobre (I),Trioxonitrato (V) de cobre
+Oxosales,Cu₂CO₃,Carbonato cuproso,Carbonato de cobre (I),Trioxocarbonato (IV) de dicobre
+Oxosales,CuSO₃,Sulfito cúprico,Sulfito de cobre (II),Trioxosulfato (IV) de cobre
+Oxosales,CuSO₄,Sulfato cúprico,Sulfato de cobre (II),Tetraoxosulfato (VI) de cobre
+Oxosales,Cu(NO₃)₂,Nitrato cúprico,Nitrato de cobre (II),Bis[trioxonitrato (V)] de cobre
+Oxosales,CuCO₃,Carbonato cúprico,Carbonato de cobre (II),Trioxocarbonato (IV) de cobre
+Oxosales,CrSO₄,Sulfato cromoso,Sulfato de cromo (II),Tetraoxosulfato (VI) de cromo
+Oxosales,Cr₂(SO₄)₃,Sulfato crómico,Sulfato de cromo (III),Tris[tetraoxosulfato (VI)] de dicromo
+Oxosales,Cr(NO₃)₃,Nitrato crómico,Nitrato de cromo (III),Tris[trioxonitrato (V)] de cromo
+Oxosales,Sc₂(SO₄)₃,Sulfato de escandio,Sulfato de escandio,Tris[tetraoxosulfato (VI)] de diescandio
+Oxosales,Sc(NO₃)₃,Nitrato de escandio,Nitrato de escandio,Tris[trioxonitrato (V)] de escandio
+Oxosales,SnSO₄,Sulfato estannoso,Sulfato de estaño (II),Tetraoxosulfato (VI) de estaño
+Oxosales,Sn(NO₃)₂,Nitrato estannoso,Nitrato de estaño (II),Bis[trioxonitrato (V)] de estaño
+Oxosales,Sn(SO₄)₂,Sulfato estannico,Sulfato de estaño (IV),Bis[tetraoxosulfato (VI)] de estaño
+Oxosales,Sn(NO₃)₄,Nitrato estannico,Nitrato de estaño (IV),Tetrakis[trioxonitrato (V)] de estaño
+Oxosales,SrSO₄,Sulfato de estroncio,Sulfato de estroncio,Tetraoxosulfato (VI) de estroncio
+Oxosales,Sr(NO₃)₂,Nitrato de estroncio,Nitrato de estroncio,Bis[trioxonitrato (V)] de estroncio
+Oxosales,SrCO₃,Carbonato de estroncio,Carbonato de estroncio,Trioxocarbonato (IV) de estroncio
+Oxosales,Fr₂SO₄,Sulfato de francio,Sulfato de francio,Tetraoxosulfato (VI) de difrancio
+Oxosales,FrNO₃,Nitrato de francio,Nitrato de francio,Trioxonitrato (V) de francio
+Oxosales,Al(ClO)₃,Hipoclorito de aluminio,Hipoclorito de aluminio,Tris[monoxoclorato (I)] de aluminio
+Oxosales,Al(ClO₂)₃,Clorito de aluminio,Clorito de aluminio,Tris[dioxoclorato (III)] de aluminio
+Oxosales,Al(ClO₃)₃,Clorato de aluminio,Clorato de aluminio,Tris[trioxoclorato (V)] de aluminio
+Oxosales,Al(ClO₄)₃,Perclorato de aluminio,Perclorato de aluminio,Tris[tetraoxoclorato (VII)] de aluminio
+Oxosales,Ba(ClO)₂,Hipoclorito de bario,Hipoclorito de bario,Bis[monoxoclorato (I)] de bario
+Oxosales,Ba(ClO₂)₂,Clorito de bario,Clorito de bario,Bis[dioxoclorato (III)] de bario
+Oxosales,Ba(ClO₃)₂,Clorato de bario,Clorato de bario,Bis[trioxoclorato (V)] de bario
+Oxosales,Ba(ClO₄)₂,Perclorato de bario,Perclorato de bario,Bis[tetraoxoclorato (VII)] de bario
+Oxosales,Be(ClO)₂,Hipoclorito de berilio,Hipoclorito de berilio,Bis[monoxoclorato (I)] de berilio
+Oxosales,Be(ClO₃)₂,Clorato de berilio,Clorato de berilio,Bis[trioxoclorato (V)] de berilio
+Oxosales,Be(ClO₄)₂,Perclorato de berilio,Perclorato de berilio,Bis[tetraoxoclorato (VII)] de berilio
+Oxosales,Cd(ClO₃)₂,Clorato de cadmio,Clorato de cadmio,Bis[trioxoclorato (V)] de cadmio
+Oxosales,Cd(ClO₄)₂,Perclorato de cadmio,Perclorato de cadmio,Bis[tetraoxoclorato (VII)] de cadmio
+Oxosales,Ca(ClO)₂,Hipoclorito de calcio,Hipoclorito de calcio,Bis[monoxoclorato (I)] de calcio
+Oxosales,Ca(ClO₂)₂,Clorito de calcio,Clorito de calcio,Bis[dioxoclorato (III)] de calcio
+Oxosales,Ca(ClO₃)₂,Clorato de calcio,Clorato de calcio,Bis[trioxoclorato (V)] de calcio
+Oxosales,Ca(ClO₄)₂,Perclorato de calcio,Perclorato de calcio,Bis[tetraoxoclorato (VII)] de calcio
+Oxosales,CsClO₄,Perclorato de cesio,Perclorato de cesio,Tetraoxoclorato (VII) de cesio
+Oxosales,Zn(ClO)₂,Hipoclorito de cinc,Hipoclorito de cinc,Bis[monoxoclorato (I)] de zinc
+Oxosales,Zn(ClO₃)₂,Clorato de cinc,Clorato de cinc,Bis[trioxoclorato (V)] de zinc
+Oxosales,Zn(ClO₄)₂,Perclorato de cinc,Perclorato de cinc,Bis[tetraoxoclorato (VII)] de zinc
+Oxosales,Co(ClO)₂,Hipoclorito cobaltoso,Hipoclorito de cobalto (II),Bis[monoxoclorato (I)] de cobalto
+Oxosales,Co(ClO₃)₂,Clorato cobaltoso,Clorato de cobalto (II),Bis[trioxoclorato (V)] de cobalto
+Oxosales,Co(ClO₄)₂,Perclorato cobaltoso,Perclorato de cobalto (II),Bis[tetraoxoclorato (VII)] de cobalto
+Oxosales,Co(ClO)₃,Hipoclorito cobáltico,Hipoclorito de cobalto (III),Tris[monoxoclorato (I)] de cobalto
+Oxosales,Co(ClO₃)₃,Clorato cobáltico,Clorato de cobalto (III),Tris[trioxoclorato (V)] de cobalto
+Oxosales,Co(ClO₄)₃,Perclorato cobáltico,Perclorato de cobalto (III),Tris[tetraoxoclorato (VII)] de cobalto
+Oxosales,CuClO,Hipoclorito cuproso,Hipoclorito de cobre (I),Monoxoclorato (I) de cobre
+Oxosales,CuClO₃,Clorato cuproso,Clorato de cobre (I),Trioxoclorato (V) de cobre
+Oxosales,CuClO₄,Perclorato cuproso,Perclorato de cobre (I),Tetraoxoclorato (VII) de cobre
+Oxosales,Cu(ClO)₂,Hipoclorito cúprico,Hipoclorito de cobre (II),Bis[monoxoclorato (I)] de cobre
+Oxosales,Cu(ClO₂)₂,Clorito cúprico,Clorito de cobre (II),Bis[dioxoclorato (III)] de cobre
+Oxosales,Cu(ClO₃)₂,Clorato cúprico,Clorato de cobre (II),Bis[trioxoclorato (V)] de cobre
+Oxosales,Cu(ClO₄)₂,Perclorato cúprico,Perclorato de cobre (II),Bis[tetraoxoclorato (VII)] de cobre
+Oxosales,Cr(ClO)₂,Hipoclorito cromoso,Hipoclorito de cromo (II),Bis[monoxoclorato (I)] de cromo
+Oxosales,Cr(ClO₄)₂,Perclorato cromoso,Perclorato de cromo (II),Bis[tetraoxoclorato (VII)] de cromo
+Oxosales,Cr(ClO)₃,Hipoclorito crómico,Hipoclorito de cromo (III),Tris[monoxoclorato (I)] de cromo
+Oxosales,Cr(ClO₃)₃,Clorato crómico,Clorato de cromo (III),Tris[trioxoclorato (V)] de cromo
+Oxosales,Cr(ClO₄)₃,Perclorato crómico,Perclorato de cromo (III),Tris[tetraoxoclorato (VII)] de cromo
+Oxosales,Sc(ClO₄)₃,Perclorato de escandio,Perclorato de escandio,Tris[tetraoxoclorato (VII)] de escandio
+Oxosales,Sn(ClO)₂,Hipoclorito estannoso,Hipoclorito de estaño (II),Bis[monoxoclorato (I)] de estaño
+Oxosales,Sn(ClO₃)₂,Clorato estannoso,Clorato de estaño (II),Bis[trioxoclorato (V)] de estaño
+Oxosales,Sn(ClO₄)₂,Perclorato estannoso,Perclorato de estaño (II),Bis[tetraoxoclorato (VII)] de estaño
+Oxosales,Sn(ClO)₄,Hipoclorito estannico,Hipoclorito de estaño (IV),Tetrakis[monoxoclorato (I)] de estaño
+Oxosales,Sn(ClO₃)₄,Clorato estannico,Clorato de estaño (IV),Tetrakis[trioxoclorato (V)] de estaño
+Oxosales,Sn(ClO₄)₄,Perclorato estannico,Perclorato de estaño (IV),Tetrakis[tetraoxoclorato (VII)] de estaño
+Oxosales,Sr(ClO)₂,Hipoclorito de estroncio,Hipoclorito de estroncio,Bis[monoxoclorato (I)] de estroncio
+Oxosales,Sr(ClO₃)₂,Clorato de estroncio,Clorato de estroncio,Bis[trioxoclorato (V)] de estroncio
+Oxosales,Sr(ClO₄)₂,Perclorato de estroncio,Perclorato de estroncio,Bis[tetraoxoclorato (VII)] de estroncio
+Oxosales,FrClO,Hipoclorito de francio,Hipoclorito de francio,Monoxoclorato (I) de francio
+Oxosales,FrClO₄,Perclorato de francio,Perclorato de francio,Tetraoxoclorato (VII) de francio
+Oxosales,Al(PO₃)₃,Metafosfato de aluminio,Metafosfato de aluminio,Tris[trioxofosfato (V)] de aluminio
+Oxosales,Al₄(P₂O₇)₃,Pirofosfato de aluminio,Pirofosfato de aluminio,Tris[heptaoxodifosfato (V)] de tetraaluminio
+Oxosales,AlPO₄,Fosfato de aluminio,Fosfato de aluminio,Tetraoxofosfato (V) de aluminio
+Oxosales,Ba(PO₃)₂,Metafosfato de bario,Metafosfato de bario,Bis[trioxofosfato (V)] de bario
+Oxosales,Ba₂P₂O₇,Pirofosfato de bario,Pirofosfato de bario,Heptaoxodifosfato (V) de dibario
+Oxosales,Ba₃(PO₄)₂,Fosfato de bario,Fosfato de bario,Bis[tetraoxofosfato (V)] de tribario
+Oxosales,Be₃(PO₄)₂,Fosfato de berilio,Fosfato de berilio,Bis[tetraoxofosfato (V)] de triberilio
+Oxosales,Cd₃(AsO₄)₂,Arseniato de cadmio,Arseniato de cadmio,Bis[tetraoxoarseniato (V)] de tricadmio
+Oxosales,Ca(PO₃)₂,Metafosfato de calcio,Metafosfato de calcio,Bis[trioxofosfato (V)] de calcio
+Oxosales,Ca₂P₂O₇,Pirofosfato de calcio,Pirofosfato de calcio,Heptaoxodifosfato (V) de dicalcio
+Oxosales,Ca₃(PO₄)₂,Fosfato de calcio,Fosfato de calcio,Bis[tetraoxofosfato (V)] de tricalcio
+Oxosales,Ca₃(AsO₄)₂,Arseniato de calcio,Arseniato de calcio,Bis[tetraoxoarseniato (V)] de tricalcio
+Oxosales,Cs₃PO₄,Fosfato de cesio,Fosfato de cesio,Tetraoxofosfato (V) de tricesio
+Oxosales,Zn₂P₂O₇,Pirofosfato de cinc,Pirofosfato de cinc,Heptaoxodifosfato (V) de dizinc
+Oxosales,Zn₃(PO₄)₂,Fosfato de cinc,Fosfato de cinc,Bis[tetraoxofosfato (V)] de trizinc
+Oxosales,Co₃(PO₃)₂,Fosfito cobaltoso,Fosfito de cobalto (II),Bis[trioxofosfato (III)] de tricobalto
+Oxosales,Co₃(PO₄)₂,Fosfato cobaltoso,Fosfato de cobalto (II),Bis[tetraoxofosfato (V)] de tricobalto
+Oxosales,CoPO₄,Fosfato cobáltico,Fosfato de cobalto (III),Tetraoxofosfato (V) de cobalto
+Oxosales,Cu₃PO₄,Fosfato cuproso,Fosfato de cobre (I),Tetraoxofosfato (V) de tricobre
+Oxosales,Cu₂P₂O₇,Pirofosfato cúprico,Pirofosfato de cobre (II),Heptaoxodifosfato (V) de dicobre
+Oxosales,Cu₃(PO₄)₂,Fosfato cúprico,Fosfato de cobre (II),Bis[tetraoxofosfato (V)] de tricobre
+Oxosales,Cu₃(AsO₃)₂,Arsenito cúprico,Arsenito de cobre (II),Bis[trioxoarseniato (III)] de tricobre
+Oxosales,Cr₃(PO₄)₂,Fosfato cromoso,Fosfato de cromo (II),Bis[tetraoxofosfato (V)] de tricromo
+Oxosales,Cr₄(P₂O₇)₃,Pirofosfato crómico,Pirofosfato de cromo (III),Tris[heptaoxodifosfato (V)] de tetracromo
+Oxosales,CrPO₄,Fosfato crómico,Fosfato de cromo (III),Tetraoxofosfato (V) de cromo
+Oxosales,ScPO₄,Fosfato de escandio,Fosfato de escandio,Tetraoxofosfato (V) de escandio
+Oxosales,Sn₃(PO₄)₂,Fosfato estannoso,Fosfato de estaño (II),Bis[tetraoxofosfato (V)] de triestaño
+Oxosales,SnP₂O₇,Pirofosfato estannico,Pirofosfato de estaño (IV),Heptaoxodifosfato (V) de estaño
+Oxosales,Sn₃(PO₄)₄,Fosfato estannico,Fosfato de estaño (IV),Tetrakis[tetraoxofosfato (V)] de triestaño
+Oxosales,Sr₃(PO₄)₂,Fosfato de estroncio,Fosfato de estroncio,Bis[tetraoxofosfato (V)] de triestroncio
+Oxosales,Sr₃(AsO₄)₂,Arseniato de estroncio,Arseniato de estroncio,Bis[tetraoxoarseniato (V)] de triestroncio
+Oxosales,Fr₃PO₄,Fosfato de francio,Fosfato de francio,Tetraoxofosfato (V) de trifrancio
+Oxosales,Al(SbO₃)₃,Metaantimoniato de aluminio,Metaantimoniato de aluminio,Tris[trioxoantimoniato (V)] de aluminio
+Oxosales,Cu₂Sb₂O₇,Piroantimoniato cúprico,Piroantimoniato de cobre (II),Heptaoxodiantimoniato (V) de dicobre
+Oxosales,FeSbO₄,Antimoniato férrico,Antimoniato de hierro (III),Tetraoxoantimoniato (V) de hierro
+Oxosales,Ba(AsO₃)₂,Metaarseniato de bario,Metaarseniato de bario,Bis[trioxoarseniato (V)] de bario
+Oxosales,Al₄(As₂O₇)₃,Piroarseniato de aluminio,Piroarseniato de aluminio,Tris[heptaoxodiarseniato (V)] de tetraaluminio
+Oxosales,Al₂(CO₃)₃,Carbonato de aluminio,Carbonato de aluminio,Tris[trioxocarbonato (IV)] de dialuminio
+Oxosales,Al₄(SiO₄)₃,Silicato de aluminio,Ortosilicato de aluminio,Tris[tetraoxosilicato (IV)] de tetraaluminio
+Oxosales,AlBO₃,Borato de aluminio,Borato de aluminio,Trioxoborato (III) de aluminio
+Oxosales,Al₂(CrO₄)₃,Cromato de aluminio,Cromato de aluminio,Tris[tetraoxocromato (VI)] de dialuminio
+Oxosales,BaCO₃,Carbonato de bario,Carbonato de bario,Trioxocarbonato (IV) de bario
+Oxosales,BaSiO₃,Metasilicato de bario,Metasilicato de bario,Trioxosilicato (IV) de bario
+Oxosales,Ba(BO₂)₂,Metaborato de bario,Metaborato de bario,Bis[dioxoborato (III)] de bario
+Oxosales,BaCrO₄,Cromato de bario,Cromato de bario,Tetraoxocromato (VI) de bario
+Oxosales,BaMnO₄,Manganato de bario,Manganato de bario,Tetraoxomanganato (VI) de bario
+Oxosales,Be₂SiO₄,Silicato de berilio,Ortosilicato de berilio,Tetraoxosilicato (IV) de diberilio
+Oxosales,CdCO₃,Carbonato de cadmio,Carbonato de cadmio,Trioxocarbonato (IV) de cadmio
+Oxosales,Cd(VO₃)₂,Metavanadato de cadmio,Metavanadato de cadmio,Bis[trioxovanadato (V)] de cadmio
+Oxosales,CaSiO₃,Metasilicato de calcio,Metasilicato de calcio,Trioxosilicato (IV) de calcio
+Oxosales,Ca₃(BO₃)₂,Borato de calcio,Borato de calcio,Bis[trioxoborato (III)] de tricalcio
+Oxosales,Ca(MnO₄)₂,Permanganato de calcio,Permanganato de calcio,Bis[tetraoxomanganato (VII)] de calcio
+Oxosales,Cs₂CO₃,Carbonato de cesio,Carbonato de cesio,Trioxocarbonato (IV) de dicesio
+Oxosales,Cs₂Cr₂O₇,Dicromato de cesio,Dicromato de cesio,Heptaoxodicromato (VI) de dicesio
+Oxosales,CsMnO₄,Permanganato de cesio,Permanganato de cesio,Tetraoxomanganato (VII) de cesio
+Oxosales,ZnCrO₄,Cromato de cinc,Cromato de cinc,Tetraoxocromato (VI) de zinc
+Oxosales,Zn₃(VO₄)₂,Ortovanadato de cinc,Ortovanadato de cinc,Bis[tetraoxovanadato (V)] de trizinc
+Oxosales,CoCO₃,Carbonato cobaltoso,Carbonato de cobalto (II),Trioxocarbonato (IV) de cobalto
+Oxosales,Co₂SiO₄,Silicato cobaltoso,Ortosilicato de cobalto (II),Tetraoxosilicato (IV) de dicobalto
+Oxosales,CoBO₃,Borato cobáltico,Borato de cobalto (III),Trioxoborato (III) de cobalto
+Oxosales,Cu₂CrO₄,Cromato cuproso,Cromato de cobre (I),Tetraoxocromato (VI) de dicobre
+Oxosales,CuCr₂O₇,Dicromato cúprico,Dicromato de cobre (II),Heptaoxodicromato (VI) de cobre
+Oxosales,Cu₃(VO₄)₂,Ortovanadato cúprico,Ortovanadato de cobre (II),Bis[tetraoxovanadato (V)] de tricobre
+Oxosales,CrBO₃,Borato crómico,Borato de cromo (III),Trioxoborato (III) de cromo
+Oxosales,ScVO₄,Ortovanadato de escandio,Ortovanadato de escandio,Tetraoxovanadato (V) de escandio
+Oxosales,SnSiO₃,Metasilicato estannoso,Metasilicato de estaño (II),Trioxosilicato (IV) de estaño
+Oxosales,SnSiO₄,Silicato estannico,Ortosilicato de estaño (IV),Tetraoxosilicato (IV) de estaño
+Oxosales,SrCrO₄,Cromato de estroncio,Cromato de estroncio,Tetraoxocromato (VI) de estroncio
+Oxosales,Sr(MnO₄)₂,Permanganato de estroncio,Permanganato de estroncio,Bis[tetraoxomanganato (VII)] de estroncio
+Oxosales,FrMnO₄,Permanganato de francio,Permanganato de francio,Tetraoxomanganato (VII) de francio
+Oxosales,Fr₂Cr₂O₇,Dicromato de francio,Dicromato de francio,Heptaoxodicromato (VI) de difrancio
+Oxosales,Ga₂(SO₄)₃,Sulfato gálico,Sulfato de galio,Tris[tetraoxosulfato (VI)] de digalio
+Oxosales,Ga(NO₃)₃,Nitrato gálico,Nitrato de galio,Tris[trioxonitrato (V)] de galio
+Oxosales,FeSO₄,Sulfato ferroso,Sulfato de hierro (II),Tetraoxosulfato (VI) de hierro
+Oxosales,Fe(NO₃)₂,Nitrato ferroso,Nitrato de hierro (II),Bis[trioxonitrato (V)] de hierro
+Oxosales,FeCO₃,Carbonato ferroso,Carbonato de hierro (II),Trioxocarbonato (IV) de hierro
+Oxosales,Fe₂(SO₄)₃,Sulfato férrico,Sulfato de hierro (III),Tris[tetraoxosulfato (VI)] de dihierro
+Oxosales,Fe(NO₃)₃,Nitrato férrico,Nitrato de hierro (III),Tris[trioxonitrato (V)] de hierro
+Oxosales,In₂(SO₄)₃,Sulfato índico,Sulfato de indio,Tris[tetraoxosulfato (VI)] de diindio
+Oxosales,Li₂SO₄,Sulfato lítico,Sulfato de litio,Tetraoxosulfato (VI) de dilitio
+Oxosales,LiNO₃,Nitrato lítico,Nitrato de litio,Trioxonitrato (V) de litio
+Oxosales,Li₂CO₃,Carbonato lítico,Carbonato de litio,Trioxocarbonato (IV) de dilitio
+Oxosales,MgSO₄,Sulfato magnésico,Sulfato de magnesio,Tetraoxosulfato (VI) de magnesio
+Oxosales,Mg(NO₃)₂,Nitrato magnésico,Nitrato de magnesio,Bis[trioxonitrato (V)] de magnesio
+Oxosales,Hg₂SO₄,Sulfato mercurioso,Sulfato de mercurio (I),Tetraoxosulfato (VI) de dimercurio
+Oxosales,Hg₂(NO₃)₂,Nitrato mercurioso,Nitrato de mercurio (I),Bis[trioxonitrato (V)] de dimercurio
+Oxosales,HgSO₄,Sulfato mercúrico,Sulfato de mercurio (II),Tetraoxosulfato (VI) de mercurio
+Oxosales,Hg(NO₃)₂,Nitrato mercúrico,Nitrato de mercurio (II),Bis[trioxonitrato (V)] de mercurio
+Oxosales,NiSO₄,Sulfato niqueloso,Sulfato de níquel (II),Tetraoxosulfato (VI) de níquel
+Oxosales,Ni₂(SO₄)₃,Sulfato niquélico,Sulfato de níquel (III),Tris[tetraoxosulfato (VI)] de diníquel
+Oxosales,Au₂SO₄,Sulfato auroso,Sulfato de oro (I),Tetraoxosulfato (VI) de dioro
+Oxosales,AuNO₃,Nitrato auroso,Nitrato de oro (I),Trioxonitrato (V) de oro
+Oxosales,Au₂(SO₄)₃,Sulfato áurico,Sulfato de oro (III),Tris[tetraoxosulfato (VI)] de dioro
+Oxosales,Au(NO₃)₃,Nitrato áurico,Nitrato de oro (III),Tris[trioxonitrato (V)] de oro
+Oxosales,Pd(NO₃)₂,Nitrato paladioso,Nitrato de paladio (II),Bis[trioxonitrato (V)] de paladio
+Oxosales,Pd(SO₄)₂,Sulfato paládico,Sulfato de paladio (IV),Bis[tetraoxosulfato (VI)] de paladio
+Oxosales,Ag₂SO₄,Sulfato argéntico,Sulfato de plata,Tetraoxosulfato (VI) de diplata
+Oxosales,AgNO₃,Nitrato argéntico,Nitrato de plata,Trioxonitrato (V) de plata
+Oxosales,PtCO₃,Carbonato platinoso,Carbonato de platino (II),Trioxocarbonato (IV) de platino
+Oxosales,Pt(SO₄)₂,Sulfato platínico,Sulfato de platino (IV),Bis[tetraoxosulfato (VI)] de platino
+Oxosales,PbSO₄,Sulfato plumboso,Sulfato de plomo (II),Tetraoxosulfato (VI) de plomo
+Oxosales,Pb(SO₄)₂,Sulfato plúmbico,Sulfato de plomo (IV),Bis[tetraoxosulfato (VI)] de plomo
+Oxosales,K₂SO₄,Sulfato potásico,Sulfato de potasio,Tetraoxosulfato (VI) de dipotasio
+Oxosales,KNO₃,Nitrato potásico,Nitrato de potasio,Trioxonitrato (V) de potasio
+Oxosales,RaSO₄,Sulfato de radio,Sulfato de radio,Tetraoxosulfato (VI) de radio
+Oxosales,Rb₂SO₄,Sulfato de rubidio,Sulfato de rubidio,Tetraoxosulfato (VI) de dirubidio
+Oxosales,Na₂SO₄,Sulfato sódico,Sulfato de sodio,Tetraoxosulfato (VI) de disodio
+Oxosales,Na₂CO₃,Carbonato sódico,Carbonato de sodio,Trioxocarbonato (IV) de disodio
+Oxosales,TlNO₃,Nitrato talioso,Nitrato de talio (I),Trioxonitrato (V) de talio
+Oxosales,Tl₂(SO₄)₃,Sulfato tálico,Sulfato de talio (III),Tris[tetraoxosulfato (VI)] de ditalio
+Oxosales,TiSO₄,Sulfato titanoso,Sulfato de titanio (II),Tetraoxosulfato (VI) de titanio
+Oxosales,Ti(SO₄)₂,Sulfato titánico,Sulfato de titanio (IV),Bis[tetraoxosulfato (VI)] de titanio
+Oxosales,VSO₄,Sulfato hipovanadoso,Sulfato de vanadio (II),Tetraoxosulfato (VI) de vanadio
+Oxosales,V₂(SO₄)₃,Sulfato vanadoso,Sulfato de vanadio (III),Tris[tetraoxosulfato (VI)] de divanadio
+Oxosales,ZnSO₄,Sulfato de zinc,Sulfato de zinc,Tetraoxosulfato (VI) de zinc
+Oxosales,ZnCO₃,Carbonato de zinc,Carbonato de zinc,Trioxocarbonato (IV) de zinc
+Oxosales,Ga(BrO₃)₃,Bromato gálico,Bromato de galio,Tris[trioxobromato (V)] de galio
+Oxosales,Fe(IO₃)₂,Yodato ferroso,Yodato de hierro (II),Bis[trioxoyodato (V)] de hierro
+Oxosales,Fe(IO₄)₃,Peryodato férrico,Peryodato de hierro (III),Tris[tetraoxoyodato (VII)] de hierro
+Oxosales,In(BrO₃)₃,Bromato índico,Bromato de indio,Tris[trioxobromato (V)] de indio
+Oxosales,LiBrO,Hipobromito lítico,Hipobromito de litio,Monoxobromato (I) de litio
+Oxosales,Mg(IO₂)₂,Yodito magnésico,Yodito de magnesio,Bis[dioxoyodato (III)] de magnesio
+Oxosales,Hg₂(BrO₃)₂,Bromato mercurioso,Bromato de mercurio (I),Bis[trioxobromato (V)] de dimercurio
+Oxosales,Hg(IO₄)₂,Peryodato mercúrico,Peryodato de mercurio (II),Bis[tetraoxoyodato (VII)] de mercurio
+Oxosales,Ni(BrO₂)₂,Bromito niqueloso,Bromito de níquel (II),Bis[dioxobromato (III)] de níquel
+Oxosales,Ni(IO₃)₃,Yodato niquélico,Yodato de níquel (III),Tris[trioxoyodato (V)] de níquel
+Oxosales,AuIO,Hipoyodito auroso,Hipoyodito de oro (I),Monoxoyodato (I) de oro
+Oxosales,Au(BrO₃)₃,Bromato áurico,Bromato de oro (III),Tris[trioxobromato (V)] de oro
+Oxosales,Pd(IO₃)₂,Yodato paladioso,Yodato de paladio (II),Bis[trioxoyodato (V)] de paladio
+Oxosales,Pd(BrO₄)₄,Perbromato paládico,Perbromato de paladio (IV),Tetrakis[tetraoxobromato (VII)] de paladio
+Oxosales,AgIO₃,Yodato argéntico,Yodato de plata,Trioxoyodato (V) de plata
+Oxosales,Pt(BrO₂)₂,Bromito platinoso,Bromito de platino (II),Bis[dioxobromato (III)] de platino
+Oxosales,Pt(IO₄)₄,Peryodato platínico,Peryodato de platino (IV),Tetrakis[tetraoxoyodato (VII)] de platino
+Oxosales,Pb(IO₃)₂,Yodato plumboso,Yodato de plomo (II),Bis[trioxoyodato (V)] de plomo
+Oxosales,Pb(BrO₃)₄,Bromato plúmbico,Bromato de plomo (IV),Tetrakis[trioxobromato (V)] de plomo
+Oxosales,KIO,Hipoyodito potásico,Hipoyodito de potasio,Monoxoyodato (I) de potasio
+Oxosales,Ra(BrO₃)₂,Bromato de radio,Bromato de radio,Bis[trioxobromato (V)] de radio
+Oxosales,RbIO₄,Peryodato de rubidio,Peryodato de rubidio,Tetraoxoyodato (VII) de rubidio
+Oxosales,NaBrO,Hipobromito sódico,Hipobromito de sodio,Monoxobromato (I) de sodio
+Oxosales,TlIO₃,Yodato talioso,Yodato de talio (I),Trioxoyodato (V) de talio
+Oxosales,Tl(BrO₃)₃,Bromato tálico,Bromato de talio (III),Tris[trioxobromato (V)] de talio
+Oxosales,Ti(BrO₂)₂,Bromito titanoso,Bromito de titanio (II),Bis[dioxobromato (III)] de titanio
+Oxosales,Ti(IO₄)₄,Peryodato titánico,Peryodato de titanio (IV),Tetrakis[tetraoxoyodato (VII)] de titanio
+Oxosales,V(BrO)₂,Hipobromito hipovanadoso,Hipobromito de vanadio (II),Bis[monoxobromato (I)] de vanadio
+Oxosales,V(IO₃)₃,Yodato vanadoso,Yodato de vanadio (III),Tris[trioxoyodato (V)] de vanadio
+Oxosales,V(BrO₃)₄,Bromato de vanadio (IV),Bromato de vanadio (IV),Tetrakis[trioxobromato (V)] de vanadio
+Oxosales,V(IO₄)₅,Peryodato vanádico,Peryodato de vanadio (V),Pentakis[tetraoxoyodato (VII)] de vanadio
+Oxosales,Zn(BrO₃)₂,Bromato de zinc,Bromato de zinc,Bis[trioxobromato (V)] de zinc
+Oxosales,Ga(ClO₄)₃,Perclorato gálico,Perclorato de galio,Tris[tetraoxoclorato (VII)] de galio
+Oxosales,Fe(ClO₃)₂,Clorato ferroso,Clorato de hierro (II),Bis[trioxoclorato (V)] de hierro
+Oxosales,Fe(ClO₄)₃,Perclorato férrico,Perclorato de hierro (III),Tris[tetraoxoclorato (VII)] de hierro
+Oxosales,In(ClO₃)₃,Clorato índico,Clorato de indio,Tris[trioxoclorato (V)] de indio
+Oxosales,LiClO,Hipoclorito lítico,Hipoclorito de litio,Monoxoclorato (I) de litio
+Oxosales,Mg(ClO₂)₂,Clorito magnésico,Clorito de magnesio,Bis[dioxoclorato (III)] de magnesio
+Oxosales,Hg₂(ClO₄)₂,Perclorato mercurioso,Perclorato de mercurio (I),Bis[tetraoxoclorato (VII)] de dimercurio
+Oxosales,Hg(ClO₃)₂,Clorato mercúrico,Clorato de mercurio (II),Bis[trioxoclorato (V)] de mercurio
+Oxosales,Ni(ClO)₂,Hipoclorito niqueloso,Hipoclorito de níquel (II),Bis[monoxoclorato (I)] de níquel
+Oxosales,Ni(ClO₃)₃,Clorato niquélico,Clorato de níquel (III),Tris[trioxoclorato (V)] de níquel
+Oxosales,AuClO₃,Clorato auroso,Clorato de oro (I),Trioxoclorato (V) de oro
+Oxosales,Au(ClO₄)₃,Perclorato áurico,Perclorato de oro (III),Tris[tetraoxoclorato (VII)] de oro
+Oxosales,Pd(ClO₂)₂,Clorito paladioso,Clorito de paladio (II),Bis[dioxoclorato (III)] de paladio
+Oxosales,Pd(ClO₄)₄,Perclorato paládico,Perclorato de paladio (IV),Tetrakis[tetraoxoclorato (VII)] de paladio
+Oxosales,AgClO₃,Clorato argéntico,Clorato de plata,Trioxoclorato (V) de plata
+Oxosales,Pt(ClO₃)₂,Clorato platinoso,Clorato de platino (II),Bis[trioxoclorato (V)] de platino
+Oxosales,Pt(ClO₄)₄,Perclorato platínico,Perclorato de platino (IV),Tetrakis[tetraoxoclorato (VII)] de platino
+Oxosales,Pb(ClO)₂,Hipoclorito plumboso,Hipoclorito de plomo (II),Bis[monoxoclorato (I)] de plomo
+Oxosales,Pb(ClO₄)₄,Perclorato plúmbico,Perclorato de plomo (IV),Tetrakis[tetraoxoclorato (VII)] de plomo
+Oxosales,KClO₃,Clorato potásico,Clorato de potasio,Trioxoclorato (V) de potasio
+Oxosales,Ra(ClO₂)₂,Clorito de radio,Clorito de radio,Bis[dioxoclorato (III)] de radio
+Oxosales,RbClO₄,Perclorato de rubidio,Perclorato de rubidio,Tetraoxoclorato (VII) de rubidio
+Oxosales,NaClO,Hipoclorito sódico,Hipoclorito de sodio,Monoxoclorato (I) de sodio
+Oxosales,TlClO₃,Clorato talioso,Clorato de talio (I),Trioxoclorato (V) de talio
+Oxosales,Tl(ClO₄)₃,Perclorato tálico,Perclorato de talio (III),Tris[tetraoxoclorato (VII)] de talio
+Oxosales,Ti(ClO₃)₂,Clorato titanoso,Clorato de titanio (II),Bis[trioxoclorato (V)] de titanio
+Oxosales,Ti(ClO₄)₄,Perclorato titánico,Perclorato de titanio (IV),Tetrakis[tetraoxoclorato (VII)] de titanio
+Oxosales,V(ClO₂)₂,Clorito hipovanadoso,Clorito de vanadio (II),Bis[dioxoclorato (III)] de vanadio
+Oxosales,V(ClO₃)₃,Clorato vanadoso,Clorato de vanadio (III),Tris[trioxoclorato (V)] de vanadio
+Oxosales,V(ClO₄)₄,Perclorato de vanadio (IV),Perclorato de vanadio (IV),Tetrakis[tetraoxoclorato (VII)] de vanadio
+Oxosales,V(ClO₄)₅,Perclorato vanádico,Perclorato de vanadio (V),Pentakis[tetraoxoclorato (VII)] de vanadio
+Oxosales,Zn(ClO₃)₂,Clorato de zinc,Clorato de zinc,Bis[trioxoclorato (V)] de zinc
+Oxosales,GaPO₄,Fosfato gálico,Fosfato de galio,Tetraoxofosfato (V) de galio
+Oxosales,Fe₂P₂O₇,Pirofosfato ferroso,Pirofosfato de hierro (II),Heptaoxodifosfato (V) de dihierro
+Oxosales,FeAsO₄,Arseniato férrico,Arseniato de hierro (III),Tetraoxoarseniato (V) de hierro
+Oxosales,InSbO₄,Antimoniato índico,Antimoniato de indio,Tetraoxoantimoniato (V) de indio
+Oxosales,Li₃PO₄,Fosfato lítico,Fosfato de litio,Tetraoxofosfato (V) de trilitio
+Oxosales,Mg₃(AsO₃)₂,Arsenito magnésico,Arsenito de magnesio,Bis[trioxoarseniato (III)] de trimagnesio
+Oxosales,(Hg₂)₃(PO₄)₂,Fosfato mercurioso,Fosfato de mercurio (I),Bis[tetraoxofosfato (V)] de tridimercurio
+Oxosales,Hg(PO₃)₂,Metafosfato mercúrico,Metafosfato de mercurio (II),Bis[trioxofosfato (V)] de mercurio
+Oxosales,Ni₃(PO₄)₂,Fosfato niqueloso,Fosfato de níquel (II),Bis[tetraoxofosfato (V)] de triníquel
+Oxosales,Ni₄(P₂O₇)₃,Pirofosfato niquélico,Pirofosfato de níquel (III),Tris[heptaoxodifosfato (V)] de tetraníquel
+Oxosales,Au₃AsO₄,Arseniato auroso,Arseniato de oro (I),Tetraoxoarseniato (V) de trioro
+Oxosales,AuPO₄,Fosfato áurico,Fosfato de oro (III),Tetraoxofosfato (V) de oro
+Oxosales,Pd₃(PO₄)₂,Fosfato paladioso,Fosfato de paladio (II),Bis[tetraoxofosfato (V)] de tripaladio
+Oxosales,PdP₂O₇,Pirofosfato paládico,Pirofosfato de paladio (IV),Heptaoxodifosfato (V) de paladio
+Oxosales,Ag₃PO₄,Fosfato argéntico,Fosfato de plata,Tetraoxofosfato (V) de triplata
+Oxosales,Pt₃(AsO₄)₂,Arseniato platinoso,Arseniato de platino (II),Bis[tetraoxoarseniato (V)] de triplatino
+Oxosales,Pt₃(PO₄)₄,Fosfato platínico,Fosfato de platino (IV),Tetrakis[tetraoxofosfato (V)] de triplatino
+Oxosales,Pb₃(SbO₄)₂,Antimoniato plumboso,Antimoniato de plomo (II),Bis[tetraoxoantimoniato (V)] de triplomo
+Oxosales,Pb₃(PO₄)₄,Fosfato plúmbico,Fosfato de plomo (IV),Tetrakis[tetraoxofosfato (V)] de triplomo
+Oxosales,K₄P₂O₇,Pirofosfato potásico,Pirofosfato de potasio,Heptaoxodifosfato (V) de tetrapotasio
+Oxosales,Ra₃(PO₄)₂,Fosfato de radio,Fosfato de radio,Bis[tetraoxofosfato (V)] de triradio
+Oxosales,Rb₃AsO₄,Arseniato de rubidio,Arseniato de rubidio,Tetraoxoarseniato (V) de trirubidio
+Oxosales,NaPO₃,Metafosfato sódico,Metafosfato de sodio,Trioxofosfato (V) de sodio
+Oxosales,Tl₃PO₄,Fosfato talioso,Fosfato de talio (I),Tetraoxofosfato (V) de tritalio
+Oxosales,TlAsO₄,Arseniato tálico,Arseniato de talio (III),Tetraoxoarseniato (V) de talio
+Oxosales,Ti₃(PO₄)₂,Fosfato titanoso,Fosfato de titanio (II),Bis[tetraoxofosfato (V)] de trititanio
+Oxosales,TiP₂O₇,Pirofosfato titánico,Pirofosfato de titanio (IV),Heptaoxodifosfato (V) de titanio
+Oxosales,V₃(PO₄)₂,Fosfato hipovanadoso,Fosfato de vanadio (II),Bis[tetraoxofosfato (V)] de trivanadio
+Oxosales,VAsO₄,Arseniato vanadoso,Arseniato de vanadio (III),Tetraoxoarseniato (V) de vanadio
+Oxosales,V₃(PO₄)₄,Fosfato de vanadio (IV),Fosfato de vanadio (IV),Tetrakis[tetraoxofosfato (V)] de trivanadio
+Oxosales,V₃(PO₄)₅,Fosfato vanádico,Fosfato de vanadio (V),Pentakis[tetraoxofosfato (V)] de trivanadio
+Oxosales,Zn₃(PO₄)₂,Fosfato de zinc,Fosfato de zinc,Bis[tetraoxofosfato (V)] de trizinc
+Oxosales,GaBO₃,Borato gálico,Borato de galio,Trioxoborato (III) de galio
+Oxosales,FeCrO₄,Cromato ferroso,Cromato de hierro (II),Tetraoxocromato (VI) de hierro
+Oxosales,Fe₄(SiO₄)₃,Silicato férrico,Ortosilicato de hierro (III),Tris[tetraoxosilicato (IV)] de tetrahierro
+Oxosales,In(MnO₄)₃,Permanganato índico,Permanganato de indio,Tris[tetraoxomanganato (VII)] de indio
+Oxosales,Li₂SiO₃,Metasilicato lítico,Metasilicato de litio,Trioxosilicato (IV) de dilitio
+Oxosales,Mg(BO₂)₂,Metaborato magnésico,Metaborato de magnesio,Bis[dioxoborato (III)] de magnesio
+Oxosales,Hg₂Cr₂O₇,Dicromato mercurioso,Dicromato de mercurio (I),Heptaoxodicromato (VI) de dimercurio
+Oxosales,Hg₂SiO₄,Silicato mercúrico,Ortosilicato de mercurio (II),Tetraoxosilicato (IV) de dimercurio
+Oxosales,NiCrO₄,Cromato niqueloso,Cromato de níquel (II),Tetraoxocromato (VI) de níquel
+Oxosales,NiBO₃,Borato niquélico,Borato de níquel (III),Trioxoborato (III) de níquel
+Oxosales,AuMnO₄,Permanganato auroso,Permanganato de oro (I),Tetraoxomanganato (VII) de oro
+Oxosales,Au₂(SiO₃)₃,Metasilicato áurico,Metasilicato de oro (III),Tris[trioxosilicato (IV)] de dioro
+Oxosales,PdCrO₄,Cromato paladioso,Cromato de paladio (II),Tetraoxocromato (VI) de paladio
+Oxosales,Pd(SiO₃)₂,Metasilicato paládico,Metasilicato de paladio (IV),Bis[trioxosilicato (IV)] de paladio
+Oxosales,Ag₂Cr₂O₇,Dicromato argéntico,Dicromato de plata,Heptaoxodicromato (VI) de diplata
+Oxosales,Pt(BO₂)₂,Metaborato platinoso,Metaborato de platino (II),Bis[dioxoborato (III)] de platino
+Oxosales,Pt(CrO₄)₂,Cromato platínico,Cromato de platino (IV),Bis[tetraoxocromato (VI)] de platino
+Oxosales,PbCrO₄,Cromato plumboso,Cromato de plomo (II),Tetraoxocromato (VI) de plomo
+Oxosales,PbSiO₄,Silicato plúmbico,Ortosilicato de plomo (IV),Tetraoxosilicato (IV) de plomo
+Oxosales,KMnO₄,Permanganato potásico,Permanganato de potasio,Tetraoxomanganato (VII) de potasio
+Oxosales,RaSiO₃,Metasilicato de radio,Metasilicato de radio,Trioxosilicato (IV) de radio
+Oxosales,Rb₃BO₃,Borato de rubidio,Borato de rubidio,Trioxoborato (III) de trirubidio
+Oxosales,Na₂B₄O₇,Tetraborato sódico,Tetraborato de sodio,Heptaoxotetraborato (III) de disodio
+Oxosales,TlMnO₄,Permanganato talioso,Permanganato de talio (I),Tetraoxomanganato (VII) de talio
+Oxosales,Tl₂(CrO₄)₃,Cromato tálico,Cromato de talio (III),Tris[tetraoxocromato (VI)] de ditalio
+Oxosales,TiSiO₃,Metasilicato titanoso,Metasilicato de titanio (II),Trioxosilicato (IV) de titanio
+Oxosales,TiSiO₄,Silicato titánico,Ortosilicato de titanio (IV),Tetraoxosilicato (IV) de titanio
+Oxosales,V₃(BO₃)₂,Borato hipovanadoso,Borato de vanadio (II),Bis[trioxoborato (III)] de trivanadio
+Oxosales,V₂(CrO₄)₃,Cromato vanadoso,Cromato de vanadio (III),Tris[tetraoxocromato (VI)] de divanadio
+Oxosales,V(MnO₄)₄,Permanganato de vanadio (IV),Permanganato de vanadio (IV),Tetrakis[tetraoxomanganato (VII)] de vanadio
+Oxosales,V₂(SiO₃)₅,Metasilicato vanádico,Metasilicato de vanadio (V),Pentakis[trioxosilicato (IV)] de divanadio
+Oxosales,ZnCr₂O₇,Dicromato de zinc,Dicromato de zinc,Heptaoxodicromato (VI) de zinc
+Sales binarias,TiS,Sulfuro titanoso,Sulfuro de titanio (II),Monosulfuro de titanio
+Sales binarias,TiBr₂,Bromuro titanoso,Bromuro de titanio (II),Dibromuro de titanio
+Sales binarias,Ti₂C,Carburo titanoso,Carburo de titanio (II),Monocarburo de dititanio
+Sales binarias,TiCl₂,Cloruro titanoso,Cloruro de titanio (II),Dicloruro de titanio
+Sales binarias,Ag₂S,Sulfuro argéntico,Sulfuro de plata,Monosulfuro de diplata
+Sales binarias,Au₂S,Sulfuro auroso,Sulfuro de oro (I),Monosulfuro de dioro
+Sales binarias,Cs₂S,Sulfuro césico,Sulfuro de cesio,Monosulfuro de dicesio
+Sales binarias,Cu₂S,Sulfuro cuproso,Sulfuro de cobre (I),Monosulfuro de dicobre
+Sales binarias,Fr₂S,Sulfuro fráncico,Sulfuro de francio,Monosulfuro de difrancio
+Sales binarias,Hg₂S,Sulfuro mercurioso,Sulfuro de mercurio (I),Monosulfuro de dimercurio
+Sales binarias,K₂S,Sulfuro potásico,Sulfuro de potasio,Monosulfuro de dipotasio
+Sales binarias,Li₂S,Sulfuro lítico,Sulfuro de litio,Monosulfuro de dilitio
+Sales binarias,Na₂S,Sulfuro sódico,Sulfuro de sodio,Monosulfuro de disodio
+Sales binarias,Rb₂S,Sulfuro rubídico,Sulfuro de rubidio,Monosulfuro de dirubidio
+Sales binarias,Tl₂S,Sulfuro talioso,Sulfuro de talio (I),Monosulfuro de ditalio
+Sales binarias,BaS,Sulfuro bárico,Sulfuro de bario,Monosulfuro de bario
+Sales binarias,BeS,Sulfuro berílico,Sulfuro de berilio,Monosulfuro de berilio
+Sales binarias,CaS,Sulfuro cálcico,Sulfuro de calcio,Monosulfuro de calcio
+Sales binarias,CdS,Sulfuro cádmico,Sulfuro de cadmio,Monosulfuro de cadmio
+Sales binarias,CoS,Sulfuro cobaltoso,Sulfuro de cobalto (II),Monosulfuro de cobalto
+Sales binarias,CrS,Sulfuro cromoso,Sulfuro de cromo (II),Monosulfuro de cromo
+Sales binarias,CuS,Sulfuro cúprico,Sulfuro de cobre (II),Monosulfuro de cobre
+Sales binarias,FeS,Sulfuro ferroso,Sulfuro de hierro (II),Monosulfuro de hierro
+Sales binarias,HgS,Sulfuro mercúrico,Sulfuro de mercurio (II),Monosulfuro de mercurio
+Sales binarias,MgS,Sulfuro magnésico,Sulfuro de magnesio,Monosulfuro de magnesio
+Sales binarias,MnS,Sulfuro manganoso,Sulfuro de manganeso (II),Monosulfuro de manganeso
+Sales binarias,NiS,Sulfuro niqueloso,Sulfuro de níquel (II),Monosulfuro de níquel
+Sales binarias,PbS,Sulfuro plumboso,Sulfuro de plomo (II),Monosulfuro de plomo
+Sales binarias,PdS,Sulfuro paladioso,Sulfuro de paladio (II),Monosulfuro de paladio
+Sales binarias,PtS,Sulfuro platinoso,Sulfuro de platino (II),Monosulfuro de platino
+Sales binarias,RaS,Sulfuro radico,Sulfuro de radio,Monosulfuro de radio
+Sales binarias,SnS,Sulfuro estannoso,Sulfuro de estaño (II),Monosulfuro de estaño
+Sales binarias,SrS,Sulfuro estróncico,Sulfuro de estroncio,Monosulfuro de estroncio
+Sales binarias,TiF₂,Fluoruro titanoso,Fluoruro de titanio (II),Difluoruro de titanio
+Sales binarias,VS,Sulfuro hipovanadoso,Sulfuro de vanadio (II),Monosulfuro de vanadio
+Sales binarias,ZnS,Sulfuro cíncico,Sulfuro de cinc,Monosulfuro de cinc
+Sales binarias,Al₂S₃,Sulfuro alumínico,Sulfuro de aluminio,Trisulfuro de dialuminio
+Sales binarias,Au₂S₃,Sulfuro áurico,Sulfuro de oro (III),Trisulfuro de dioro
+Sales binarias,Co₂S₃,Sulfuro cobáltico,Sulfuro de cobalto (III),Trisulfuro de dicobalto
+Sales binarias,Cr₂S₃,Sulfuro crómico,Sulfuro de cromo (III),Trisulfuro de dicromo
+Sales binarias,Fe₂S₃,Sulfuro férrico,Sulfuro de hierro (III),Trisulfuro de dihierro
+Sales binarias,Ga₂S₃,Sulfuro gálico,Sulfuro de galio (III),Trisulfuro de digalio
+Sales binarias,In₂S₃,Sulfuro índico,Sulfuro de indio (III),Trisulfuro de diindio
+Sales binarias,Mn₂S₃,Sulfuro mangánico,Sulfuro de manganeso (III),Trisulfuro de dimanganeso
+Sales binarias,Ni₂S₃,Sulfuro niquélico,Sulfuro de níquel (III),Trisulfuro de diníquel
+Sales binarias,Sc₂S₃,Sulfuro escándico,Sulfuro de escandio,Trisulfuro de diescandio
+Sales binarias,Ti₃P₂,Fosfuro titanoso,Fosfuro de titanio (II),Difosfuro de trititanio
+Sales binarias,Tl₂S₃,Sulfuro tálico,Sulfuro de talio (III),Trisulfuro de ditalio
+Sales binarias,V₂S₃,Sulfuro vanadoso,Sulfuro de vanadio (III),Trisulfuro de divanadio
+Sales binarias,MnS₂,Sulfuro mangánico superior,Sulfuro de manganeso (IV),Disulfuro de manganeso
+Sales binarias,PbS₂,Sulfuro plúmbico,Sulfuro de plomo (IV),Disulfuro de plomo
+Sales binarias,PdS₂,Sulfuro paládico,Sulfuro de paladio (IV),Disulfuro de paladio
+Sales binarias,PtS₂,Sulfuro platínico,Sulfuro de platino (IV),Disulfuro de platino
+Sales binarias,SnS₂,Sulfuro estánnico,Sulfuro de estaño (IV),Disulfuro de estaño
+Sales binarias,Ti₃N₂,Nitruro titanoso,Nitruro de titanio (II),Dinitruro de trititanio
+Sales binarias,VS₂,Sulfuro vanádico,Sulfuro de vanadio (IV),Disulfuro de vanadio
+Sales binarias,V₂S₅,Sulfuro pervanádico,Sulfuro de vanadio (V),Pentasulfuro de divanadio
+Sales binarias,CrS₃,Sulfuro crómico superior,Sulfuro de cromo (VI),Trisulfuro de cromo
+Sales binarias,MnS₃,Sulfuro permangánico,Sulfuro de manganeso (VI),Trisulfuro de manganeso
+Sales binarias,Mn₂S₇,Sulfuro hipermangánico,Sulfuro de manganeso (VII),Heptasulfuro de dimanganeso
+Sales binarias,AgBr,Bromuro argéntico,Bromuro de plata,Monobromuro de plata
+Sales binarias,AuBr,Bromuro auroso,Bromuro de oro (I),Monobromuro de oro
+Sales binarias,CsBr,Bromuro césico,Bromuro de cesio,Monobromuro de cesio
+Sales binarias,CuBr,Bromuro cuproso,Bromuro de cobre (I),Monobromuro de cobre
+Sales binarias,FrBr,Bromuro fráncico,Bromuro de francio,Monobromuro de francio
+Sales binarias,Hg₂Br₂,Bromuro mercurioso,Bromuro de mercurio (I),Dibromuro de dimercurio
+Sales binarias,KBr,Bromuro potásico,Bromuro de potasio,Monobromuro de potasio
+Sales binarias,LiBr,Bromuro lítico,Bromuro de litio,Monobromuro de litio
+Sales binarias,NaBr,Bromuro sódico,Bromuro de sodio,Monobromuro de sodio
+Sales binarias,RbBr,Bromuro rubídico,Bromuro de rubidio,Monobromuro de rubidio
+Sales binarias,TlBr,Bromuro talioso,Bromuro de talio (I),Monobromuro de talio
+Sales binarias,BaBr₂,Bromuro bárico,Bromuro de bario,Dibromuro de bario
+Sales binarias,BeBr₂,Bromuro berílico,Bromuro de berilio,Dibromuro de berilio
+Sales binarias,CaBr₂,Bromuro cálcico,Bromuro de calcio,Dibromuro de calcio
+Sales binarias,CdBr₂,Bromuro cádmico,Bromuro de cadmio,Dibromuro de cadmio
+Sales binarias,CoBr₂,Bromuro cobaltoso,Bromuro de cobalto (II),Dibromuro de cobalto
+Sales binarias,CrBr₂,Bromuro cromoso,Bromuro de cromo (II),Dibromuro de cromo
+Sales binarias,CuBr₂,Bromuro cúprico,Bromuro de cobre (II),Dibromuro de cobre
+Sales binarias,FeBr₂,Bromuro ferroso,Bromuro de hierro (II),Dibromuro de hierro
+Sales binarias,HgBr₂,Bromuro mercúrico,Bromuro de mercurio (II),Dibromuro de mercurio
+Sales binarias,MgBr₂,Bromuro magnésico,Bromuro de magnesio,Dibromuro de magnesio
+Sales binarias,MnBr₂,Bromuro manganoso,Bromuro de manganeso (II),Dibromuro de manganeso
+Sales binarias,NiBr₂,Bromuro niqueloso,Bromuro de níquel (II),Dibromuro de níquel
+Sales binarias,PbBr₂,Bromuro plumboso,Bromuro de plomo (II),Dibromuro de plomo
+Sales binarias,PdBr₂,Bromuro paladioso,Bromuro de paladio (II),Dibromuro de paladio
+Sales binarias,PtBr₂,Bromuro platinoso,Bromuro de platino (II),Dibromuro de platino
+Sales binarias,RaBr₂,Bromuro radico,Bromuro de radio,Dibromuro de radio
+Sales binarias,SnBr₂,Bromuro estannoso,Bromuro de estaño (II),Dibromuro de estaño
+Sales binarias,SrBr₂,Bromuro estróncico,Bromuro de estroncio,Dibromuro de estroncio
+Sales binarias,TiSe,Seleniuro titanoso,Seleniuro de titanio (II),Monoseleniuro de titanio
+Sales binarias,VBr₂,Bromuro hipovanadoso,Bromuro de vanadio (II),Dibromuro de vanadio
+Sales binarias,ZnBr₂,Bromuro cíncico,Bromuro de cinc,Dibromuro de cinc
+Sales binarias,AlBr₃,Bromuro alumínico,Bromuro de aluminio,Tribromuro de aluminio
+Sales binarias,AuBr₃,Bromuro áurico,Bromuro de oro (III),Tribromuro de oro
+Sales binarias,CoBr₃,Bromuro cobáltico,Bromuro de cobalto (III),Tribromuro de cobalto
+Sales binarias,CrBr₃,Bromuro crómico,Bromuro de cromo (III),Tribromuro de cromo
+Sales binarias,FeBr₃,Bromuro férrico,Bromuro de hierro (III),Tribromuro de hierro
+Sales binarias,GaBr₃,Bromuro gálico,Bromuro de galio (III),Tribromuro de galio
+Sales binarias,InBr₃,Bromuro índico,Bromuro de indio (III),Tribromuro de indio
+Sales binarias,MnBr₃,Bromuro mangánico,Bromuro de manganeso (III),Tribromuro de manganeso
+Sales binarias,NiBr₃,Bromuro niquélico,Bromuro de níquel (III),Tribromuro de níquel
+Sales binarias,ScBr₃,Bromuro escándico,Bromuro de escandio,Tribromuro de escandio
+Sales binarias,TiTe,Telururo titanoso,Telururo de titanio (II),Monotelururo de titanio
+Sales binarias,TlBr₃,Bromuro tálico,Bromuro de talio (III),Tribromuro de talio
+Sales binarias,VBr₃,Bromuro vanadoso,Bromuro de vanadio (III),Tribromuro de vanadio
+Sales binarias,PbBr₄,Bromuro plúmbico,Bromuro de plomo (IV),Tetrabromuro de plomo
+Sales binarias,PdBr₄,Bromuro paládico,Bromuro de paladio (IV),Tetrabromuro de paladio
+Sales binarias,PtBr₄,Bromuro platínico,Bromuro de platino (IV),Tetrabromuro de platino
+Sales binarias,SnBr₄,Bromuro estánnico,Bromuro de estaño (IV),Tetrabromuro de estaño
+Sales binarias,TiI₂,Yoduro titanoso,Yoduro de titanio (II),Diyoduro de titanio
+Sales binarias,VBr₄,Bromuro vanádico,Bromuro de vanadio (IV),Tetrabromuro de vanadio
+Sales binarias,Ag₄C,Carburo argéntico,Carburo de plata,Monocarburo de tetraplata
+Sales binarias,Au₄C,Carburo auroso,Carburo de oro (I),Monocarburo de tetraoro
+Sales binarias,Cs₄C,Carburo césico,Carburo de cesio,Monocarburo de tetracesio
+Sales binarias,Cu₄C,Carburo cuproso,Carburo de cobre (I),Monocarburo de tetracobre
+Sales binarias,Fr₄C,Carburo fráncico,Carburo de francio,Monocarburo de tetrafrancio
+Sales binarias,Hg₄C,Carburo mercurioso,Carburo de mercurio (I),Monocarburo de tetramercurio
+Sales binarias,K₄C,Carburo potásico,Carburo de potasio,Monocarburo de tetrapotasio
+Sales binarias,Li₄C,Carburo lítico,Carburo de litio,Monocarburo de tetralitio
+Sales binarias,Na₄C,Carburo sódico,Carburo de sodio,Monocarburo de tetrasodio
+Sales binarias,Rb₄C,Carburo rubídico,Carburo de rubidio,Monocarburo de tetrarubidio
+Sales binarias,Tl₄C,Carburo talioso,Carburo de talio (I),Monocarburo de tetrat alio
+Sales binarias,Ba₂C,Carburo bárico,Carburo de bario,Monocarburo de dibario
+Sales binarias,Be₂C,Carburo berílico,Carburo de berilio,Monocarburo de diberilio
+Sales binarias,Ca₂C,Carburo cálcico,Carburo de calcio,Monocarburo de dicalcio
+Sales binarias,Cd₂C,Carburo cádmico,Carburo de cadmio,Monocarburo de dicadmio
+Sales binarias,Co₂C,Carburo cobaltoso,Carburo de cobalto (II),Monocarburo de dicobalto
+Sales binarias,Cr₂C,Carburo cromoso,Carburo de cromo (II),Monocarburo de dicromo
+Sales binarias,Cu₂C,Carburo cúprico,Carburo de cobre (II),Monocarburo de dicobre
+Sales binarias,Fe₂C,Carburo ferroso,Carburo de hierro (II),Monocarburo de dihierro
+Sales binarias,Hg₂C,Carburo mercúrico,Carburo de mercurio (II),Monocarburo de dimercurio
+Sales binarias,Mg₂C,Carburo magnésico,Carburo de magnesio,Monocarburo de dimagnesio
+Sales binarias,Mn₂C,Carburo manganoso,Carburo de manganeso (II),Monocarburo de dimanganeso
+Sales binarias,Ni₂C,Carburo niqueloso,Carburo de níquel (II),Monocarburo de diníquel
+Sales binarias,Pb₂C,Carburo plumboso,Carburo de plomo (II),Monocarburo de diplomo
+Sales binarias,Pd₂C,Carburo paladioso,Carburo de paladio (II),Monocarburo de dipaladio
+Sales binarias,Pt₂C,Carburo platinoso,Carburo de platino (II),Monocarburo de diplatino
+Sales binarias,Ra₂C,Carburo radico,Carburo de radio,Monocarburo de diradio
+Sales binarias,Sn₂C,Carburo estannoso,Carburo de estaño (II),Monocarburo de diestaño
+Sales binarias,Sr₂C,Carburo estróncico,Carburo de estroncio,Monocarburo de diestroncio
+Sales binarias,V₂C,Carburo hipovanadoso,Carburo de vanadio (II),Monocarburo de divanadio
+Sales binarias,Zn₂C,Carburo cíncico,Carburo de cinc,Monocarburo de dicinc
+Sales binarias,Al₄C₃,Carburo alumínico,Carburo de aluminio,Tricarburo de tetraluminio
+Sales binarias,Au₄C₃,Carburo áurico,Carburo de oro (III),Tricarburo de tetraoro
+Sales binarias,Co₄C₃,Carburo cobáltico,Carburo de cobalto (III),Tricarburo de tetracobalto
+Sales binarias,Cr₄C₃,Carburo crómico,Carburo de cromo (III),Tricarburo de tetracromo
+Sales binarias,Fe₄C₃,Carburo férrico,Carburo de hierro (III),Tricarburo de tetrahierro
+Sales binarias,Ga₄C₃,Carburo gálico,Carburo de galio (III),Tricarburo de tetragalio
+Sales binarias,In₄C₃,Carburo índico,Carburo de indio (III),Tricarburo de tetraindio
+Sales binarias,Mn₄C₃,Carburo mangánico,Carburo de manganeso (III),Tricarburo de tetramanganeso
+Sales binarias,Ni₄C₃,Carburo niquélico,Carburo de níquel (III),Tricarburo de tetraníquel
+Sales binarias,Sc₄C₃,Carburo escándico,Carburo de escandio,Tricarburo de tetraescandio
+Sales binarias,Tl₄C₃,Carburo tálico,Carburo de talio (III),Tricarburo de tetrat alio
+Sales binarias,V₄C₃,Carburo vanadoso,Carburo de vanadio (III),Tricarburo de tetravanadio
+Sales binarias,MnC,Carburo mangánico superior,Carburo de manganeso (IV),Monocarburo de manganeso
+Sales binarias,PbC,Carburo plúmbico,Carburo de plomo (IV),Monocarburo de plomo
+Sales binarias,PdC,Carburo paládico,Carburo de paladio (IV),Monocarburo de paladio
+Sales binarias,PtC,Carburo platínico,Carburo de platino (IV),Monocarburo de platino
+Sales binarias,SnC,Carburo estánnico,Carburo de estaño (IV),Monocarburo de estaño
+Sales binarias,VC,Carburo vanádico,Carburo de vanadio (IV),Monocarburo de vanadio
+Sales binarias,V₄C₅,Carburo pervanádico,Carburo de vanadio (V),Pentacarburo de tetravanadio
+Sales binarias,Cr₂C₃,Carburo crómico superior,Carburo de cromo (VI),Tricarburo de dicromo
+Sales binarias,Mn₂C₃,Carburo permangánico,Carburo de manganeso (VI),Tricarburo de dimanganeso
+Sales binarias,Mn₄C₇,Carburo hipermangánico,Carburo de manganeso (VII),Heptacarburo de tetramanganeso
+Sales binarias,AgCl,Cloruro argéntico,Cloruro de plata,Monocloruro de plata
+Sales binarias,AuCl,Cloruro auroso,Cloruro de oro (I),Monocloruro de oro
+Sales binarias,CsCl,Cloruro césico,Cloruro de cesio,Monocloruro de cesio
+Sales binarias,CuCl,Cloruro cuproso,Cloruro de cobre (I),Monocloruro de cobre
+Sales binarias,FrCl,Cloruro fráncico,Cloruro de francio,Monocloruro de francio
+Sales binarias,Hg₂Cl₂,Cloruro mercurioso,Cloruro de mercurio (I),Dicloruro de dimercurio
+Sales binarias,KCl,Cloruro potásico,Cloruro de potasio,Monocloruro de potasio
+Sales binarias,LiCl,Cloruro lítico,Cloruro de litio,Monocloruro de litio
+Sales binarias,NaCl,Cloruro sódico,Cloruro de sodio,Monocloruro de sodio
+Sales binarias,RbCl,Cloruro rubídico,Cloruro de rubidio,Monocloruro de rubidio
+Sales binarias,TlCl,Cloruro talioso,Cloruro de talio (I),Monocloruro de talio
+Sales binarias,BaCl₂,Cloruro bárico,Cloruro de bario,Dicloruro de bario
+Sales binarias,BeCl₂,Cloruro berílico,Cloruro de berilio,Dicloruro de berilio
+Sales binarias,CaCl₂,Cloruro cálcico,Cloruro de calcio,Dicloruro de calcio
+Sales binarias,CdCl₂,Cloruro cádmico,Cloruro de cadmio,Dicloruro de cadmio
+Sales binarias,CoCl₂,Cloruro cobaltoso,Cloruro de cobalto (II),Dicloruro de cobalto
+Sales binarias,CrCl₂,Cloruro cromoso,Cloruro de cromo (II),Dicloruro de cromo
+Sales binarias,CuCl₂,Cloruro cúprico,Cloruro de cobre (II),Dicloruro de cobre
+Sales binarias,FeCl₂,Cloruro ferroso,Cloruro de hierro (II),Dicloruro de hierro
+Sales binarias,HgCl₂,Cloruro mercúrico,Cloruro de mercurio (II),Dicloruro de mercurio
+Sales binarias,MgCl₂,Cloruro magnésico,Cloruro de magnesio,Dicloruro de magnesio
+Sales binarias,MnCl₂,Cloruro manganoso,Cloruro de manganeso (II),Dicloruro de manganeso
+Sales binarias,NiCl₂,Cloruro niqueloso,Cloruro de níquel (II),Dicloruro de níquel
+Sales binarias,PbCl₂,Cloruro plumboso,Cloruro de plomo (II),Dicloruro de plomo
+Sales binarias,PdCl₂,Cloruro paladioso,Cloruro de paladio (II),Dicloruro de paladio
+Sales binarias,PtCl₂,Cloruro platinoso,Cloruro de platino (II),Dicloruro de platino
+Sales binarias,RaCl₂,Cloruro radico,Cloruro de radio,Dicloruro de radio
+Sales binarias,SnCl₂,Cloruro estannoso,Cloruro de estaño (II),Dicloruro de estaño
+Sales binarias,SrCl₂,Cloruro estróncico,Cloruro de estroncio,Dicloruro de estroncio
+Sales binarias,VCl₂,Cloruro hipovanadoso,Cloruro de vanadio (II),Dicloruro de vanadio
+Sales binarias,ZnCl₂,Cloruro cíncico,Cloruro de cinc,Dicloruro de cinc
+Sales binarias,AlCl₃,Cloruro alumínico,Cloruro de aluminio,Tricloruro de aluminio
+Sales binarias,AuCl₃,Cloruro áurico,Cloruro de oro (III),Tricloruro de oro
+Sales binarias,CoCl₃,Cloruro cobáltico,Cloruro de cobalto (III),Tricloruro de cobalto
+Sales binarias,CrCl₃,Cloruro crómico,Cloruro de cromo (III),Tricloruro de cromo
+Sales binarias,FeCl₃,Cloruro férrico,Cloruro de hierro (III),Tricloruro de hierro
+Sales binarias,GaCl₃,Cloruro gálico,Cloruro de galio (III),Tricloruro de galio
+Sales binarias,InCl₃,Cloruro índico,Cloruro de indio (III),Tricloruro de indio
+Sales binarias,MnCl₃,Cloruro mangánico,Cloruro de manganeso (III),Tricloruro de manganeso
+Sales binarias,NiCl₃,Cloruro niquélico,Cloruro de níquel (III),Tricloruro de níquel
+Sales binarias,ScCl₃,Cloruro escándico,Cloruro de escandio,Tricloruro de escandio
+Sales binarias,TlCl₃,Cloruro tálico,Cloruro de talio (III),Tricloruro de talio
+Sales binarias,VCl₃,Cloruro vanadoso,Cloruro de vanadio (III),Tricloruro de vanadio
+Sales binarias,PbCl₄,Cloruro plúmbico,Cloruro de plomo (IV),Tetracloruro de plomo
+Sales binarias,PdCl₄,Cloruro paládico,Cloruro de paladio (IV),Tetracloruro de paladio
+Sales binarias,PtCl₄,Cloruro platínico,Cloruro de platino (IV),Tetracloruro de platino
+Sales binarias,SnCl₄,Cloruro estánnico,Cloruro de estaño (IV),Tetracloruro de estaño
+Sales binarias,VCl₄,Cloruro vanádico,Cloruro de vanadio (IV),Tetracloruro de vanadio
+Sales binarias,AgF,Fluoruro argéntico,Fluoruro de plata,Monofluoruro de plata
+Sales binarias,AuF,Fluoruro auroso,Fluoruro de oro (I),Monofluoruro de oro
+Sales binarias,CsF,Fluoruro césico,Fluoruro de cesio,Monofluoruro de cesio
+Sales binarias,CuF,Fluoruro cuproso,Fluoruro de cobre (I),Monofluoruro de cobre
+Sales binarias,FrF,Fluoruro fráncico,Fluoruro de francio,Monofluoruro de francio
+Sales binarias,Hg₂F₂,Fluoruro mercurioso,Fluoruro de mercurio (I),Difluoruro de dimercurio
+Sales binarias,KF,Fluoruro potásico,Fluoruro de potasio,Monofluoruro de potasio
+Sales binarias,LiF,Fluoruro lítico,Fluoruro de litio,Monofluoruro de litio
+Sales binarias,NaF,Fluoruro sódico,Fluoruro de sodio,Monofluoruro de sodio
+Sales binarias,RbF,Fluoruro rubídico,Fluoruro de rubidio,Monofluoruro de rubidio
+Sales binarias,TlF,Fluoruro talioso,Fluoruro de talio (I),Monofluoruro de talio
+Sales binarias,BaF₂,Fluoruro bárico,Fluoruro de bario,Difluoruro de bario
+Sales binarias,BeF₂,Fluoruro berílico,Fluoruro de berilio,Difluoruro de berilio
+Sales binarias,CaF₂,Fluoruro cálcico,Fluoruro de calcio,Difluoruro de calcio
+Sales binarias,CdF₂,Fluoruro cádmico,Fluoruro de cadmio,Difluoruro de cadmio
+Sales binarias,CoF₂,Fluoruro cobaltoso,Fluoruro de cobalto (II),Difluoruro de cobalto
+Sales binarias,CrF₂,Fluoruro cromoso,Fluoruro de cromo (II),Difluoruro de cromo
+Sales binarias,CuF₂,Fluoruro cúprico,Fluoruro de cobre (II),Difluoruro de cobre
+Sales binarias,FeF₂,Fluoruro ferroso,Fluoruro de hierro (II),Difluoruro de hierro
+Sales binarias,HgF₂,Fluoruro mercúrico,Fluoruro de mercurio (II),Difluoruro de mercurio
+Sales binarias,MgF₂,Fluoruro magnésico,Fluoruro de magnesio,Difluoruro de magnesio
+Sales binarias,MnF₂,Fluoruro manganoso,Fluoruro de manganeso (II),Difluoruro de manganeso
+Sales binarias,NiF₂,Fluoruro niqueloso,Fluoruro de níquel (II),Difluoruro de níquel
+Sales binarias,PbF₂,Fluoruro plumboso,Fluoruro de plomo (II),Difluoruro de plomo
+Sales binarias,PdF₂,Fluoruro paladioso,Fluoruro de paladio (II),Difluoruro de paladio
+Sales binarias,PtF₂,Fluoruro platinoso,Fluoruro de platino (II),Difluoruro de platino
+Sales binarias,RaF₂,Fluoruro radico,Fluoruro de radio,Difluoruro de radio
+Sales binarias,SnF₂,Fluoruro estannoso,Fluoruro de estaño (II),Difluoruro de estaño
+Sales binarias,SrF₂,Fluoruro estróncico,Fluoruro de estroncio,Difluoruro de estroncio
+Sales binarias,VF₂,Fluoruro hipovanadoso,Fluoruro de vanadio (II),Difluoruro de vanadio
+Sales binarias,ZnF₂,Fluoruro cíncico,Fluoruro de cinc,Difluoruro de cinc
+Sales binarias,AlF₃,Fluoruro alumínico,Fluoruro de aluminio,Trifluoruro de aluminio
+Sales binarias,AuF₃,Fluoruro áurico,Fluoruro de oro (III),Trifluoruro de oro
+Sales binarias,CoF₃,Fluoruro cobáltico,Fluoruro de cobalto (III),Trifluoruro de cobalto
+Sales binarias,CrF₃,Fluoruro crómico,Fluoruro de cromo (III),Trifluoruro de cromo
+Sales binarias,FeF₃,Fluoruro férrico,Fluoruro de hierro (III),Trifluoruro de hierro
+Sales binarias,GaF₃,Fluoruro gálico,Fluoruro de galio (III),Trifluoruro de galio
+Sales binarias,InF₃,Fluoruro índico,Fluoruro de indio (III),Trifluoruro de indio
+Sales binarias,MnF₃,Fluoruro mangánico,Fluoruro de manganeso (III),Trifluoruro de manganeso
+Sales binarias,NiF₃,Fluoruro niquélico,Fluoruro de níquel (III),Trifluoruro de níquel
+Sales binarias,ScF₃,Fluoruro escándico,Fluoruro de escandio,Trifluoruro de escandio
+Sales binarias,TlF₃,Fluoruro tálico,Fluoruro de talio (III),Trifluoruro de talio
+Sales binarias,VF₃,Fluoruro vanadoso,Fluoruro de vanadio (III),Trifluoruro de vanadio
+Sales binarias,PbF₄,Fluoruro plúmbico,Fluoruro de plomo (IV),Tetrafluoruro de plomo
+Sales binarias,PdF₄,Fluoruro paládico,Fluoruro de paladio (IV),Tetrafluoruro de paladio
+Sales binarias,PtF₄,Fluoruro platínico,Fluoruro de platino (IV),Tetrafluoruro de platino
+Sales binarias,SnF₄,Fluoruro estánnico,Fluoruro de estaño (IV),Tetrafluoruro de estaño
+Sales binarias,VF₄,Fluoruro vanádico,Fluoruro de vanadio (IV),Tetrafluoruro de vanadio
+Sales binarias,Ag₃P,Fosfuro argéntico,Fosfuro de plata,Monofosfuro de triplata
+Sales binarias,Au₃P,Fosfuro auroso,Fosfuro de oro (I),Monofosfuro de trioro
+Sales binarias,Cs₃P,Fosfuro césico,Fosfuro de cesio,Monofosfuro de tricesio
+Sales binarias,Cu₃P,Fosfuro cuproso,Fosfuro de cobre (I),Monofosfuro de tricobre
+Sales binarias,Fr₃P,Fosfuro fráncico,Fosfuro de francio,Monofosfuro de trifrancio
+Sales binarias,Hg₃P,Fosfuro mercurioso,Fosfuro de mercurio (I),Monofosfuro de trimercurio
+Sales binarias,K₃P,Fosfuro potásico,Fosfuro de potasio,Monofosfuro de tripotasio
+Sales binarias,Li₃P,Fosfuro lítico,Fosfuro de litio,Monofosfuro de trilitio
+Sales binarias,Na₃P,Fosfuro sódico,Fosfuro de sodio,Monofosfuro de trisodio
+Sales binarias,Rb₃P,Fosfuro rubídico,Fosfuro de rubidio,Monofosfuro de trirubidio
+Sales binarias,Tl₃P,Fosfuro talioso,Fosfuro de talio (I),Monofosfuro de tritalio
+Sales binarias,Ba₃P₂,Fosfuro bárico,Fosfuro de bario,Difosfuro de tribario
+Sales binarias,Be₃P₂,Fosfuro berílico,Fosfuro de berilio,Difosfuro de triberilio
+Sales binarias,Ca₃P₂,Fosfuro cálcico,Fosfuro de calcio,Difosfuro de tricalcio
+Sales binarias,Cd₃P₂,Fosfuro cádmico,Fosfuro de cadmio,Difosfuro de tricadmio
+Sales binarias,Co₃P₂,Fosfuro cobaltoso,Fosfuro de cobalto (II),Difosfuro de tricobalto
+Sales binarias,Cr₃P₂,Fosfuro cromoso,Fosfuro de cromo (II),Difosfuro de tricromo
+Sales binarias,Cu₃P₂,Fosfuro cúprico,Fosfuro de cobre (II),Difosfuro de tricobre
+Sales binarias,Fe₃P₂,Fosfuro ferroso,Fosfuro de hierro (II),Difosfuro de trihierro
+Sales binarias,Hg₃P₂,Fosfuro mercúrico,Fosfuro de mercurio (II),Difosfuro de trimercurio
+Sales binarias,Mg₃P₂,Fosfuro magnésico,Fosfuro de magnesio,Difosfuro de trimagnesio
+Sales binarias,Mn₃P₂,Fosfuro manganoso,Fosfuro de manganeso (II),Difosfuro de trimanganeso
+Sales binarias,Ni₃P₂,Fosfuro niqueloso,Fosfuro de níquel (II),Difosfuro de triníquel
+Sales binarias,Pb₃P₂,Fosfuro plumboso,Fosfuro de plomo (II),Difosfuro de triplomo
+Sales binarias,Pd₃P₂,Fosfuro paladioso,Fosfuro de paladio (II),Difosfuro de tripaladio
+Sales binarias,Pt₃P₂,Fosfuro platinoso,Fosfuro de platino (II),Difosfuro de triplatino
+Sales binarias,Ra₃P₂,Fosfuro radico,Fosfuro de radio,Difosfuro de triradio
+Sales binarias,Sn₃P₂,Fosfuro estannoso,Fosfuro de estaño (II),Difosfuro de triestaño
+Sales binarias,Sr₃P₂,Fosfuro estróncico,Fosfuro de estroncio,Difosfuro de triestroncio
+Sales binarias,V₃P₂,Fosfuro hipovanadoso,Fosfuro de vanadio (II),Difosfuro de trivanadio
+Sales binarias,Zn₃P₂,Fosfuro cíncico,Fosfuro de cinc,Difosfuro de tricinc
+Sales binarias,AlP,Fosfuro alumínico,Fosfuro de aluminio,Monofosfuro de aluminio
+Sales binarias,AuP,Fosfuro áurico,Fosfuro de oro (III),Monofosfuro de oro
+Sales binarias,CoP,Fosfuro cobáltico,Fosfuro de cobalto (III),Monofosfuro de cobalto
+Sales binarias,CrP,Fosfuro crómico,Fosfuro de cromo (III),Monofosfuro de cromo
+Sales binarias,FeP,Fosfuro férrico,Fosfuro de hierro (III),Monofosfuro de hierro
+Sales binarias,GaP,Fosfuro gálico,Fosfuro de galio (III),Monofosfuro de galio
+Sales binarias,InP,Fosfuro índico,Fosfuro de indio (III),Monofosfuro de indio
+Sales binarias,MnP,Fosfuro mangánico,Fosfuro de manganeso (III),Monofosfuro de manganeso
+Sales binarias,NiP,Fosfuro niquélico,Fosfuro de níquel (III),Monofosfuro de níquel
+Sales binarias,ScP,Fosfuro escándico,Fosfuro de escandio,Monofosfuro de escandio
+Sales binarias,TlP,Fosfuro tálico,Fosfuro de talio (III),Monofosfuro de talio
+Sales binarias,VP,Fosfuro vanadoso,Fosfuro de vanadio (III),Monofosfuro de vanadio
+Sales binarias,Mn₃P₄,Fosfuro mangánico superior,Fosfuro de manganeso (IV),Tetrafosfuro de trimanganeso
+Sales binarias,Pb₃P₄,Fosfuro plúmbico,Fosfuro de plomo (IV),Tetrafosfuro de triplomo
+Sales binarias,Pd₃P₄,Fosfuro paládico,Fosfuro de paladio (IV),Tetrafosfuro de tripaladio
+Sales binarias,Pt₃P₄,Fosfuro platínico,Fosfuro de platino (IV),Tetrafosfuro de triplatino
+Sales binarias,Sn₃P₄,Fosfuro estánnico,Fosfuro de estaño (IV),Tetrafosfuro de triestaño
+Sales binarias,V₃P₄,Fosfuro vanádico,Fosfuro de vanadio (IV),Tetrafosfuro de trivanadio
+Sales binarias,V₃P₅,Fosfuro pervanádico,Fosfuro de vanadio (V),Pentafosfuro de trivanadio
+Sales binarias,CrP₂,Fosfuro crómico superior,Fosfuro de cromo (VI),Difosfuro de cromo
+Sales binarias,MnP₂,Fosfuro permangánico,Fosfuro de manganeso (VI),Difosfuro de manganeso
+Sales binarias,Mn₃P₇,Fosfuro hipermangánico,Fosfuro de manganeso (VII),Heptafosfuro de trimanganeso
+Sales binarias,Ag₃N,Nitruro argéntico,Nitruro de plata,Mononitruro de triplata
+Sales binarias,Au₃N,Nitruro auroso,Nitruro de oro (I),Mononitruro de trioro
+Sales binarias,Cs₃N,Nitruro césico,Nitruro de cesio,Mononitruro de tricesio
+Sales binarias,Cu₃N,Nitruro cuproso,Nitruro de cobre (I),Mononitruro de tricobre
+Sales binarias,Fr₃N,Nitruro fráncico,Nitruro de francio,Mononitruro de trifrancio
+Sales binarias,Hg₆N₂,Nitruro mercurioso,Nitruro de mercurio (I),Dinitruro de hexamercurio
+Sales binarias,K₃N,Nitruro potásico,Nitruro de potasio,Mononitruro de tripotasio
+Sales binarias,Li₃N,Nitruro lítico,Nitruro de litio,Mononitruro de trilitio
+Sales binarias,Na₃N,Nitruro sódico,Nitruro de sodio,Mononitruro de trisodio
+Sales binarias,Rb₃N,Nitruro rubídico,Nitruro de rubidio,Mononitruro de trirubidio
+Sales binarias,Tl₃N,Nitruro talioso,Nitruro de talio (I),Mononitruro de tritalio
+Sales binarias,Ba₃N₂,Nitruro bárico,Nitruro de bario,Dinitruro de tribario
+Sales binarias,Be₃N₂,Nitruro berílico,Nitruro de berilio,Dinitruro de triberilio
+Sales binarias,Ca₃N₂,Nitruro cálcico,Nitruro de calcio,Dinitruro de tricalcio
+Sales binarias,Cd₃N₂,Nitruro cádmico,Nitruro de cadmio,Dinitruro de tricadmio
+Sales binarias,Co₃N₂,Nitruro cobaltoso,Nitruro de cobalto (II),Dinitruro de tricobalto
+Sales binarias,Cr₃N₂,Nitruro cromoso,Nitruro de cromo (II),Dinitruro de tricromo
+Sales binarias,Cu₃N₂,Nitruro cúprico,Nitruro de cobre (II),Dinitruro de tricobre
+Sales binarias,Fe₃N₂,Nitruro ferroso,Nitruro de hierro (II),Dinitruro de trihierro
+Sales binarias,Hg₃N₂,Nitruro mercúrico,Nitruro de mercurio (II),Dinitruro de trimercurio
+Sales binarias,Mg₃N₂,Nitruro magnésico,Nitruro de magnesio,Dinitruro de trimagnesio
+Sales binarias,Mn₃N₂,Nitruro manganoso,Nitruro de manganeso (II),Dinitruro de trimanganeso
+Sales binarias,Ni₃N₂,Nitruro niqueloso,Nitruro de níquel (II),Dinitruro de triníquel
+Sales binarias,Pb₃N₂,Nitruro plumboso,Nitruro de plomo (II),Dinitruro de triplomo
+Sales binarias,Pd₃N₂,Nitruro paladioso,Nitruro de paladio (II),Dinitruro de tripaladio
+Sales binarias,Pt₃N₂,Nitruro platinoso,Nitruro de platino (II),Dinitruro de triplatino
+Sales binarias,Ra₃N₂,Nitruro radico,Nitruro de radio,Dinitruro de triradio
+Sales binarias,Sn₃N₂,Nitruro estannoso,Nitruro de estaño (II),Dinitruro de triestaño
+Sales binarias,Sr₃N₂,Nitruro estróncico,Nitruro de estroncio,Dinitruro de triestroncio
+Sales binarias,V₃N₂,Nitruro hipovanadoso,Nitruro de vanadio (II),Dinitruro de trivanadio
+Sales binarias,Zn₃N₂,Nitruro cíncico,Nitruro de cinc,Dinitruro de tricinc
+Sales binarias,AlN,Nitruro alumínico,Nitruro de aluminio,Mononitruro de aluminio
+Sales binarias,AuN,Nitruro áurico,Nitruro de oro (III),Mononitruro de oro
+Sales binarias,CoN,Nitruro cobáltico,Nitruro de cobalto (III),Mononitruro de cobalto
+Sales binarias,CrN,Nitruro crómico,Nitruro de cromo (III),Mononitruro de cromo
+Sales binarias,FeN,Nitruro férrico,Nitruro de hierro (III),Mononitruro de hierro
+Sales binarias,GaN,Nitruro gálico,Nitruro de galio (III),Mononitruro de galio
+Sales binarias,InN,Nitruro índico,Nitruro de indio (III),Mononitruro de indio
+Sales binarias,MnN,Nitruro mangánico,Nitruro de manganeso (III),Mononitruro de manganeso
+Sales binarias,NiN,Nitruro niquélico,Nitruro de níquel (III),Mononitruro de níquel
+Sales binarias,ScN,Nitruro escándico,Nitruro de escandio,Mononitruro de escandio
+Sales binarias,TlN,Nitruro tálico,Nitruro de talio (III),Mononitruro de talio
+Sales binarias,VN,Nitruro vanadoso,Nitruro de vanadio (III),Mononitruro de vanadio
+Sales binarias,Mn₃N₄,Nitruro mangánico superior,Nitruro de manganeso (IV),Tetranitruro de trimanganeso
+Sales binarias,Pb₃N₄,Nitruro plúmbico,Nitruro de plomo (IV),Tetranitruro de triplomo
+Sales binarias,Pd₃N₄,Nitruro paládico,Nitruro de paladio (IV),Tetranitruro de tripaladio
+Sales binarias,Pt₃N₄,Nitruro platínico,Nitruro de platino (IV),Tetranitruro de triplatino
+Sales binarias,Sn₃N₄,Nitruro estánnico,Nitruro de estaño (IV),Tetranitruro de triestaño
+Sales binarias,TiS₂,Sulfuro titánico,Sulfuro de titanio (IV),Disulfuro de titanio
+Sales binarias,V₃N₄,Nitruro vanádico,Nitruro de vanadio (IV),Tetranitruro de trivanadio
+Sales binarias,V₃N₅,Nitruro pervanádico,Nitruro de vanadio (V),Pentanitruro de trivanadio
+Sales binarias,CrN₂,Nitruro crómico superior,Nitruro de cromo (VI),Dinitruro de cromo
+Sales binarias,MnN₂,Nitruro permangánico,Nitruro de manganeso (VI),Dinitruro de manganeso
+Sales binarias,Mn₃N₇,Nitruro hipermangánico,Nitruro de manganeso (VII),Heptanitruro de trimanganeso
+Sales binarias,Ag₂Se,Seleniuro argéntico,Seleniuro de plata,Monoseleniuro de diplata
+Sales binarias,Au₂Se,Seleniuro auroso,Seleniuro de oro (I),Monoseleniuro de dioro
+Sales binarias,Cs₂Se,Seleniuro césico,Seleniuro de cesio,Monoseleniuro de dicesio
+Sales binarias,Cu₂Se,Seleniuro cuproso,Seleniuro de cobre (I),Monoseleniuro de dicobre
+Sales binarias,Fr₂Se,Seleniuro fráncico,Seleniuro de francio,Monoseleniuro de difrancio
+Sales binarias,Hg₂Se,Seleniuro mercurioso,Seleniuro de mercurio (I),Monoseleniuro de dimercurio
+Sales binarias,K₂Se,Seleniuro potásico,Seleniuro de potasio,Monoseleniuro de dipotasio
+Sales binarias,Li₂Se,Seleniuro lítico,Seleniuro de litio,Monoseleniuro de dilitio
+Sales binarias,Na₂Se,Seleniuro sódico,Seleniuro de sodio,Monoseleniuro de disodio
+Sales binarias,Rb₂Se,Seleniuro rubídico,Seleniuro de rubidio,Monoseleniuro de dirubidio
+Sales binarias,Tl₂Se,Seleniuro talioso,Seleniuro de talio (I),Monoseleniuro de ditalio
+Sales binarias,BaSe,Seleniuro bárico,Seleniuro de bario,Monoseleniuro de bario
+Sales binarias,BeSe,Seleniuro berílico,Seleniuro de berilio,Monoseleniuro de berilio
+Sales binarias,CaSe,Seleniuro cálcico,Seleniuro de calcio,Monoseleniuro de calcio
+Sales binarias,CdSe,Seleniuro cádmico,Seleniuro de cadmio,Monoseleniuro de cadmio
+Sales binarias,CoSe,Seleniuro cobaltoso,Seleniuro de cobalto (II),Monoseleniuro de cobalto
+Sales binarias,CrSe,Seleniuro cromoso,Seleniuro de cromo (II),Monoseleniuro de cromo
+Sales binarias,CuSe,Seleniuro cúprico,Seleniuro de cobre (II),Monoseleniuro de cobre
+Sales binarias,FeSe,Seleniuro ferroso,Seleniuro de hierro (II),Monoseleniuro de hierro
+Sales binarias,HgSe,Seleniuro mercúrico,Seleniuro de mercurio (II),Monoseleniuro de mercurio
+Sales binarias,MgSe,Seleniuro magnésico,Seleniuro de magnesio,Monoseleniuro de magnesio
+Sales binarias,MnSe,Seleniuro manganoso,Seleniuro de manganeso (II),Monoseleniuro de manganeso
+Sales binarias,NiSe,Seleniuro niqueloso,Seleniuro de níquel (II),Monoseleniuro de níquel
+Sales binarias,PbSe,Seleniuro plumboso,Seleniuro de plomo (II),Monoseleniuro de plomo
+Sales binarias,PdSe,Seleniuro paladioso,Seleniuro de paladio (II),Monoseleniuro de paladio
+Sales binarias,PtSe,Seleniuro platinoso,Seleniuro de platino (II),Monoseleniuro de platino
+Sales binarias,RaSe,Seleniuro radico,Seleniuro de radio,Monoseleniuro de radio
+Sales binarias,SnSe,Seleniuro estannoso,Seleniuro de estaño (II),Monoseleniuro de estaño
+Sales binarias,SrSe,Seleniuro estróncico,Seleniuro de estroncio,Monoseleniuro de estroncio
+Sales binarias,TiBr₄,Bromuro titánico,Bromuro de titanio (IV),Tetrabromuro de titanio
+Sales binarias,VSe,Seleniuro hipovanadoso,Seleniuro de vanadio (II),Monoseleniuro de vanadio
+Sales binarias,ZnSe,Seleniuro cíncico,Seleniuro de cinc,Monoseleniuro de cinc
+Sales binarias,Al₂Se₃,Seleniuro alumínico,Seleniuro de aluminio,Triseleniuro de dialuminio
+Sales binarias,Au₂Se₃,Seleniuro áurico,Seleniuro de oro (III),Triseleniuro de dioro
+Sales binarias,Co₂Se₃,Seleniuro cobáltico,Seleniuro de cobalto (III),Triseleniuro de dicobalto
+Sales binarias,Cr₂Se₃,Seleniuro crómico,Seleniuro de cromo (III),Triseleniuro de dicromo
+Sales binarias,Fe₂Se₃,Seleniuro férrico,Seleniuro de hierro (III),Triseleniuro de dihierro
+Sales binarias,Ga₂Se₃,Seleniuro gálico,Seleniuro de galio (III),Triseleniuro de digalio
+Sales binarias,In₂Se₃,Seleniuro índico,Seleniuro de indio (III),Triseleniuro de diindio
+Sales binarias,Mn₂Se₃,Seleniuro mangánico,Seleniuro de manganeso (III),Triseleniuro de dimanganeso
+Sales binarias,Ni₂Se₃,Seleniuro niquélico,Seleniuro de níquel (III),Triseleniuro de diníquel
+Sales binarias,Sc₂Se₃,Seleniuro escándico,Seleniuro de escandio,Triseleniuro de diescandio
+Sales binarias,TiC,Carburo titánico,Carburo de titanio (IV),Monocarburo de titanio
+Sales binarias,Tl₂Se₃,Seleniuro tálico,Seleniuro de talio (III),Triseleniuro de ditalio
+Sales binarias,V₂Se₃,Seleniuro vanadoso,Seleniuro de vanadio (III),Triseleniuro de divanadio
+Sales binarias,MnSe₂,Seleniuro mangánico superior,Seleniuro de manganeso (IV),Diseleniuro de manganeso
+Sales binarias,PbSe₂,Seleniuro plúmbico,Seleniuro de plomo (IV),Diseleniuro de plomo
+Sales binarias,PdSe₂,Seleniuro paládico,Seleniuro de paladio (IV),Diseleniuro de paladio
+Sales binarias,PtSe₂,Seleniuro platínico,Seleniuro de platino (IV),Diseleniuro de platino
+Sales binarias,SnSe₂,Seleniuro estánnico,Seleniuro de estaño (IV),Diseleniuro de estaño
+Sales binarias,TiCl₄,Cloruro titánico,Cloruro de titanio (IV),Tetracloruro de titanio
+Sales binarias,VSe₂,Seleniuro vanádico,Seleniuro de vanadio (IV),Diseleniuro de vanadio
+Sales binarias,V₂Se₅,Seleniuro pervanádico,Seleniuro de vanadio (V),Pentaseleniuro de divanadio
+Sales binarias,CrSe₃,Seleniuro crómico superior,Seleniuro de cromo (VI),Triseleniuro de cromo
+Sales binarias,MnSe₃,Seleniuro permangánico,Seleniuro de manganeso (VI),Triseleniuro de manganeso
+Sales binarias,Mn₂Se₇,Seleniuro hipermangánico,Seleniuro de manganeso (VII),Heptaseleniuro de dimanganeso
+Sales binarias,Ag₂Te,Telururo argéntico,Telururo de plata,Monotelururo de diplata
+Sales binarias,Au₂Te,Telururo auroso,Telururo de oro (I),Monotelururo de dioro
+Sales binarias,Cs₂Te,Telururo césico,Telururo de cesio,Monotelururo de dicesio
+Sales binarias,Cu₂Te,Telururo cuproso,Telururo de cobre (I),Monotelururo de dicobre
+Sales binarias,Fr₂Te,Telururo fráncico,Telururo de francio,Monotelururo de difrancio
+Sales binarias,Hg₂Te,Telururo mercurioso,Telururo de mercurio (I),Monotelururo de dimercurio
+Sales binarias,K₂Te,Telururo potásico,Telururo de potasio,Monotelururo de dipotasio
+Sales binarias,Li₂Te,Telururo lítico,Telururo de litio,Monotelururo de dilitio
+Sales binarias,Na₂Te,Telururo sódico,Telururo de sodio,Monotelururo de disodio
+Sales binarias,Rb₂Te,Telururo rubídico,Telururo de rubidio,Monotelururo de dirubidio
+Sales binarias,Tl₂Te,Telururo talioso,Telururo de talio (I),Monotelururo de ditalio
+Sales binarias,BaTe,Telururo bárico,Telururo de bario,Monotelururo de bario
+Sales binarias,BeTe,Telururo berílico,Telururo de berilio,Monotelururo de berilio
+Sales binarias,CaTe,Telururo cálcico,Telururo de calcio,Monotelururo de calcio
+Sales binarias,CdTe,Telururo cádmico,Telururo de cadmio,Monotelururo de cadmio
+Sales binarias,CoTe,Telururo cobaltoso,Telururo de cobalto (II),Monotelururo de cobalto
+Sales binarias,CrTe,Telururo cromoso,Telururo de cromo (II),Monotelururo de cromo
+Sales binarias,CuTe,Telururo cúprico,Telururo de cobre (II),Monotelururo de cobre
+Sales binarias,FeTe,Telururo ferroso,Telururo de hierro (II),Monotelururo de hierro
+Sales binarias,HgTe,Telururo mercúrico,Telururo de mercurio (II),Monotelururo de mercurio
+Sales binarias,MgTe,Telururo magnésico,Telururo de magnesio,Monotelururo de magnesio
+Sales binarias,MnTe,Telururo manganoso,Telururo de manganeso (II),Monotelururo de manganeso
+Sales binarias,NiTe,Telururo niqueloso,Telururo de níquel (II),Monotelururo de níquel
+Sales binarias,PbTe,Telururo plumboso,Telururo de plomo (II),Monotelururo de plomo
+Sales binarias,PdTe,Telururo paladioso,Telururo de paladio (II),Monotelururo de paladio
+Sales binarias,PtTe,Telururo platinoso,Telururo de platino (II),Monotelururo de platino
+Sales binarias,RaTe,Telururo radico,Telururo de radio,Monotelururo de radio
+Sales binarias,SnTe,Telururo estannoso,Telururo de estaño (II),Monotelururo de estaño
+Sales binarias,SrTe,Telururo estróncico,Telururo de estroncio,Monotelururo de estroncio
+Sales binarias,TiF₄,Fluoruro titánico,Fluoruro de titanio (IV),Tetrafluoruro de titanio
+Sales binarias,VTe,Telururo hipovanadoso,Telururo de vanadio (II),Monotelururo de vanadio
+Sales binarias,ZnTe,Telururo cíncico,Telururo de cinc,Monotelururo de cinc
+Sales binarias,Al₂Te₃,Telururo alumínico,Telururo de aluminio,Tritelururo de dialuminio
+Sales binarias,Au₂Te₃,Telururo áurico,Telururo de oro (III),Tritelururo de dioro
+Sales binarias,Co₂Te₃,Telururo cobáltico,Telururo de cobalto (III),Tritelururo de dicobalto
+Sales binarias,Cr₂Te₃,Telururo crómico,Telururo de cromo (III),Tritelururo de dicromo
+Sales binarias,Fe₂Te₃,Telururo férrico,Telururo de hierro (III),Tritelururo de dihierro
+Sales binarias,Ga₂Te₃,Telururo gálico,Telururo de galio (III),Tritelururo de digalio
+Sales binarias,In₂Te₃,Telururo índico,Telururo de indio (III),Tritelururo de diindio
+Sales binarias,Mn₂Te₃,Telururo mangánico,Telururo de manganeso (III),Tritelururo de dimanganeso
+Sales binarias,Ni₂Te₃,Telururo niquélico,Telururo de níquel (III),Tritelururo de diníquel
+Sales binarias,Sc₂Te₃,Telururo escándico,Telururo de escandio,Tritelururo de diescandio
+Sales binarias,Ti₃P₄,Fosfuro titánico,Fosfuro de titanio (IV),Tetrafosfuro de trititanio
+Sales binarias,Tl₂Te₃,Telururo tálico,Telururo de talio (III),Tritelururo de ditalio
+Sales binarias,V₂Te₃,Telururo vanadoso,Telururo de vanadio (III),Tritelururo de divanadio
+Sales binarias,MnTe₂,Telururo mangánico superior,Telururo de manganeso (IV),Ditelururo de manganeso
+Sales binarias,PbTe₂,Telururo plúmbico,Telururo de plomo (IV),Ditelururo de plomo
+Sales binarias,PdTe₂,Telururo paládico,Telururo de paladio (IV),Ditelururo de paladio
+Sales binarias,PtTe₂,Telururo platínico,Telururo de platino (IV),Ditelururo de platino
+Sales binarias,SnTe₂,Telururo estánnico,Telururo de estaño (IV),Ditelururo de estaño
+Sales binarias,Ti₃N₄,Nitruro titánico,Nitruro de titanio (IV),Tetranitruro de trititanio
+Sales binarias,VTe₂,Telururo vanádico,Telururo de vanadio (IV),Ditelururo de vanadio
+Sales binarias,V₂Te₅,Telururo pervanádico,Telururo de vanadio (V),Pentalururo de divanadio
+Sales binarias,CrTe₃,Telururo crómico superior,Telururo de cromo (VI),Tritelururo de cromo
+Sales binarias,MnTe₃,Telururo permangánico,Telururo de manganeso (VI),Tritelururo de manganeso
+Sales binarias,Mn₂Te₇,Telururo hipermangánico,Telururo de manganeso (VII),Heptatelururo de dimanganeso
+Sales binarias,AgI,Yoduro argéntico,Yoduro de plata,Monoyoduro de plata
+Sales binarias,AuI,Yoduro auroso,Yoduro de oro (I),Monoyoduro de oro
+Sales binarias,CsI,Yoduro césico,Yoduro de cesio,Monoyoduro de cesio
+Sales binarias,CuI,Yoduro cuproso,Yoduro de cobre (I),Monoyoduro de cobre
+Sales binarias,FrI,Yoduro fráncico,Yoduro de francio,Monoyoduro de francio
+Sales binarias,Hg₂I₂,Yoduro mercurioso,Yoduro de mercurio (I),Diyoduro de dimercurio
+Sales binarias,KI,Yoduro potásico,Yoduro de potasio,Monoyoduro de potasio
+Sales binarias,LiI,Yoduro lítico,Yoduro de litio,Monoyoduro de litio
+Sales binarias,NaI,Yoduro sódico,Yoduro de sodio,Monoyoduro de sodio
+Sales binarias,RbI,Yoduro rubídico,Yoduro de rubidio,Monoyoduro de rubidio
+Sales binarias,TlI,Yoduro talioso,Yoduro de talio (I),Monoyoduro de talio
+Sales binarias,BaI₂,Yoduro bárico,Yoduro de bario,Diyoduro de bario
+Sales binarias,BeI₂,Yoduro berílico,Yoduro de berilio,Diyoduro de berilio
+Sales binarias,CaI₂,Yoduro cálcico,Yoduro de calcio,Diyoduro de calcio
+Sales binarias,CdI₂,Yoduro cádmico,Yoduro de cadmio,Diyoduro de cadmio
+Sales binarias,CoI₂,Yoduro cobaltoso,Yoduro de cobalto (II),Diyoduro de cobalto
+Sales binarias,CrI₂,Yoduro cromoso,Yoduro de cromo (II),Diyoduro de cromo
+Sales binarias,CuI₂,Yoduro cúprico,Yoduro de cobre (II),Diyoduro de cobre
+Sales binarias,FeI₂,Yoduro ferroso,Yoduro de hierro (II),Diyoduro de hierro
+Sales binarias,HgI₂,Yoduro mercúrico,Yoduro de mercurio (II),Diyoduro de mercurio
+Sales binarias,MgI₂,Yoduro magnésico,Yoduro de magnesio,Diyoduro de magnesio
+Sales binarias,MnI₂,Yoduro manganoso,Yoduro de manganeso (II),Diyoduro de manganeso
+Sales binarias,NiI₂,Yoduro niqueloso,Yoduro de níquel (II),Diyoduro de níquel
+Sales binarias,PbI₂,Yoduro plumboso,Yoduro de plomo (II),Diyoduro de plomo
+Sales binarias,PdI₂,Yoduro paladioso,Yoduro de paladio (II),Diyoduro de paladio
+Sales binarias,PtI₂,Yoduro platinoso,Yoduro de platino (II),Diyoduro de platino
+Sales binarias,RaI₂,Yoduro radico,Yoduro de radio,Diyoduro de radio
+Sales binarias,SnI₂,Yoduro estannoso,Yoduro de estaño (II),Diyoduro de estaño
+Sales binarias,SrI₂,Yoduro estróncico,Yoduro de estroncio,Diyoduro de estroncio
+Sales binarias,TiSe₂,Seleniuro titánico,Seleniuro de titanio (IV),Diseleniuro de titanio
+Sales binarias,VI₂,Yoduro hipovanadoso,Yoduro de vanadio (II),Diyoduro de vanadio
+Sales binarias,ZnI₂,Yoduro cíncico,Yoduro de cinc,Diyoduro de cinc
+Sales binarias,AlI₃,Yoduro alumínico,Yoduro de aluminio,Triyoduro de aluminio
+Sales binarias,AuI₃,Yoduro áurico,Yoduro de oro (III),Triyoduro de oro
+Sales binarias,CoI₃,Yoduro cobáltico,Yoduro de cobalto (III),Triyoduro de cobalto
+Sales binarias,CrI₃,Yoduro crómico,Yoduro de cromo (III),Triyoduro de cromo
+Sales binarias,FeI₃,Yoduro férrico,Yoduro de hierro (III),Triyoduro de hierro
+Sales binarias,GaI₃,Yoduro gálico,Yoduro de galio (III),Triyoduro de galio
+Sales binarias,InI₃,Yoduro índico,Yoduro de indio (III),Triyoduro de indio
+Sales binarias,MnI₃,Yoduro mangánico,Yoduro de manganeso (III),Triyoduro de manganeso
+Sales binarias,NiI₃,Yoduro niquélico,Yoduro de níquel (III),Triyoduro de níquel
+Sales binarias,ScI₃,Yoduro escándico,Yoduro de escandio,Triyoduro de escandio
+Sales binarias,TiTe₂,Telururo titánico,Telururo de titanio (IV),Ditelururo de titanio
+Sales binarias,TlI₃,Yoduro tálico,Yoduro de talio (III),Triyoduro de talio
+Sales binarias,VI₃,Yoduro vanadoso,Yoduro de vanadio (III),Triyoduro de vanadio
+Sales binarias,PbI₄,Yoduro plúmbico,Yoduro de plomo (IV),Tetrayoduro de plomo
+Sales binarias,PdI₄,Yoduro paládico,Yoduro de paladio (IV),Tetrayoduro de paladio
+Sales binarias,PtI₄,Yoduro platínico,Yoduro de platino (IV),Tetrayoduro de platino
+Sales binarias,SnI₄,Yoduro estánnico,Yoduro de estaño (IV),Tetrayoduro de estaño
+Sales binarias,TiI₄,Yoduro titánico,Yoduro de titanio (IV),Tetrayoduro de titanio
+Sales binarias,VI₄,Yoduro vanádico,Yoduro de vanadio (IV),Tetrayoduro de vanadio
+Oxosal Ácida,Al(HSO₃)₃,Sulfito ácido de aluminio,Hidrogenosulfito de aluminio,Tris[hidrogenotrioxosulfato (IV)] de aluminio
+Oxosal Ácida,Al(HSO₄)₃,Sulfato ácido de aluminio,Hidrogenosulfato de aluminio,Tris[hidrogenotetraoxosulfato (VI)] de aluminio
+Oxosal Ácida,Al(HCO₃)₃,Carbonato ácido de aluminio,Hidrogenocarbonato de aluminio,Tris[hidrogenotrioxocarbonato (IV)] de aluminio
+Oxosal Ácida,Al(H₂PO₄)₃,Fosfato diácido de aluminio,Dihidrogenofosfato de aluminio,Tris[dihidrogenotetraoxofosfato (V)] de aluminio
+Oxosal Ácida,Al(H₂AsO₄)₃,Arseniato diácido de aluminio,Dihidrogenoarseniato de aluminio,Tris[dihidrogenotetraoxoarseniato (V)] de aluminio
+Oxosal Ácida,Al(HCrO₄)₃,Cromato ácido de aluminio,Hidrogenocromato de aluminio,Tris[hidrogenotetraoxocromato (VI)] de aluminio
+Oxosal Ácida,Ba(HSO₃)₂,Sulfito ácido de bario,Hidrogenosulfito de bario,Bis[hidrogenotrioxosulfato (IV)] de bario
+Oxosal Ácida,Ba(HSO₄)₂,Sulfato ácido de bario,Hidrogenosulfato de bario,Bis[hidrogenotetraoxosulfato (VI)] de bario
+Oxosal Ácida,Ba(HCO₃)₂,Carbonato ácido de bario,Hidrogenocarbonato de bario,Bis[hidrogenotrioxocarbonato (IV)] de bario
+Oxosal Ácida,BaHPO₄,Fosfato ácido de bario,Hidrogenofosfato de bario,Hidrogenotetraoxofosfato (V) de bario
+Oxosal Ácida,Ba(HCrO₄)₂,Cromato ácido de bario,Hidrogenocromato de bario,Bis[hidrogenotetraoxocromato (VI)] de bario
+Oxosal Ácida,Ba(HMnO₄)₂,Manganato ácido de bario,Hidrogenomanganato de bario,Bis[hidrogenotetraoxomanganato (VI)] de bario
+Oxosal Ácida,Be(HSO₄)₂,Sulfato ácido de berilio,Hidrogenosulfato de berilio,Bis[hidrogenotetraoxosulfato (VI)] de berilio
+Oxosal Ácida,Be(HCO₃)₂,Carbonato ácido de berilio,Hidrogenocarbonato de berilio,Bis[hidrogenotrioxocarbonato (IV)] de berilio
+Oxosal Ácida,BeHPO₄,Fosfato ácido de berilio,Hidrogenofosfato de berilio,Hidrogenotetraoxofosfato (V) de berilio
+Oxosal Ácida,Cd(HSO₄)₂,Sulfato ácido de cadmio,Hidrogenosulfato de cadmio,Bis[hidrogenotetraoxosulfato (VI)] de cadmio
+Oxosal Ácida,Cd(HCO₃)₂,Carbonato ácido de cadmio,Hidrogenocarbonato de cadmio,Bis[hidrogenotrioxocarbonato (IV)] de cadmio
+Oxosal Ácida,Ca(HSO₃)₂,Sulfito ácido de calcio,Hidrogenosulfito de calcio,Bis[hidrogenotrioxosulfato (IV)] de calcio
+Oxosal Ácida,Ca(HSO₄)₂,Sulfato ácido de calcio,Hidrogenosulfato de calcio,Bis[hidrogenotetraoxosulfato (VI)] de calcio
+Oxosal Ácida,Ca(HCO₃)₂,Carbonato ácido de calcio,Hidrogenocarbonato de calcio,Bis[hidrogenotrioxocarbonato (IV)] de calcio
+Oxosal Ácida,CaHPO₄,Fosfato ácido de calcio,Hidrogenofosfato de calcio,Hidrogenotetraoxofosfato (V) de calcio
+Oxosal Ácida,CaHAsO₄,Arseniato ácido de calcio,Hidrogenoarseniato de calcio,Hidrogenotetraoxoarseniato (V) de calcio
+Oxosal Ácida,CsHSO₄,Sulfato ácido de cesio,Hidrogenosulfato de cesio,Hidrogenotetraoxosulfato (VI) de cesio
+Oxosal Ácida,CsHCO₃,Carbonato ácido de cesio,Hidrogenocarbonato de cesio,Hidrogenotrioxocarbonato (IV) de cesio
+Oxosal Ácida,CsH₂PO₄,Fosfato diácido de cesio,Dihidrogenofosfato de cesio,Dihidrogenotetraoxofosfato (V) de cesio
+Oxosal Ácida,CsHCr₂O₇,Dicromato ácido de cesio,Hidrogenodicromato de cesio,Hidrogenoheptaoxodicromato (VI) de cesio
+Oxosal Ácida,Zn(HSO₄)₂,Sulfato ácido de cinc,Hidrogenosulfato de cinc,Bis[hidrogenotetraoxosulfato (VI)] de zinc
+Oxosal Ácida,Zn(HCO₃)₂,Carbonato ácido de cinc,Hidrogenocarbonato de cinc,Bis[hidrogenotrioxocarbonato (IV)] de zinc
+Oxosal Ácida,ZnHPO₄,Fosfato ácido de cinc,Hidrogenofosfato de cinc,Hidrogenotetraoxofosfato (V) de zinc
+Oxosal Ácida,Zn(HCrO₄)₂,Cromato ácido de cinc,Hidrogenocromato de cinc,Bis[hidrogenotetraoxocromato (VI)] de zinc
+Oxosal Ácida,Co(HSO₃)₂,Sulfito ácido cobaltoso,Hidrogenosulfito de cobalto (II),Bis[hidrogenotrioxosulfato (IV)] de cobalto (II)
+Oxosal Ácida,Co(HSO₄)₂,Sulfato ácido cobaltoso,Hidrogenosulfato de cobalto (II),Bis[hidrogenotetraoxosulfato (VI)] de cobalto (II)
+Oxosal Ácida,Co(HCO₃)₂,Carbonato ácido cobaltoso,Hidrogenocarbonato de cobalto (II),Bis[hidrogenotrioxocarbonato (IV)] de cobalto (II)
+Oxosal Ácida,CoHPO₄,Fosfato ácido cobaltoso,Hidrogenofosfato de cobalto (II),Hidrogenotetraoxofosfato (V) de cobalto (II)
+Oxosal Ácida,Co(HSO₃)₃,Sulfito ácido cobáltico,Hidrogenosulfito de cobalto (III),Tris[hidrogenotrioxosulfato (IV)] de cobalto (III)
+Oxosal Ácida,Co(HSO₄)₃,Sulfato ácido cobáltico,Hidrogenosulfato de cobalto (III),Tris[hidrogenotetraoxosulfato (VI)] de cobalto (III)
+Oxosal Ácida,Co(H₂PO₄)₃,Fosfato diácido cobáltico,Dihidrogenofosfato de cobalto (III),Tris[dihidrogenotetraoxofosfato (V)] de cobalto (III)
+Oxosal Ácida,CuHSO₃,Sulfito ácido cuproso,Hidrogenosulfito de cobre (I),Hidrogenotrioxosulfato (IV) de cobre (I)
+Oxosal Ácida,CuHSO₄,Sulfato ácido cuproso,Hidrogenosulfato de cobre (I),Hidrogenotetraoxosulfato (VI) de cobre (I)
+Oxosal Ácida,CuHCO₃,Carbonato ácido cuproso,Hidrogenocarbonato de cobre (I),Hidrogenotrioxocarbonato (IV) de cobre (I)
+Oxosal Ácida,CuH₂PO₄,Fosfato diácido cuproso,Dihidrogenofosfato de cobre (I),Dihidrogenotetraoxofosfato (V) de cobre (I)
+Oxosal Ácida,CuHCrO₄,Cromato ácido cuproso,Hidrogenocromato de cobre (I),Hidrogenotetraoxocromato (VI) de cobre (I)
+Oxosal Ácida,Cu(HSO₃)₂,Sulfito ácido cúprico,Hidrogenosulfito de cobre (II),Bis[hidrogenotrioxosulfato (IV)] de cobre (II)
+Oxosal Ácida,Cu(HSO₄)₂,Sulfato ácido cúprico,Hidrogenosulfato de cobre (II),Bis[hidrogenotetraoxosulfato (VI)] de cobre (II)
+Oxosal Ácida,Cu(HCO₃)₂,Carbonato ácido cúprico,Hidrogenocarbonato de cobre (II),Bis[hidrogenotrioxocarbonato (IV)] de cobre (II)
+Oxosal Ácida,CuHPO₄,Fosfato ácido cúprico,Hidrogenofosfato de cobre (II),Hidrogenotetraoxofosfato (V) de cobre (II)
+Oxosal Ácida,Cu(HCr₂O₇)₂,Dicromato ácido cúprico,Hidrogenodicromato de cobre (II),Bis[hidrogenoheptaoxodicromato (VI)] de cobre (II)
+Oxosal Ácida,Cr(HSO₄)₂,Sulfato ácido cromoso,Hidrogenosulfato de cromo (II),Bis[hidrogenotetraoxosulfato (VI)] de cromo (II)
+Oxosal Ácida,CrHPO₄,Fosfato ácido cromoso,Hidrogenofosfato de cromo (II),Hidrogenotetraoxofosfato (V) de cromo (II)
+Oxosal Ácida,Cr(HSO₄)₃,Sulfato ácido crómico,Hidrogenosulfato de cromo (III),Tris[hidrogenotetraoxosulfato (VI)] de cromo (III)
+Oxosal Ácida,Cr(H₂PO₄)₃,Fosfato diácido crómico,Dihidrogenofosfato de cromo (III),Tris[dihidrogenotetraoxofosfato (V)] de cromo (III)
+Oxosal Ácida,Sc(HSO₄)₃,Sulfato ácido de escandio,Hidrogenosulfato de escandio,Tris[hidrogenotetraoxosulfato (VI)] de escandio
+Oxosal Ácida,Sc(H₂PO₄)₃,Fosfato diácido de escandio,Dihidrogenofosfato de escandio,Tris[dihidrogenotetraoxofosfato (V)] de escandio
+Oxosal Ácida,Sn(HSO₄)₂,Sulfato ácido estannoso,Hidrogenosulfato de estaño (II),Bis[hidrogenotetraoxosulfato (VI)] de estaño (II)
+Oxosal Ácida,SnHPO₄,Fosfato ácido estannoso,Hidrogenofosfato de estaño (II),Hidrogenotetraoxofosfato (V) de estaño (II)
+Oxosal Ácida,Sn(HSO₄)₄,Sulfato ácido estárnico,Hidrogenosulfato de estaño (IV),Tetrakis[hidrogenotetraoxosulfato (VI)] de estaño (IV)
+Oxosal Ácida,Sn(H₂PO₄)₄,Fosfato diácido estárnico,Dihidrogenofosfato de estaño (IV),Tetrakis[dihidrogenotetraoxofosfato (V)] de estaño (IV)
+Oxosal Ácida,Sr(HSO₄)₂,Sulfato ácido de estroncio,Hidrogenosulfato de estroncio,Bis[hidrogenotetraoxosulfato (VI)] de estroncio
+Oxosal Ácida,Sr(HCO₃)₂,Carbonato ácido de estroncio,Hidrogenocarbonato de estroncio,Bis[hidrogenotrioxocarbonato (IV)] de estroncio
+Oxosal Ácida,SrHPO₄,Fosfato ácido de estroncio,Hidrogenofosfato de estroncio,Hidrogenotetraoxofosfato (V) de estroncio
+Oxosal Ácida,SrHAsO₄,Arseniato ácido de estroncio,Hidrogenoarseniato de estroncio,Hidrogenotetraoxoarseniato (V) de estroncio
+Oxosal Ácida,FrHSO₄,Sulfato ácido de francio,Hidrogenosulfato de francio,Hidrogenotetraoxosulfato (VI) de francio
+Oxosal Ácida,FrH₂PO₄,Fosfato diácido de francio,Dihidrogenofosfato de francio,Dihidrogenotetraoxofosfato (V) de francio
+Oxosal Ácida,FrHCr₂O₇,Dicromato ácido de francio,Hidrogenodicromato de francio,Hidrogenoheptaoxodicromato (VI) de francio
+Oxosal Ácida,Ga(HSO₄)₃,Sulfato ácido de galio,Hidrogenosulfato de galio,Tris[hidrogenotetraoxosulfato (VI)] de galio
+Oxosal Ácida,Ga(H₂PO₄)₃,Fosfato diácido de galio,Dihidrogenofosfato de galio,Tris[dihidrogenotetraoxofosfato (V)] de galio
+Oxosal Ácida,Fe(HSO₄)₂,Sulfato ácido ferroso,Hidrogenosulfato de hierro (II),Bis[hidrogenotetraoxosulfato (VI)] de hierro (II)
+Oxosal Ácida,Fe(HCO₃)₂,Carbonato ácido ferroso,Hidrogenocarbonato de hierro (II),Bis[hidrogenotrioxocarbonato (IV)] de hierro (II)
+Oxosal Ácida,Fe(HCrO₄)₂,Cromato ácido ferroso,Hidrogenocromato de hierro (II),Bis[hidrogenotetraoxocromato (VI)] de hierro (II)
+Oxosal Ácida,Fe(HSO₄)₃,Sulfato ácido férrico,Hidrogenosulfato de hierro (III),Tris[hidrogenotetraoxosulfato (VI)] de hierro (III)
+Oxosal Ácida,Fe(H₂AsO₄)₃,Arseniato diácido férrico,Dihidrogenoarseniato de hierro (III),Tris[dihidrogenotetraoxoarseniato (V)] de hierro (III)
+Oxosal Ácida,In(HSO₄)₃,Sulfato ácido de indio,Hidrogenosulfato de indio,Tris[hidrogenotetraoxosulfato (VI)] de indio
+Oxosal Ácida,LiHSO₄,Sulfato ácido de litio,Hidrogenosulfato de litio,Hidrogenotetraoxosulfato (VI) de litio
+Oxosal Ácida,LiHCO₃,Carbonato ácido de litio,Hidrogenocarbonato de litio,Hidrogenotrioxocarbonato (IV) de litio
+Oxosal Ácida,LiH₂PO₄,Fosfato diácido de litio,Dihidrogenofosfato de litio,Dihidrogenotetraoxofosfato (V) de litio
+Oxosal Ácida,Mg(HSO₄)₂,Sulfato ácido de magnesio,Hidrogenosulfato de magnesio,Bis[hidrogenotetraoxosulfato (VI)] de magnesio
+Oxosal Ácida,Hg₂(HSO₄)₂,Sulfato ácido mercurioso,Hidrogenosulfato de mercurio (I),Bis[hidrogenotetraoxosulfato (VI)] de dimercurio
+Oxosal Ácida,Hg₂(H₂PO₄)₂,Fosfato diácido mercurioso,Dihidrogenofosfato de mercurio (I),Bis[dihidrogenotetraoxofosfato (V)] de dimercurio
+Oxosal Ácida,Hg₂(HCr₂O₇)₂,Dicromato ácido mercurioso,Hidrogenodicromato de mercurio (I),Bis[hidrogenoheptaoxodicromato (VI)] de dimercurio
+Oxosal Ácida,Hg(HSO₄)₂,Sulfato ácido mercúrico,Hidrogenosulfato de mercurio (II),Bis[hidrogenotetraoxosulfato (VI)] de mercurio
+Oxosal Ácida,Ni(HSO₄)₂,Sulfato ácido niqueloso,Hidrogenosulfato de níquel (II),Bis[hidrogenotetraoxosulfato (VI)] de níquel
+Oxosal Ácida,NiHPO₄,Fosfato ácido niqueloso,Hidrogenofosfato de níquel (II),Hidrogenotetraoxofosfato (V) de níquel
+Oxosal Ácida,Ni(HCrO₄)₂,Cromato ácido niqueloso,Hidrogenocromato de níquel (II),Bis[hidrogenotetraoxocromato (VI)] de níquel
+Oxosal Ácida,Ni(HSO₄)₃,Sulfato ácido niquélico,Hidrogenosulfato de níquel (III),Tris[hidrogenotetraoxosulfato (VI)] de níquel
+Oxosal Ácida,AuHSO₄,Sulfato ácido auroso,Hidrogenosulfato de oro (I),Hidrogenotetraoxosulfato (VI) de oro
+Oxosal Ácida,AuH₂AsO₄,Arseniato diácido auroso,Dihidrogenoarseniato de oro (I),Dihidrogenotetraoxoarseniato (V) de oro
+Oxosal Ácida,Au(HSO₄)₃,Sulfato ácido áurico,Hidrogenosulfato de oro (III),Tris[hidrogenotetraoxosulfato (VI)] de oro
+Oxosal Ácida,Au(H₂PO₄)₃,Fosfato diácido áurico,Dihidrogenofosfato de oro (III),Tris[dihidrogenotetraoxofosfato (V)] de oro
+Oxosal Ácida,Pd(H₂PO₄)₂,Fosfato diácido de paladio (II),Dihidrogenofosfato de paladio (II),Bis[dihidrogenotetraoxofosfato (V)] de paladio (II)
+Oxosal Ácida,Pd(HCrO₄)₂,Cromato ácido de paladio (II),Hidrogenocromato de paladio (II),Bis[hidrogenotetraoxocromato (VI)] de paladio (II)
+Oxosal Ácida,Pd(HSO₄)₄,Sulfato ácido de paladio (IV),Hidrogenosulfato de paladio (IV),Tetrakis[hidrogenotetraoxosulfato (VI)] de paladio (IV)
+Oxosal Ácida,AgHSO₄,Sulfato ácido de plata,Hidrogenosulfato de plata,Hidrogenotetraoxosulfato (VI) de plata
+Oxosal Ácida,AgH₂PO₄,Fosfato diácido de plata,Dihidrogenofosfato de plata,Dihidrogenotetraoxofosfato (V) de plata
+Oxosal Ácida,AgHCr₂O₇,Dicromato ácido de plata,Hidrogenodicromato de plata,Hidrogenoheptaoxodicromato (VI) de plata
+Oxosal Ácida,Pt(HCO₃)₂,Carbonato ácido platinoso,Hidrogenocarbonato de platino (II),Bis[hidrogenotrioxocarbonato (IV)] de platino (II)
+Oxosal Ácida,Pt(H₂AsO₄)₂,Arseniato diácido platinoso,Dihidrogenoarseniato de platino (II),Bis[dihidrogenotetraoxoarseniato (V)] de platino (II)
+Oxosal Ácida,Pt(HSO₄)₄,Sulfato ácido platínico,Hidrogenosulfato de platino (IV),Tetrakis[hidrogenotetraoxosulfato (VI)] de platino (IV)
+Oxosal Ácida,Pt(H₂PO₄)₄,Fosfato diácido platínico,Dihidrogenofosfato de platino (IV),Tetrakis[dihidrogenotetraoxofosfato (V)] de platino (IV)
+Oxosal Ácida,Pt(HCrO₄)₄,Cromato ácido platínico,Hidrogenocromato de platino (IV),Tetrakis[hidrogenotetraoxocromato (VI)] de platino (IV)
+Oxosal Ácida,Pb(HSO₄)₂,Sulfato ácido plumboso,Hidrogenosulfato de plomo (II),Bis[hidrogenotetraoxosulfato (VI)] de plomo (II)
+Oxosal Ácida,Pb(HCrO₄)₂,Cromato ácido plumboso,Hidrogenocromato de plomo (II),Bis[hidrogenotetraoxocromato (VI)] de plomo (II)
+Oxosal Ácida,Pb(HSO₄)₄,Sulfato ácido plúmbico,Hidrogenosulfato de plomo (IV),Tetrakis[hidrogenotetraoxosulfato (VI)] de plomo (IV)
+Oxosal Ácida,Pb(H₂PO₄)₄,Fosfato diácido plúmbico,Dihidrogenofosfato de plomo (IV),Tetrakis[dihidrogenotetraoxofosfato (V)] de plomo (IV)
+Oxosal Ácida,KHSO₄,Sulfato ácido de potasio,Hidrogenosulfato de potasio,Hidrogenotetraoxosulfato (VI) de potasio
+Oxosal Ácida,Ra(HSO₄)₂,Sulfato ácido de radio,Hidrogenosulfato de radio,Bis[hidrogenotetraoxosulfato (VI)] de radio
+Oxosal Ácida,RaHPO₄,Fosfato ácido de radio,Hidrogenofosfato de radio,Hidrogenotetraoxofosfato (V) de radio
+Oxosal Ácida,RbHSO₄,Sulfato ácido de rubidio,Hidrogenosulfato de rubidio,Hidrogenotetraoxosulfato (VI) de rubidio
+Oxosal Ácida,RbH₂AsO₄,Arseniato diácido de rubidio,Dihidrogenoarseniato de rubidio,Dihidrogenotetraoxoarseniato (V) de rubidio
+Oxosal Ácida,NaHSO₄,Sulfato ácido de sodio,Hidrogenosulfato de sodio,Hidrogenotetraoxosulfato (VI) de sodio
+Oxosal Ácida,NaHCO₃,Carbonato ácido de sodio,Hidrogenocarbonato de sodio,Hidrogenotrioxocarbonato (IV) de sodio
+Oxosal Ácida,NaHB₄O₇,Tetraborato ácido de sodio,Hidrogenotetraborato de sodio,Hidrogenoheptaoxotetraborato (III) de sodio
+Oxosal Ácida,TlH₂PO₄,Fosfato diácido talioso,Dihidrogenofosfato de talio (I),Dihidrogenotetraoxofosfato (V) de talio (I)
+Oxosal Ácida,Tl(HSO₄)₃,Sulfato ácido tálico,Hidrogenosulfato de talio (III),Tris[hidrogenotetraoxosulfato (VI)] de talio (III)
+Oxosal Ácida,Tl(H₂AsO₄)₃,Arseniato diácido tálico,Dihidrogenoarseniato de talio (III),Tris[dihidrogenotetraoxoarseniato (V)] de talio (III)
+Oxosal Ácida,Tl(HCrO₄)₃,Cromato ácido tálico,Hidrogenocromato de talio (III),Tris[hidrogenotetraoxocromato (VI)] de talio (III)
+Oxosal Ácida,Ti(HSO₄)₂,Sulfato ácido de titanio (II),Hidrogenosulfato de titanio (II),Bis[hidrogenotetraoxosulfato (VI)] de titanio (II)
+Oxosal Ácida,TiHPO₄,Fosfato ácido de titanio (II),Hidrogenofosfato de titanio (II),Hidrogenotetraoxofosfato (V) de titanio (II)
+Oxosal Ácida,Ti(HSO₄)₄,Sulfato ácido de titanio (IV),Hidrogenosulfato de titanio (IV),Tetrakis[hidrogenotetraoxosulfato (VI)] de titanio (IV)
+Oxosal Ácida,V(HSO₄)₂,Sulfato ácido hipovanadoso,Hidrogenosulfato de vanadio (II),Bis[hidrogenotetraoxosulfato (VI)] de vanadio (II)
+Oxosal Ácida,VHPO₄,Fosfato ácido hipovanadoso,Hidrogenofosfato de vanadio (II),Hidrogenotetraoxofosfato (V) de vanadio (II)
+Oxosal Ácida,V(HSO₄)₃,Sulfato ácido vanadoso,Hidrogenosulfato de vanadio (III),Tris[hidrogenotetraoxosulfato (VI)] de vanadio (III)
+Oxosal Ácida,V(H₂AsO₄)₃,Arseniato diácido vanadoso,Dihidrogenoarseniato de vanadio (III),Tris[dihidrogenotetraoxoarseniato (V)] de vanadio (III)
+Oxosal Ácida,V(HCrO₄)₃,Cromato ácido vanadoso,Hidrogenocromato de vanadio (III),Tris[hidrogenotetraoxocromato (VI)] de vanadio (III)
+Oxosal Ácida,V(H₂PO₄)₄,Fosfato diácido de vanadio (IV),Dihidrogenofosfato de vanadio (IV),Tetrakis[dihidrogenotetraoxofosfato (V)] de vanadio (IV)
+Oxosal Ácida,V(H₂PO₄)₅,Fosfato diácido de vanadio (V),Dihidrogenofosfato de vanadio (V),Pentakis[dihidrogenotetraoxofosfato (V)] de vanadio (V)
+Sal ácida,Ti(HS)₂,Sulfuro ácido hipotitanioso,Hidrogenosulfuro de titanio(II),Bis(hidrogenosulfuro) de titanio
+Sal ácida,AgHS,Sulfuro ácido argéntico,Hidrogenosulfuro de plata,Hidrogenosulfuro de plata
+Sal ácida,AuHS,Sulfuro ácido auroso,Hidrogenosulfuro de oro(I),Hidrogenosulfuro de oro
+Sal ácida,CsHS,Sulfuro ácido césico,Hidrogenosulfuro de cesio,Hidrogenosulfuro de cesio
+Sal ácida,CuHS,Sulfuro ácido cuproso,Hidrogenosulfuro de cobre(I),Hidrogenosulfuro de cobre
+Sal ácida,FrHS,Sulfuro ácido fráncico,Hidrogenosulfuro de francio,Hidrogenosulfuro de francio
+Sal ácida,Hg₂(HS)₂,Sulfuro ácido mercurioso,Hidrogenosulfuro de mercurio(I),Bis(hidrogenosulfuro) de dimercurio
+Sal ácida,KHS,Sulfuro ácido potásico,Hidrogenosulfuro de potasio,Hidrogenosulfuro de potasio
+Sal ácida,LiHS,Sulfuro ácido lítico,Hidrogenosulfuro de litio,Hidrogenosulfuro de litio
+Sal ácida,NaHS,Sulfuro ácido sódico,Hidrogenosulfuro de sodio,Hidrogenosulfuro de sodio
+Sal ácida,RbHS,Sulfuro ácido rubídico,Hidrogenosulfuro de rubidio,Hidrogenosulfuro de rubidio
+Sal ácida,TlHS,Sulfuro ácido talioso,Hidrogenosulfuro de talio(I),Hidrogenosulfuro de talio
+Sal ácida,Ba(HS)₂,Sulfuro ácido bárico,Hidrogenosulfuro de bario,Bis(hidrogenosulfuro) de bario
+Sal ácida,Be(HS)₂,Sulfuro ácido berílico,Hidrogenosulfuro de berilio,Bis(hidrogenosulfuro) de berilio
+Sal ácida,Ca(HS)₂,Sulfuro ácido cálcico,Hidrogenosulfuro de calcio,Bis(hidrogenosulfuro) de calcio
+Sal ácida,Cd(HS)₂,Sulfuro ácido cádmico,Hidrogenosulfuro de cadmio,Bis(hidrogenosulfuro) de cadmio
+Sal ácida,Co(HS)₂,Sulfuro ácido cobaltoso,Hidrogenosulfuro de cobalto(II),Bis(hidrogenosulfuro) de cobalto
+Sal ácida,Cr(HS)₂,Sulfuro ácido cromoso,Hidrogenosulfuro de cromo(II),Bis(hidrogenosulfuro) de cromo
+Sal ácida,Cu(HS)₂,Sulfuro ácido cúprico,Hidrogenosulfuro de cobre(II),Bis(hidrogenosulfuro) de cobre
+Sal ácida,Fe(HS)₂,Sulfuro ácido ferroso,Hidrogenosulfuro de hierro(II),Bis(hidrogenosulfuro) de hierro
+Sal ácida,Hg(HS)₂,Sulfuro ácido mercúrico,Hidrogenosulfuro de mercurio(II),Bis(hidrogenosulfuro) de mercurio
+Sal ácida,Mg(HS)₂,Sulfuro ácido magnésico,Hidrogenosulfuro de magnesio,Bis(hidrogenosulfuro) de magnesio
+Sal ácida,Mn(HS)₂,Sulfuro ácido manganoso,Hidrogenosulfuro de manganeso(II),Bis(hidrogenosulfuro) de manganeso
+Sal ácida,Ni(HS)₂,Sulfuro ácido niqueloso,Hidrogenosulfuro de níquel(II),Bis(hidrogenosulfuro) de níquel
+Sal ácida,Pb(HS)₂,Sulfuro ácido plumboso,Hidrogenosulfuro de plomo(II),Bis(hidrogenosulfuro) de plomo
+Sal ácida,Pd(HS)₂,Sulfuro ácido paladioso,Hidrogenosulfuro de paladio(II),Bis(hidrogenosulfuro) de paladio
+Sal ácida,Pt(HS)₂,Sulfuro ácido platinoso,Hidrogenosulfuro de platino(II),Bis(hidrogenosulfuro) de platino
+Sal ácida,Ra(HS)₂,Sulfuro ácido radico,Hidrogenosulfuro de radio,Bis(hidrogenosulfuro) de radio
+Sal ácida,Sn(HS)₂,Sulfuro ácido estannoso,Hidrogenosulfuro de estaño(II),Bis(hidrogenosulfuro) de estaño
+Sal ácida,Sr(HS)₂,Sulfuro ácido estróntico,Hidrogenosulfuro de estroncio,Bis(hidrogenosulfuro) de estroncio
+Sal ácida,V(HS)₂,Sulfuro ácido hipovanadoso,Hidrogenosulfuro de vanadio(II),Bis(hidrogenosulfuro) de vanadio
+Sal ácida,Zn(HS)₂,Sulfuro ácido cíncico,Hidrogenosulfuro de cinc,Bis(hidrogenosulfuro) de cinc
+Sal ácida,Al(HS)₃,Sulfuro ácido alumínico,Hidrogenosulfuro de aluminio,Tris(hidrogenosulfuro) de aluminio
+Sal ácida,Au(HS)₃,Sulfuro ácido áurico,Hidrogenosulfuro de oro(III),Tris(hidrogenosulfuro) de oro
+Sal ácida,Co(HS)₃,Sulfuro ácido cobáltico,Hidrogenosulfuro de cobalto(III),Tris(hidrogenosulfuro) de cobalto
+Sal ácida,Cr(HS)₃,Sulfuro ácido crómico,Hidrogenosulfuro de cromo(III),Tris(hidrogenosulfuro) de cromo
+Sal ácida,Fe(HS)₃,Sulfuro ácido férrico,Hidrogenosulfuro de hierro(III),Tris(hidrogenosulfuro) de hierro
+Sal ácida,Ga(HS)₃,Sulfuro ácido gálico,Hidrogenosulfuro de galio,Tris(hidrogenosulfuro) de galio
+Sal ácida,In(HS)₃,Sulfuro ácido índico,Hidrogenosulfuro de indio,Tris(hidrogenosulfuro) de indio
+Sal ácida,Mn(HS)₃,Sulfuro ácido mangánico,Hidrogenosulfuro de manganeso(III),Tris(hidrogenosulfuro) de manganeso
+Sal ácida,Ni(HS)₃,Sulfuro ácido niquélico,Hidrogenosulfuro de níquel(III),Tris(hidrogenosulfuro) de níquel
+Sal ácida,Sc(HS)₃,Sulfuro ácido escandico,Hidrogenosulfuro de escandio,Tris(hidrogenosulfuro) de escandio
+Sal ácida,Tl(HS)₃,Sulfuro ácido tálico,Hidrogenosulfuro de talio(III),Tris(hidrogenosulfuro) de talio
+Sal ácida,V(HS)₃,Sulfuro ácido vanadoso,Hidrogenosulfuro de vanadio(III),Tris(hidrogenosulfuro) de vanadio
+Sal ácida,Mn(HS)₄,Sulfuro ácido permangánico,Hidrogenosulfuro de manganeso(IV),Tetrakis(hidrogenosulfuro) de manganeso
+Sal ácida,Pb(HS)₄,Sulfuro ácido plúmbico,Hidrogenosulfuro de plomo(IV),Tetrakis(hidrogenosulfuro) de plomo
+Sal ácida,Pd(HS)₄,Sulfuro ácido paládico,Hidrogenosulfuro de paladio(IV),Tetrakis(hidrogenosulfuro) de paladio
+Sal ácida,Pt(HS)₄,Sulfuro ácido platínico,Hidrogenosulfuro de platino(IV),Tetrakis(hidrogenosulfuro) de platino
+Sal ácida,Sn(HS)₄,Sulfuro ácido estánnico,Hidrogenosulfuro de estaño(IV),Tetrakis(hidrogenosulfuro) de estaño
+Sal ácida,V(HS)₄,Sulfuro ácido vanádico,Hidrogenosulfuro de vanadio(IV),Tetrakis(hidrogenosulfuro) de vanadio
+Sal ácida,V(HS)₅,Sulfuro ácido pervanádico,Hidrogenosulfuro de vanadio(V),Pentakis(hidrogenosulfuro) de vanadio
+Sal ácida,Cr(HS)₆,Sulfuro ácido percómico,Hidrogenosulfuro de cromo(VI),Hexakis(hidrogenosulfuro) de cromo
+Sal ácida,Ti(HS)₄,Sulfuro ácido titánico,Hidrogenosulfuro de titanio(IV),Tetrakis(hidrogenosulfuro) de titanio
+Sal ácida,AgHSe,Seleniuro ácido argéntico,Hidrogenoseleniuro de plata,Hidrogenoseleniuro de plata
+Sal ácida,AuHSe,Seleniuro ácido auroso,Hidrogenoseleniuro de oro(I),Hidrogenoseleniuro de oro
+Sal ácida,CsHSe,Seleniuro ácido césico,Hidrogenoseleniuro de cesio,Hidrogenoseleniuro de cesio
+Sal ácida,CuHSe,Seleniuro ácido cuproso,Hidrogenoseleniuro de cobre(I),Hidrogenoseleniuro de cobre
+Sal ácida,FrHSe,Seleniuro ácido fráncico,Hidrogenoseleniuro de francio,Hidrogenoseleniuro de francio
+Sal ácida,Hg₂(HSe)₂,Seleniuro ácido mercurioso,Hidrogenoseleniuro de mercurio(I),Bis(hidrogenoseleniuro) de dimercurio
+Sal ácida,KHSe,Seleniuro ácido potásico,Hidrogenoseleniuro de potasio,Hidrogenoseleniuro de potasio
+Sal ácida,LiHSe,Seleniuro ácido lítico,Hidrogenoseleniuro de litio,Hidrogenoseleniuro de litio
+Sal ácida,NaHSe,Seleniuro ácido sódico,Hidrogenoseleniuro de sodio,Hidrogenoseleniuro de sodio
+Sal ácida,RbHSe,Seleniuro ácido rubídico,Hidrogenoseleniuro de rubidio,Hidrogenoseleniuro de rubidio
+Sal ácida,TlHSe,Seleniuro ácido talioso,Hidrogenoseleniuro de talio(I),Hidrogenoseleniuro de talio
+Sal ácida,Ba(HSe)₂,Seleniuro ácido bárico,Hidrogenoseleniuro de bario,Bis(hidrogenoseleniuro) de bario
+Sal ácida,Be(HSe)₂,Seleniuro ácido berílico,Hidrogenoseleniuro de berilio,Bis(hidrogenoseleniuro) de berilio
+Sal ácida,Ca(HSe)₂,Seleniuro ácido cálcico,Hidrogenoseleniuro de calcio,Bis(hidrogenoseleniuro) de calcio
+Sal ácida,Cd(HSe)₂,Seleniuro ácido cádmico,Hidrogenoseleniuro de cadmio,Bis(hidrogenoseleniuro) de cadmio
+Sal ácida,Co(HSe)₂,Seleniuro ácido cobaltoso,Hidrogenoseleniuro de cobalto(II),Bis(hidrogenoseleniuro) de cobalto
+Sal ácida,Cr(HSe)₂,Seleniuro ácido cromoso,Hidrogenoseleniuro de cromo(II),Bis(hidrogenoseleniuro) de cromo
+Sal ácida,Cu(HSe)₂,Seleniuro ácido cúprico,Hidrogenoseleniuro de cobre(II),Bis(hidrogenoseleniuro) de cobre
+Sal ácida,Fe(HSe)₂,Seleniuro ácido ferroso,Hidrogenoseleniuro de hierro(II),Bis(hidrogenoseleniuro) de hierro
+Sal ácida,Hg(HSe)₂,Seleniuro ácido mercúrico,Hidrogenoseleniuro de mercurio(II),Bis(hidrogenoseleniuro) de mercurio
+Sal ácida,Mg(HSe)₂,Seleniuro ácido magnésico,Hidrogenoseleniuro de magnesio,Bis(hidrogenoseleniuro) de magnesio
+Sal ácida,Mn(HSe)₂,Seleniuro ácido manganoso,Hidrogenoseleniuro de manganeso(II),Bis(hidrogenoseleniuro) de manganeso
+Sal ácida,Ni(HSe)₂,Seleniuro ácido niqueloso,Hidrogenoseleniuro de níquel(II),Bis(hidrogenoseleniuro) de níquel
+Sal ácida,Pb(HSe)₂,Seleniuro ácido plumboso,Hidrogenoseleniuro de plomo(II),Bis(hidrogenoseleniuro) de plomo
+Sal ácida,Pd(HSe)₂,Seleniuro ácido paladioso,Hidrogenoseleniuro de paladio(II),Bis(hidrogenoseleniuro) de paladio
+Sal ácida,Pt(HSe)₂,Seleniuro ácido platinoso,Hidrogenoseleniuro de platino(II),Bis(hidrogenoseleniuro) de platino
+Sal ácida,Ra(HSe)₂,Seleniuro ácido radico,Hidrogenoseleniuro de radio,Bis(hidrogenoseleniuro) de radio
+Sal ácida,Sn(HSe)₂,Seleniuro ácido estannoso,Hidrogenoseleniuro de estaño(II),Bis(hidrogenoseleniuro) de estaño
+Sal ácida,Sr(HSe)₂,Seleniuro ácido estróntico,Hidrogenoseleniuro de estroncio,Bis(hidrogenoseleniuro) de estroncio
+Sal ácida,Ti(HSe)₂,Seleniuro ácido hipotitanioso,Hidrogenoseleniuro de titanio(II),Bis(hidrogenoseleniuro) de titanio
+Sal ácida,V(HSe)₂,Seleniuro ácido hipovanadoso,Hidrogenoseleniuro de vanadio(II),Bis(hidrogenoseleniuro) de vanadio
+Sal ácida,Zn(HSe)₂,Seleniuro ácido cíncico,Hidrogenoseleniuro de cinc,Bis(hidrogenoseleniuro) de cinc
+Sal ácida,Al(HSe)₃,Seleniuro ácido alumínico,Hidrogenoseleniuro de aluminio,Tris(hidrogenoseleniuro) de aluminio
+Sal ácida,Au(HSe)₃,Seleniuro ácido áurico,Hidrogenoseleniuro de oro(III),Tris(hidrogenoseleniuro) de oro
+Sal ácida,Co(HSe)₃,Seleniuro ácido cobáltico,Hidrogenoseleniuro de cobalto(III),Tris(hidrogenoseleniuro) de cobalto
+Sal ácida,Cr(HSe)₃,Seleniuro ácido crómico,Hidrogenoseleniuro de cromo(III),Tris(hidrogenoseleniuro) de cromo
+Sal ácida,Fe(HSe)₃,Seleniuro ácido férrico,Hidrogenoseleniuro de hierro(III),Tris(hidrogenoseleniuro) de hierro
+Sal ácida,Ga(HSe)₃,Seleniuro ácido gálico,Hidrogenoseleniuro de galio,Tris(hidrogenoseleniuro) de galio
+Sal ácida,In(HSe)₃,Seleniuro ácido índico,Hidrogenoseleniuro de indio,Tris(hidrogenoseleniuro) de indio
+Sal ácida,Mn(HSe)₃,Seleniuro ácido mangánico,Hidrogenoseleniuro de manganeso(III),Tris(hidrogenoseleniuro) de manganeso
+Sal ácida,Ni(HSe)₃,Seleniuro ácido niquélico,Hidrogenoseleniuro de níquel(III),Tris(hidrogenoseleniuro) de níquel
+Sal ácida,Sc(HSe)₃,Seleniuro ácido escandico,Hidrogenoseleniuro de escandio,Tris(hidrogenoseleniuro) de escandio
+Sal ácida,Ti(HSe)₄,Seleniuro ácido titánico,Hidrogenoseleniuro de titanio(IV),Tetrakis(hidrogenoseleniuro) de titanio
+Sal ácida,Tl(HSe)₃,Seleniuro ácido tálico,Hidrogenoseleniuro de talio(III),Tris(hidrogenoseleniuro) de talio
+Sal ácida,V(HSe)₃,Seleniuro ácido vanadoso,Hidrogenoseleniuro de vanadio(III),Tris(hidrogenoseleniuro) de vanadio
+Sal ácida,Mn(HSe)₄,Seleniuro ácido permangánico,Hidrogenoseleniuro de manganeso(IV),Tetrakis(hidrogenoseleniuro) de manganeso
+Sal ácida,Pb(HSe)₄,Seleniuro ácido plúmbico,Hidrogenoseleniuro de plomo(IV),Tetrakis(hidrogenoseleniuro) de plomo
+Sal ácida,Pd(HSe)₄,Seleniuro ácido paládico,Hidrogenoseleniuro de paladio(IV),Tetrakis(hidrogenoseleniuro) de paladio
+Sal ácida,Pt(HSe)₄,Seleniuro ácido platínico,Hidrogenoseleniuro de platino(IV),Tetrakis(hidrogenoseleniuro) de platino
+Sal ácida,Sn(HSe)₄,Seleniuro ácido estánnico,Hidrogenoseleniuro de estaño(IV),Tetrakis(hidrogenoseleniuro) de estaño
+Sal ácida,V(HSe)₄,Seleniuro ácido vanádico,Hidrogenoseleniuro de vanadio(IV),Tetrakis(hidrogenoseleniuro) de vanadio
+Sal ácida,V(HSe)₅,Seleniuro ácido pervanádico,Hidrogenoseleniuro de vanadio(V),Pentakis(hidrogenoseleniuro) de vanadio
+Sal ácida,Cr(HSe)₆,Seleniuro ácido percómico,Hidrogenoseleniuro de cromo(VI),Hexakis(hidrogenoseleniuro) de cromo
+Sal ácida,AgHTe,Telururo ácido argéntico,Hidrogenotelururo de plata,Hidrogenotelururo de plata
+Sal ácida,AuHTe,Telururo ácido auroso,Hidrogenotelururo de oro(I),Hidrogenotelururo de oro
+Sal ácida,CsHTe,Telururo ácido césico,Hidrogenotelururo de cesio,Hidrogenotelururo de cesio
+Sal ácida,CuHTe,Telururo ácido cuproso,Hidrogenotelururo de cobre(I),Hidrogenotelururo de cobre
+Sal ácida,FrHTe,Telururo ácido fráncico,Hidrogenotelururo de francio,Hidrogenotelururo de francio
+Sal ácida,Hg₂(HTe)₂,Telururo ácido mercurioso,Hidrogenotelururo de mercurio(I),Bis(hidrogenotelururo) de dimercurio
+Sal ácida,KHTe,Telururo ácido potásico,Hidrogenotelururo de potasio,Hidrogenotelururo de potasio
+Sal ácida,LiHTe,Telururo ácido lítico,Hidrogenotelururo de litio,Hidrogenotelururo de litio
+Sal ácida,NaHTe,Telururo ácido sódico,Hidrogenotelururo de sodio,Hidrogenotelururo de sodio
+Sal ácida,RbHTe,Telururo ácido rubídico,Hidrogenotelururo de rubidio,Hidrogenotelururo de rubidio
+Sal ácida,TlHTe,Telururo ácido talioso,Hidrogenotelururo de talio(I),Hidrogenotelururo de talio
+Sal ácida,Ba(HTe)₂,Telururo ácido bárico,Hidrogenotelururo de bario,Bis(hidrogenotelururo) de bario
+Sal ácida,Be(HTe)₂,Telururo ácido berílico,Hidrogenotelururo de berilio,Bis(hidrogenotelururo) de berilio
+Sal ácida,Ca(HTe)₂,Telururo ácido cálcico,Hidrogenotelururo de calcio,Bis(hidrogenotelururo) de calcio
+Sal ácida,Cd(HTe)₂,Telururo ácido cádmico,Hidrogenotelururo de cadmio,Bis(hidrogenotelururo) de cadmio
+Sal ácida,Co(HTe)₂,Telururo ácido cobaltoso,Hidrogenotelururo de cobalto(II),Bis(hidrogenotelururo) de cobalto
+Sal ácida,Cr(HTe)₂,Telururo ácido cromoso,Hidrogenotelururo de cromo(II),Bis(hidrogenotelururo) de cromo
+Sal ácida,Cu(HTe)₂,Telururo ácido cúprico,Hidrogenotelururo de cobre(II),Bis(hidrogenotelururo) de cobre
+Sal ácida,Fe(HTe)₂,Telururo ácido ferroso,Hidrogenotelururo de hierro(II),Bis(hidrogenotelururo) de hierro
+Sal ácida,Hg(HTe)₂,Telururo ácido mercúrico,Hidrogenotelururo de mercurio(II),Bis(hidrogenotelururo) de mercurio
+Sal ácida,Mg(HTe)₂,Telururo ácido magnésico,Hidrogenotelururo de magnesio,Bis(hidrogenotelururo) de magnesio
+Sal ácida,Mn(HTe)₂,Telururo ácido manganoso,Hidrogenotelururo de manganeso(II),Bis(hidrogenotelururo) de manganeso
+Sal ácida,Ni(HTe)₂,Telururo ácido niqueloso,Hidrogenotelururo de níquel(II),Bis(hidrogenotelururo) de níquel
+Sal ácida,Pb(HTe)₂,Telururo ácido plumboso,Hidrogenotelururo de plomo(II),Bis(hidrogenotelururo) de plomo
+Sal ácida,Pd(HTe)₂,Telururo ácido paladioso,Hidrogenotelururo de paladio(II),Bis(hidrogenotelururo) de paladio
+Sal ácida,Pt(HTe)₂,Telururo ácido platinoso,Hidrogenotelururo de platino(II),Bis(hidrogenotelururo) de platino
+Sal ácida,Ra(HTe)₂,Telururo ácido radico,Hidrogenotelururo de radio,Bis(hidrogenotelururo) de radio
+Sal ácida,Sn(HTe)₂,Telururo ácido estannoso,Hidrogenotelururo de estaño(II),Bis(hidrogenotelururo) de estaño
+Sal ácida,Sr(HTe)₂,Telururo ácido estróntico,Hidrogenotelururo de estroncio,Bis(hidrogenotelururo) de estroncio
+Sal ácida,Ti(HTe)₂,Telururo ácido hipotitanioso,Hidrogenotelururo de titanio(II),Bis(hidrogenotelururo) de titanio
+Sal ácida,V(HTe)₂,Telururo ácido hipovanadoso,Hidrogenotelururo de vanadio(II),Bis(hidrogenotelururo) de vanadio
+Sal ácida,Zn(HTe)₂,Telururo ácido cíncico,Hidrogenotelururo de cinc,Bis(hidrogenotelururo) de cinc
+Sal ácida,Al(HTe)₃,Telururo ácido alumínico,Hidrogenotelururo de aluminio,Tris(hidrogenotelururo) de aluminio
+Sal ácida,Au(HTe)₃,Telururo ácido áurico,Hidrogenotelururo de oro(III),Tris(hidrogenotelururo) de oro
+Sal ácida,Co(HTe)₃,Telururo ácido cobáltico,Hidrogenotelururo de cobalto(III),Tris(hidrogenotelururo) de cobalto
+Sal ácida,Cr(HTe)₃,Telururo ácido crómico,Hidrogenotelururo de cromo(III),Tris(hidrogenotelururo) de cromo
+Sal ácida,Fe(HTe)₃,Telururo ácido férrico,Hidrogenotelururo de hierro(III),Tris(hidrogenotelururo) de hierro
+Sal ácida,Ga(HTe)₃,Telururo ácido gálico,Hidrogenotelururo de galio,Tris(hidrogenotelururo) de galio
+Sal ácida,In(HTe)₃,Telururo ácido índico,Hidrogenotelururo de indio,Tris(hidrogenotelururo) de indio
+Sal ácida,Mn(HTe)₃,Telururo ácido mangánico,Hidrogenotelururo de manganeso(III),Tris(hidrogenotelururo) de manganeso
+Sal ácida,Ni(HTe)₃,Telururo ácido niquélico,Hidrogenotelururo de níquel(III),Tris(hidrogenotelururo) de níquel
+Sal ácida,Sc(HTe)₃,Telururo ácido escandico,Hidrogenotelururo de escandio,Tris(hidrogenotelururo) de escandio
+Sal ácida,Ti(HTe)₄,Telururo ácido titánico,Hidrogenotelururo de titanio(IV),Tetrakis(hidrogenotelururo) de titanio
+Sal ácida,Tl(HTe)₃,Telururo ácido tálico,Hidrogenotelururo de talio(III),Tris(hidrogenotelururo) de talio
+Sal ácida,V(HTe)₃,Telururo ácido vanadoso,Hidrogenotelururo de vanadio(III),Tris(hidrogenotelururo) de vanadio
+Sal ácida,Mn(HTe)₂,Telururo ácido permangánico,Hidrogenotelururo de manganeso(IV),Tetrakis(hidrogenotelururo) de manganeso
+Sal ácida,Pb(HTe)₂,Telururo ácido plúmbico,Hidrogenotelururo de plomo(IV),Tetrakis(hidrogenotelururo) de plomo
+Sal ácida,Pd(HTe)₂,Telururo ácido paládico,Hidrogenotelururo de paladio(IV),Tetrakis(hidrogenotelururo) de paladio
+Sal ácida,Pt(HTe)₂,Telururo ácido platínico,Hidrogenotelururo de platino(IV),Tetrakis(hidrogenotelururo) de platino
+Sal ácida,Sn(HTe)₂,Telururo ácido estánnico,Hidrogenotelururo de estaño(IV),Tetrakis(hidrogenotelururo) de estaño
+Sal ácida,V(HTe)₂,Telururo ácido vanádico,Hidrogenotelururo de vanadio(IV),Tetrakis(hidrogenotelururo) de vanadio
+Sal ácida,V(HTe)₅,Telururo ácido pervanádico,Hidrogenotelururo de vanadio(V),Pentakis(hidrogenotelururo) de vanadio
+Sal ácida,Cr(HTe)₃,Telururo ácido percómico,Hidrogenotelururo de cromo(VI),Hexakis(hidrogenotelururo) de cromo
