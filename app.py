@@ -219,4 +219,223 @@ with col_modo:
     modos_activos = st.pills("Modo", options=modos, selection_mode="multi", default=[], key="pills_modo")
 
 with col_cant:
-    opciones_cantidad = [5, 10, 15, 20, 25, "
+    # AQUÍ ESTABA EL ERROR: Asegúrate de que esta línea esté completa
+    opciones_cantidad = [5, 10, 15, 20, 25, "Sin fin"]
+    limite_preguntas = st.selectbox("¿Cuántos ejercicios?", options=opciones_cantidad, index=1) 
+
+if not modos_activos: 
+    st.info("👆 Selecciona el modo de juego.")
+    st.stop()
+
+st.markdown("---")
+
+# --- CONTROL DE CAMBIOS ---
+clave_config_actual = f"{clave_cat}_{limite_preguntas}"
+if 'config_prev' not in st.session_state: st.session_state.config_prev = clave_config_actual
+
+if st.session_state.config_prev != clave_config_actual:
+    st.session_state.aciertos = 0
+    st.session_state.fallos = 0
+    st.session_state.stats_familia = {}
+    st.session_state.config_prev = clave_config_actual
+    if 'pregunta' in st.session_state: del st.session_state['pregunta']
+    st.session_state.estado_fase = 'respondiendo'
+
+
+# --- GAME OVER LOGIC (PANTALLA FINAL) ---
+total_actual = st.session_state.get('aciertos', 0) + st.session_state.get('fallos', 0)
+juego_terminado = False
+
+if isinstance(limite_preguntas, int):
+    st.caption(f"📝 Pregunta {total_actual + 1} de {limite_preguntas}")
+    st.progress(min(total_actual / limite_preguntas, 1.0))
+    if total_actual >= limite_preguntas and st.session_state.estado_fase == 'respondiendo':
+        juego_terminado = True
+else:
+    st.caption(f"♾️ Modo Sin Fin | Llevas {total_actual} ejercicios")
+
+if juego_terminado:
+    st.balloons()
+    nota_final = int((aciertos / total_actual) * 10) if total_actual > 0 else 0
+    
+    if nota_final >= 9: mensaje = "🏆 ¡EXCELENTE!"
+    elif nota_final >= 7: mensaje = "👏 ¡MUY BIEN!"
+    elif nota_final >= 5: mensaje = "👍 APROBADO"
+    else: mensaje = "💪 ¡A SEGUIR PRACTICANDO!"
+
+    st.markdown(f"""
+    <div class='resultado-box'>
+        <h2>🏁 ¡Prueba Finalizada!</h2>
+        <div class='nota-final'>{nota_final}/10</div>
+        <p>{mensaje}</p>
+        <p>Total Aciertos: <b>{aciertos}</b> / {total_actual}</p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    st.subheader("📋 Desglose por Tipo")
+    if st.session_state.stats_familia:
+        datos_finales = []
+        for fam, datos in st.session_state.stats_familia.items():
+            pct = int((datos['aciertos'] / datos['total']) * 100) if datos['total'] > 0 else 0
+            datos_finales.append({
+                "Tipo": fam,
+                "✅ Aciertos": datos['aciertos'],
+                "📝 Intentos": datos['total'],
+                "% Éxito": f"{pct}%"
+            })
+        st.dataframe(pd.DataFrame(datos_finales), hide_index=True, use_container_width=True)
+
+    if st.button("🔄 Jugar de nuevo", type="primary"):
+        reiniciar_todo()
+    st.stop() 
+
+# --- INICIALIZACIÓN SEGURA ---
+if 'pregunta' not in st.session_state or 'sis_elegido' not in st.session_state:
+    nueva_pregunta()
+
+# --- LÓGICA DE PANTALLA ---
+
+# A) MOSTRAR FALLO ANTERIOR
+if st.session_state.estado_fase == 'mostrar_fallo':
+    datos = st.session_state.datos_fallo
+    
+    st.subheader("❌ Respuesta Incorrecta")
+    
+    # Caja visual del fallo
+    st.markdown(f"""
+    <div class='question-box'>
+        <p style='color:#555; margin-bottom:5px;'>La pregunta era:</p>
+        <div class='big-text'>{datos['pregunta']}</div>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    st.markdown(f"""
+    <div class='fail-box'>
+        <p><b>Tu respuesta:</b> {datos['usuario']}</p>
+        <hr style='margin:10px 0; opacity:0.3;'>
+        <p><b>✅ Solución Correcta:</b> <span style='font-size:1.2em;'>{datos['solucion']}</span></p>
+    </div>
+    """, unsafe_allow_html=True)
+    
+    if st.button("➡️ Siguiente Pregunta", type="primary"):
+        nueva_pregunta()
+        st.rerun()
+
+# B) MOSTRAR PREGUNTA (Juego)
+else:
+    # Verificación extra por si acaso
+    if 'pregunta' not in st.session_state: nueva_pregunta(); st.rerun()
+
+    row = st.session_state.pregunta
+    familia_actual = row['COMPUESTO']
+    modo = st.session_state.modo
+    
+    # Extraer sistema con seguridad
+    if 'sis_elegido' in st.session_state:
+        col_sis, nom_sis = st.session_state.sis_elegido
+    else:
+        nueva_pregunta()
+        st.rerun()
+
+    input_key = f"resp_{st.session_state.contador_preguntas}"
+
+    c1, c2 = st.columns([4, 1])
+    with c2:
+        if st.button("⏭️"): nueva_pregunta(); st.rerun()
+
+    # === FORMULAR ===
+    if modo == "Formular (Nombre ➡️ Fórmula)":
+        nombre_preg = row[col_sis]
+        
+        with c1:
+            # HTML ESTRUCTURADO Y LIMPIO
+            st.markdown(f"""
+            <div class='question-box'>
+                <div class='sub-info'>Escribe la fórmula de:</div>
+                <div class='big-text'>{nombre_preg}</div>
+                <div class='sub-info' style='margin-top:10px; font-weight:bold; color:#666;'>({nom_sis})</div>
+            </div>
+            """, unsafe_allow_html=True)
+
+        with st.form("f1"):
+            user_input = st.text_input("Tu respuesta:", autocomplete="off", key=input_key, placeholder="Ej: H2O")
+            check = st.form_submit_button("Comprobar")
+            
+            if check:
+                raw = user_input.strip()
+                visual_user = embellecer_formula(raw)
+                correcta_orig = str(row['Fórmula']).strip()
+                correcta_clean = limpiar_subindices(correcta_orig)
+                
+                if raw == correcta_clean or raw == correcta_orig:
+                    st.balloons()
+                    st.success(f"¡CORRECTO! 🎉")
+                    st.session_state.aciertos += 1
+                    actualizar_stats(familia_actual, True)
+                    msg = st.toast("Siguiente...", icon="⏭️")
+                    time.sleep(1.2)
+                    nueva_pregunta()
+                    st.rerun()
+                else:
+                    st.session_state.fallos += 1
+                    actualizar_stats(familia_actual, False)
+                    st.session_state.datos_fallo = {
+                        "pregunta": nombre_preg,
+                        "usuario": visual_user if visual_user else "(Vacío)",
+                        "solucion": correcta_orig
+                    }
+                    st.session_state.estado_fase = 'mostrar_fallo'
+                    st.rerun()
+
+    # === NOMBRAR ===
+    else: 
+        form_preg = row['Fórmula']
+        with c1:
+            st.markdown(f"""
+            <div class='question-box'>
+                <div class='sub-info'>Nombra el compuesto:</div>
+                <div class='big-text'>{form_preg}</div>
+                <div class='sub-info' style='margin-top:10px; font-weight:bold; color:#d97706;'>⚠️ Usar {nom_sis}</div>
+            </div>
+            """, unsafe_allow_html=True)
+
+        with st.form("f2"):
+            user_input = st.text_input("Tu respuesta:", autocomplete="off", key=input_key)
+            col_b1, col_b2 = st.columns([1,1])
+            with col_b1: check = st.form_submit_button("Comprobar")
+            with col_b2: panico = st.checkbox("Me rindo (Ver solución)")
+
+            if check:
+                if panico:
+                    st.session_state.fallos += 1
+                    actualizar_stats(familia_actual, False)
+                    st.session_state.datos_fallo = {
+                        "pregunta": form_preg,
+                        "usuario": "Me he rendido 🏳️",
+                        "solucion": row[col_sis]
+                    }
+                    st.session_state.estado_fase = 'mostrar_fallo'
+                    st.rerun()
+                else:
+                    u_norm = normalizar_texto(user_input)
+                    c_norm = normalizar_texto(str(row[col_sis]))
+                    
+                    if u_norm == c_norm:
+                        st.balloons()
+                        st.success(f"¡CORRECTO! 🎉")
+                        st.session_state.aciertos += 1
+                        actualizar_stats(familia_actual, True)
+                        msg = st.toast("Siguiente...", icon="✅")
+                        time.sleep(1.2)
+                        nueva_pregunta()
+                        st.rerun()
+                    else:
+                        st.session_state.fallos += 1
+                        actualizar_stats(familia_actual, False)
+                        st.session_state.datos_fallo = {
+                            "pregunta": form_preg,
+                            "usuario": user_input if user_input else "(Vacío)",
+                            "solucion": row[col_sis]
+                        }
+                        st.session_state.estado_fase = 'mostrar_fallo'
+                        st.rerun()
