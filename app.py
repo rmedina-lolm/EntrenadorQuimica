@@ -270,7 +270,15 @@ if juego_terminado:
 # --- FUNCIONES DE LÓGICA ---
 def nueva_pregunta():
     try:
-        row = df_juego.sample(1).iloc[0]
+        # --- MODIFICACIÓN PARA EQUILIBRAR MIX ---
+        # En lugar de elegir una fila al azar de todo el montón (que favorece a las familias grandes),
+        # primero elegimos una familia al azar de las disponibles en la mezcla.
+        familias_disponibles = df_juego['COMPUESTO'].unique()
+        familia_azar = random.choice(familias_disponibles)
+        
+        # Ahora elegimos una pregunta SOLO de esa familia
+        row = df_juego[df_juego['COMPUESTO'] == familia_azar].sample(1).iloc[0]
+        # ----------------------------------------
         
         sistemas = [('Nomenclatura Tradicional', 'Tradicional'), ('Nomenclatura de Stock', 'Stock'), ('Nomenclatura Sistemática', 'Sistemática')]
         validos = []
@@ -290,7 +298,6 @@ def nueva_pregunta():
         
     except Exception as e:
         st.error(f"Error generando pregunta: {e}")
-
 # --- INICIALIZACIÓN SEGURA ---
 if 'pregunta' not in st.session_state or 'sis_elegido' not in st.session_state:
     nueva_pregunta()
