@@ -11,14 +11,14 @@ st.set_page_config(
     layout="centered"
 )
 
-# --- ESTILOS CSS (MEJORADOS PARA VISIBILIDAD) ---
+# --- ESTILOS CSS ---
 st.markdown("""
     <style>
     .stApp header {visibility: hidden;} 
     .stMultiSelect {margin-top: -10px;}
     div[data-testid="stPills"] {margin-bottom: 20px;}
     
-    /* Caja de Pregunta (Fondo blanco para asegurar contraste) */
+    /* Caja de Pregunta */
     .question-box {
         background-color: #ffffff;
         border: 2px solid #d1d5db;
@@ -32,7 +32,7 @@ st.markdown("""
     .big-text {
         font-size: 38px !important;
         font-weight: bold;
-        color: #1E88E5 !important; /* Azul fuerte */
+        color: #1E88E5 !important;
         margin: 0;
         font-family: sans-serif;
         line-height: 1.4;
@@ -48,7 +48,7 @@ st.markdown("""
     .resultado-box {
         padding: 30px;
         border-radius: 15px;
-        background-color: #f0fdf4; /* Verde muy claro */
+        background-color: #f0fdf4;
         border: 2px solid #bbf7d0;
         text-align: center;
         margin-bottom: 20px;
@@ -59,7 +59,7 @@ st.markdown("""
     .fail-box {
         padding: 20px;
         border-radius: 10px;
-        background-color: #FEF2F2; /* Rojo muy claro */
+        background-color: #FEF2F2;
         border: 2px solid #FECACA;
         margin-bottom: 15px;
         color: #991B1B;
@@ -90,7 +90,6 @@ def cargar_datos():
     try:
         df = pd.read_csv("formulacion.csv", sep=',') 
         cols = ['Fórmula', 'Nomenclatura Tradicional', 'Nomenclatura de Stock', 'Nomenclatura Sistemática', 'COMPUESTO']
-        # Limpieza básica
         df = df.dropna(subset=['Fórmula', 'COMPUESTO'])
         df['COMPUESTO'] = df['COMPUESTO'].str.strip()
         for col in cols:
@@ -104,11 +103,15 @@ def cargar_datos():
 df = cargar_datos()
 if df.empty: st.stop()
 
-# --- GESTIÓN DE VARIABLES DE ESTADO ---
+# --- GESTIÓN DE VARIABLES DE ESTADO (CORREGIDO) ---
+# Inicializamos TODO aquí para evitar AttributeError
+if 'aciertos' not in st.session_state: st.session_state.aciertos = 0
+if 'fallos' not in st.session_state: st.session_state.fallos = 0
 if 'stats_familia' not in st.session_state: st.session_state.stats_familia = {} 
 if 'contador_preguntas' not in st.session_state: st.session_state.contador_preguntas = 0
 if 'estado_fase' not in st.session_state: st.session_state.estado_fase = 'respondiendo' 
 if 'datos_fallo' not in st.session_state: st.session_state.datos_fallo = {}
+if 'config_prev' not in st.session_state: st.session_state.config_prev = ""
 
 def actualizar_stats(familia, es_acierto):
     if familia not in st.session_state.stats_familia:
@@ -126,41 +129,14 @@ def reiniciar_todo():
     if 'pregunta' in st.session_state: del st.session_state['pregunta']
     st.rerun()
 
-# --- FUNCIONES DE LÓGICA ---
-def nueva_pregunta():
-    # Selección segura
-    try:
-        row = df_juego.sample(1).iloc[0]
-        
-        # Validación de columnas
-        sistemas = [('Nomenclatura Tradicional', 'Tradicional'), ('Nomenclatura de Stock', 'Stock'), ('Nomenclatura Sistemática', 'Sistemática')]
-        validos = []
-        for col_name, display_name in sistemas:
-            if col_name in row and pd.notna(row[col_name]) and len(str(row[col_name]).strip()) > 1:
-                validos.append((col_name, display_name))
-        
-        if not validos:
-            # Si esta fila está rota, probamos otra recursivamente (con límite para no colgar)
-            nueva_pregunta()
-            return
-
-        st.session_state.pregunta = row
-        st.session_state.modo = random.choice(modos_activos)
-        st.session_state.sis_elegido = random.choice(validos)
-        st.session_state.contador_preguntas += 1
-        st.session_state.estado_fase = 'respondiendo'
-        
-    except Exception as e:
-        st.error(f"Error generando pregunta: {e}")
-
 # --- INTERFAZ PRINCIPAL ---
 st.title("🧪 Entrenador de Formulación")
 
 # --- BARRA LATERAL ---
 with st.sidebar:
     st.header("📊 Tu Progreso")
-    aciertos = st.session_state.get('aciertos', 0)
-    fallos = st.session_state.get('fallos', 0)
+    aciertos = st.session_state.aciertos
+    fallos = st.session_state.fallos
     total_intentos = aciertos + fallos
     
     if total_intentos > 0:
@@ -219,7 +195,6 @@ with col_modo:
     modos_activos = st.pills("Modo", options=modos, selection_mode="multi", default=[], key="pills_modo")
 
 with col_cant:
-    # AQUÍ ESTABA EL ERROR: Asegúrate de que esta línea esté completa
     opciones_cantidad = [5, 10, 15, 20, 25, "Sin fin"]
     limite_preguntas = st.selectbox("¿Cuántos ejercicios?", options=opciones_cantidad, index=1) 
 
@@ -230,8 +205,8 @@ if not modos_activos:
 st.markdown("---")
 
 # --- CONTROL DE CAMBIOS ---
+# Si cambia la configuración, reseteamos contadores
 clave_config_actual = f"{clave_cat}_{limite_preguntas}"
-if 'config_prev' not in st.session_state: st.session_state.config_prev = clave_config_actual
 
 if st.session_state.config_prev != clave_config_actual:
     st.session_state.aciertos = 0
@@ -242,13 +217,16 @@ if st.session_state.config_prev != clave_config_actual:
     st.session_state.estado_fase = 'respondiendo'
 
 
-# --- GAME OVER LOGIC (PANTALLA FINAL) ---
-total_actual = st.session_state.get('aciertos', 0) + st.session_state.get('fallos', 0)
+# --- GAME OVER LOGIC ---
+aciertos = st.session_state.aciertos
+fallos = st.session_state.fallos
+total_actual = aciertos + fallos
 juego_terminado = False
 
 if isinstance(limite_preguntas, int):
     st.caption(f"📝 Pregunta {total_actual + 1} de {limite_preguntas}")
     st.progress(min(total_actual / limite_preguntas, 1.0))
+    # Si ya hemos llegado al límite y NO estamos viendo un fallo pendiente
     if total_actual >= limite_preguntas and st.session_state.estado_fase == 'respondiendo':
         juego_terminado = True
 else:
@@ -289,6 +267,30 @@ if juego_terminado:
         reiniciar_todo()
     st.stop() 
 
+# --- FUNCIONES DE LÓGICA ---
+def nueva_pregunta():
+    try:
+        row = df_juego.sample(1).iloc[0]
+        
+        sistemas = [('Nomenclatura Tradicional', 'Tradicional'), ('Nomenclatura de Stock', 'Stock'), ('Nomenclatura Sistemática', 'Sistemática')]
+        validos = []
+        for col_name, display_name in sistemas:
+            if col_name in row and pd.notna(row[col_name]) and len(str(row[col_name]).strip()) > 1:
+                validos.append((col_name, display_name))
+        
+        if not validos:
+            nueva_pregunta()
+            return
+
+        st.session_state.pregunta = row
+        st.session_state.modo = random.choice(modos_activos)
+        st.session_state.sis_elegido = random.choice(validos)
+        st.session_state.contador_preguntas += 1
+        st.session_state.estado_fase = 'respondiendo'
+        
+    except Exception as e:
+        st.error(f"Error generando pregunta: {e}")
+
 # --- INICIALIZACIÓN SEGURA ---
 if 'pregunta' not in st.session_state or 'sis_elegido' not in st.session_state:
     nueva_pregunta()
@@ -301,7 +303,6 @@ if st.session_state.estado_fase == 'mostrar_fallo':
     
     st.subheader("❌ Respuesta Incorrecta")
     
-    # Caja visual del fallo
     st.markdown(f"""
     <div class='question-box'>
         <p style='color:#555; margin-bottom:5px;'>La pregunta era:</p>
@@ -323,14 +324,12 @@ if st.session_state.estado_fase == 'mostrar_fallo':
 
 # B) MOSTRAR PREGUNTA (Juego)
 else:
-    # Verificación extra por si acaso
     if 'pregunta' not in st.session_state: nueva_pregunta(); st.rerun()
 
     row = st.session_state.pregunta
     familia_actual = row['COMPUESTO']
     modo = st.session_state.modo
     
-    # Extraer sistema con seguridad
     if 'sis_elegido' in st.session_state:
         col_sis, nom_sis = st.session_state.sis_elegido
     else:
@@ -348,7 +347,6 @@ else:
         nombre_preg = row[col_sis]
         
         with c1:
-            # HTML ESTRUCTURADO Y LIMPIO
             st.markdown(f"""
             <div class='question-box'>
                 <div class='sub-info'>Escribe la fórmula de:</div>
@@ -377,7 +375,7 @@ else:
                     nueva_pregunta()
                     st.rerun()
                 else:
-                    st.session_state.fallos += 1
+                    st.session_state.fallos += 1  # Aquí daba el error, ahora ya no.
                     actualizar_stats(familia_actual, False)
                     st.session_state.datos_fallo = {
                         "pregunta": nombre_preg,
