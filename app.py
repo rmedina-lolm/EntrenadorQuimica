@@ -4,6 +4,7 @@ import random
 import unicodedata
 import time
 import smtplib
+import os  # <--- IMPORTANTE: Necesario para comprobar si existe la imagen
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
@@ -128,7 +129,7 @@ def cargar_datos():
                 df[col] = df[col].astype(str)
         return df
     except Exception as e:
-        st.error(f"Error crítico al cargar: {e}")
+        st.error(f"Error crítico al cargar CSV: {e}")
         return pd.DataFrame()
 
 df = cargar_datos()
@@ -175,11 +176,15 @@ def set_seleccion_unica(item_seleccionado):
 # --- INTERFAZ PRINCIPAL ---
 st.title("🧪 Entrenador de Formulación")
 
-# INSERTAR ESCUDO
-try:
+# --- CORRECCIÓN: CARGA SEGURA DE IMAGEN ---
+# Comprobamos si el archivo existe antes de intentar cargarlo
+if os.path.exists("image_0.png"):
     st.image("image_0.png", width=100)
-except FileNotFoundError:
-    pass
+else:
+    # Opcional: Mostrar un aviso solo si estamos depurando, o dejarlo en blanco
+    # st.warning("⚠️ No se encuentra 'image_0.png'. Sube el archivo al repositorio.")
+    pass 
+# -------------------------------------------
 
 # Mapeo de contenidos CSV vs Visualización
 cat_csv = df['COMPUESTO'].unique()
@@ -248,8 +253,6 @@ if st.session_state.estado_fase == 'configuracion':
                             on_change=set_seleccion_unica, 
                             args=(item,)
                         )
-                        # Nota: Si el usuario desmarca el seleccionado, el estado se mantiene en la lógica
-                        # visualmente pero validaremos abajo.
                     else:
                         # MODO NORMAL: Selección Múltiple
                         if st.checkbox(item, value=False, key=f"multi_{item}"):
