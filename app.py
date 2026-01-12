@@ -8,16 +8,23 @@ import time
 st.set_page_config(
     page_title="Formulación Inorgánica",
     page_icon="⚗️",
-    layout="centered"
+    layout="wide"  # Cambiamos a 'wide' para que las 3 columnas se vean bien
 )
 
 # --- ESTILOS CSS ---
 st.markdown("""
     <style>
     .stApp header {visibility: hidden;} 
-    .stMultiSelect {margin-top: -10px;}
-    div[data-testid="stPills"] {margin-bottom: 20px;}
+    div[data-testid="stPills"] {margin-bottom: 10px;}
     
+    /* Ajustes para las columnas del configurador */
+    div[data-testid="column"] {
+        background-color: #f8f9fa;
+        border-radius: 10px;
+        padding: 15px;
+        border: 1px solid #e9ecef;
+    }
+
     /* Caja de Pregunta */
     .question-box {
         background-color: #ffffff;
@@ -27,6 +34,9 @@ st.markdown("""
         text-align: center;
         margin-bottom: 20px;
         box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
     }
     
     .big-text {
@@ -52,6 +62,9 @@ st.markdown("""
         border: 2px solid #bbf7d0;
         text-align: center;
         margin-bottom: 20px;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
     }
     .nota-final { font-size: 50px; font-weight: bold; color: #15803d; }
     .mensaje-final { font-size: 24px; font-weight: bold; color: #166534; margin-top: 10px; }
@@ -64,6 +77,9 @@ st.markdown("""
         border: 2px solid #FECACA;
         margin-bottom: 15px;
         color: #991B1B;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
     }
     </style>
     """, unsafe_allow_html=True)
@@ -133,43 +149,25 @@ def reiniciar_todo():
 def mostrar_tabla_progreso():
     if st.session_state.stats_familia:
         st.markdown("---")
-        st.caption("📊 Estadísticas en tiempo real:")
-        
-        datos_tabla = []
-        for fam, datos in st.session_state.stats_familia.items():
-            fallos_fam = datos['total'] - datos['aciertos']
-            datos_tabla.append({
-                "Compuesto": fam,
-                "✅ Aciertos": datos['aciertos'],
-                "❌ Fallos": fallos_fam
-            })
-        
-        df_prog = pd.DataFrame(datos_tabla)
-        st.dataframe(df_prog, hide_index=True, use_container_width=True)
+        # Centramos la tabla usando columnas vacías a los lados
+        c_izq, c_cen, c_der = st.columns([1, 2, 1])
+        with c_cen:
+            st.caption("📊 Estadísticas en tiempo real:")
+            datos_tabla = []
+            for fam, datos in st.session_state.stats_familia.items():
+                fallos_fam = datos['total'] - datos['aciertos']
+                datos_tabla.append({
+                    "Compuesto": fam,
+                    "✅ Aciertos": datos['aciertos'],
+                    "❌ Fallos": fallos_fam
+                })
+            df_prog = pd.DataFrame(datos_tabla)
+            st.dataframe(df_prog, hide_index=True, use_container_width=True)
 
 # --- INTERFAZ PRINCIPAL ---
 st.title("🧪 Entrenador de Formulación")
 
-# --- BARRA LATERAL ---
-with st.sidebar:
-    st.header("Progreso Global")
-    aciertos = st.session_state.aciertos
-    fallos = st.session_state.fallos
-    total_intentos = aciertos + fallos
-    
-    if total_intentos > 0:
-        porcentaje = (aciertos / total_intentos)
-        st.progress(porcentaje)
-        st.write(f"**Nota:** {aciertos}/{total_intentos} ({int(porcentaje*100)}%)")
-    else:
-        st.info("Sin datos aún.")
-    
-    st.divider()
-    if st.button("🗑️ Reiniciar Sesión"):
-        reiniciar_todo()
-
-# --- 1. CONFIGURACIÓN DEL JUEGO ---
-st.write("**1. Elige el contenido:**")
+# --- MAPEO DE CATEGORÍAS ---
 orden = ["Óxidos", "Hidruros", "Hidróxidos", "Compuestos Binarios", "Sales Dobles", "Oxoácidos", "Oxosales", "Sales Ácidas", "Oxosales Ácidas"]
 cat_csv = df['COMPUESTO'].unique()
 mapa = {}
@@ -186,123 +184,156 @@ for real in cat_csv:
         cat_display.append(real)
         mapa[real] = real
 
-opciones_menu = ["🔀 Mezclar Prueba"] + cat_display
-seleccion = st.pills("Familia", options=opciones_menu, selection_mode="single", default=None, key="pills_familia")
+# --- CONFIGURADOR DE 3 COLUMNAS ---
+col1, col2, col3 = st.columns([1, 1.5, 1.5], gap="medium")
 
-if not seleccion:
-    st.info("👆 Selecciona primero un tipo de compuesto para empezar.")
+# COLUMNA 1: TIPO DE PRUEBA
+with col1:
+    st.subheader("1. Tipo")
+    tipo_prueba = st.radio(
+        "Selecciona tipo:",
+        options=["Práctica", "Prueba Mezcla", "Examen"],
+        label_visibility="collapsed"
+    )
+
+# COLUMNA 2: CONTENIDOS
+with col2:
+    st.subheader("2. Contenidos")
+    seleccion_contenidos = st.multiselect(
+        "Elige temas:",
+        options=cat_display,
+        default=cat_display[:1], # Por defecto el primero
+        label_visibility="collapsed",
+        placeholder="Elige uno o varios temas..."
+    )
+
+# COLUMNA 3: CONFIGURACIÓN
+with col3:
+    st.subheader("3. Configuración")
+    
+    # Fila interna para Modo y Cantidad
+    c3a, c3b = st.columns([2, 1])
+    with c3a:
+        modos = ["Nombrar", "Formular"] # Textos cortos para que quepan
+        modos_activos = st.pills("Modo", options=modos, selection_mode="multi", default=modos, key="pills_modo")
+    with c3b:
+        opciones_cantidad = [5, 10, 15, 20, 25, "∞"]
+        limite_preguntas = st.selectbox("Nº Ej.", options=opciones_cantidad, index=1, label_visibility="visible")
+
+    # Fila para Nomenclaturas
+    sistemas_opciones = ["Tradicional", "Stock", "Sistemática"]
+    sistemas_activos = st.multiselect("Nomenclaturas:", options=sistemas_opciones, default=sistemas_opciones)
+
+# --- VALIDACIONES DEL CONFIGURADOR ---
+if not seleccion_contenidos:
+    st.warning("⚠️ Por favor, selecciona al menos un tema en la columna central.")
     st.stop()
 
-if seleccion == "🔀 Mezclar Prueba":
-    mix = st.multiselect("Familias:", options=cat_display, default=cat_display[:3], label_visibility="collapsed")
-    if not mix: 
-        st.warning("Selecciona al menos una familia.")
-        st.stop()
-    filtros = [mapa[x] for x in mix]
-    df_juego = df[df['COMPUESTO'].isin(filtros)]
-    clave_cat = f"MIX_{'-'.join(mix)}"
-else:
-    filtro = mapa.get(seleccion, seleccion)
-    df_juego = df[df['COMPUESTO'] == filtro]
-    clave_cat = f"CAT_{seleccion}"
-
-# --- CONFIGURACIÓN DE PRACTICA ---
-st.write("**2. Configura tu práctica:**")
-
-# COLUMNA 1: MODO
-col_modo, col_cant = st.columns([2, 1])
-with col_modo:
-    modos = ["Nombrar (Fórmula ➡️ Nombre)", "Formular (Nombre ➡️ Fórmula)"]
-    modos_activos = st.pills("Modo de ejercicio:", options=modos, selection_mode="multi", default=[], key="pills_modo")
-
-# COLUMNA 2: CANTIDAD
-with col_cant:
-    opciones_cantidad = [5, 10, 15, 20, 25, "Sin fin"]
-    limite_preguntas = st.selectbox("¿Cuántos?", options=opciones_cantidad, index=1) 
-
-if not modos_activos: 
-    st.info("👆 Selecciona el modo de juego.")
+if not modos_activos:
+    st.warning("⚠️ Selecciona Nombrar o Formular.")
     st.stop()
 
-# NUEVO: SELECCIÓN DE SISTEMA DE NOMENCLATURA
-st.write("**3. Elige los sistemas:**")
-sistemas_opciones = ["Tradicional", "Stock", "Sistemática"]
+if not sistemas_activos:
+    st.warning("⚠️ Selecciona al menos un sistema de nomenclatura.")
+    st.stop()
+
+# --- PREPARACIÓN DE FILTROS ---
+# Convertimos la selección visual (con tildes) a los valores del CSV
+filtros_csv = [mapa[x] for x in seleccion_contenidos]
+df_juego = df[df['COMPUESTO'].isin(filtros_csv)]
+
+# Mapeo de sistemas
 mapa_sistemas = {
     "Tradicional": "Nomenclatura Tradicional",
     "Stock": "Nomenclatura de Stock",
     "Sistemática": "Nomenclatura Sistemática"
 }
 
-sistemas_activos = st.pills("Nomenclaturas permitidas:", options=sistemas_opciones, selection_mode="multi", default=sistemas_opciones, key="pills_sistemas")
-
-if not sistemas_activos:
-    st.warning("⚠️ Debes seleccionar al menos un sistema de nomenclatura.")
-    st.stop()
-
-st.markdown("---")
+# Traducimos modos cortos a largos para la lógica interna
+modos_logica = []
+if "Nombrar" in modos_activos: modos_logica.append("Nombrar (Fórmula ➡️ Nombre)")
+if "Formular" in modos_activos: modos_logica.append("Formular (Nombre ➡️ Fórmula)")
 
 # --- CONTROL DE CAMBIOS ---
-clave_config_actual = f"{clave_cat}_{limite_preguntas}_{''.join(sistemas_activos)}"
+# Creamos una clave única basada en TODA la configuración
+limite_str = "Inf" if limite_preguntas == "∞" else str(limite_preguntas)
+clave_config_actual = f"{tipo_prueba}_{'-'.join(seleccion_contenidos)}_{'-'.join(modos_activos)}_{limite_str}_{'-'.join(sistemas_activos)}"
 
 if st.session_state.config_prev != clave_config_actual:
     st.session_state.aciertos = 0
     st.session_state.fallos = 0
     st.session_state.stats_familia = {}
-    st.session_state.contador_preguntas = 0
     st.session_state.config_prev = clave_config_actual
     if 'pregunta' in st.session_state: del st.session_state['pregunta']
     st.session_state.estado_fase = 'respondiendo'
+    st.session_state.contador_preguntas = 0
 
 
-# --- GAME OVER LOGIC ---
-aciertos = st.session_state.aciertos
-fallos = st.session_state.fallos
-total_actual = aciertos + fallos
-juego_terminado = False
+# --- BARRA DE PROGRESO GLOBAL ---
+st.markdown("---")
+# Usamos un contenedor centrado para el juego
+contenedor_juego = st.container()
 
-if isinstance(limite_preguntas, int):
-    st.caption(f"📝 Pregunta {total_actual + 1} de {limite_preguntas}")
-    st.progress(min(total_actual / limite_preguntas, 1.0))
-    if total_actual >= limite_preguntas and st.session_state.estado_fase == 'respondiendo':
+with contenedor_juego:
+    aciertos = st.session_state.aciertos
+    fallos = st.session_state.fallos
+    total_actual = aciertos + fallos
+    juego_terminado = False
+    
+    # Lógica de fin de juego
+    limit_val = 999999 if limite_preguntas == "∞" else limite_preguntas
+    
+    if total_actual > 0:
+        col_prog, col_btn = st.columns([5, 1])
+        with col_prog:
+            if limite_preguntas != "∞":
+                progreso = min(total_actual / limit_val, 1.0)
+                st.progress(progreso)
+                st.caption(f"Pregunta {total_actual + 1} de {limit_val}")
+            else:
+                st.caption(f"Modo Infinito | Llevas {total_actual} ejercicios")
+        with col_btn:
+            if st.button("🔄 Reset"):
+                reiniciar_todo()
+
+    if total_actual >= limit_val and st.session_state.estado_fase == 'respondiendo':
         juego_terminado = True
-else:
-    st.caption(f"♾️ Modo Sin Fin | Llevas {total_actual} ejercicios")
 
-if juego_terminado:
-    st.balloons()
-    
-    porcentaje_final = (aciertos / total_actual * 100) if total_actual > 0 else 0
-    
-    if porcentaje_final >= 90: mensaje = "🌟 ¡Muy Bien!"
-    elif porcentaje_final >= 80: mensaje = "👍 Bien"
-    elif porcentaje_final >= 70: mensaje = "🎯 ¡Cerca del logro!"
-    elif porcentaje_final >= 50: mensaje = "🛠️ Aún en proceso"
-    else: mensaje = "📚 Necesitas practicar más"
+    if juego_terminado:
+        st.balloons()
+        porcentaje_final = (aciertos / total_actual * 100) if total_actual > 0 else 0
+        
+        if porcentaje_final >= 90: mensaje = "🌟 ¡Muy Bien!"
+        elif porcentaje_final >= 80: mensaje = "👍 Bien"
+        elif porcentaje_final >= 70: mensaje = "🎯 ¡Cerca del logro!"
+        elif porcentaje_final >= 50: mensaje = "🛠️ Aún en proceso"
+        else: mensaje = "📚 Necesitas practicar más"
 
-    st.markdown(f"""
-    <div class='resultado-box'>
-        <h2>🏁 ¡Prueba Finalizada!</h2>
-        <div class='nota-final'>{int(porcentaje_final)}%</div>
-        <div class='mensaje-final'>{mensaje}</div>
-        <p style='margin-top:10px;'>Total Aciertos: <b>{aciertos}</b> / {total_actual}</p>
-    </div>
-    """, unsafe_allow_html=True)
-    
-    mostrar_tabla_progreso()
+        st.markdown(f"""
+        <div class='resultado-box'>
+            <h2>🏁 ¡Prueba Finalizada!</h2>
+            <div class='nota-final'>{int(porcentaje_final)}%</div>
+            <div class='mensaje-final'>{mensaje}</div>
+            <p style='margin-top:10px;'>Total Aciertos: <b>{aciertos}</b> / {total_actual}</p>
+        </div>
+        """, unsafe_allow_html=True)
+        
+        mostrar_tabla_progreso()
 
-    if st.button("🔄 Jugar de nuevo", type="primary"):
-        reiniciar_todo()
-    st.stop() 
+        if st.button("🔄 Jugar de nuevo", type="primary"):
+            reiniciar_todo()
+        st.stop() 
 
 # --- FUNCIONES DE LÓGICA ---
 def nueva_pregunta():
     try:
+        # 1. Elegimos familia al azar de las seleccionadas (Balanceo)
         familias_disponibles = df_juego['COMPUESTO'].unique()
         familia_azar = random.choice(familias_disponibles)
         row = df_juego[df_juego['COMPUESTO'] == familia_azar].sample(1).iloc[0]
         
+        # 2. Filtramos columnas según nomenclatura elegida
         columnas_deseadas = [mapa_sistemas[s] for s in sistemas_activos]
-        
         todos_sistemas = [
             ('Nomenclatura Tradicional', 'Tradicional'), 
             ('Nomenclatura de Stock', 'Stock'), 
@@ -320,7 +351,7 @@ def nueva_pregunta():
             return
 
         st.session_state.pregunta = row
-        st.session_state.modo = random.choice(modos_activos)
+        st.session_state.modo = random.choice(modos_logica)
         st.session_state.sis_elegido = random.choice(validos)
         st.session_state.contador_preguntas += 1
         st.session_state.estado_fase = 'respondiendo'
