@@ -28,13 +28,6 @@ st.markdown("""
     .stApp header {visibility: hidden;} 
     div[data-testid="stPills"] {margin-bottom: 10px;}
     
-    /* Ajuste para centrar elementos */
-    .centered-radio {
-        display: flex;
-        justify_content: center;
-        margin-bottom: 20px;
-    }
-
     /* Caja de Pregunta */
     .question-box {
         background-color: #ffffff;
@@ -150,6 +143,9 @@ if 'estado_fase' not in st.session_state: st.session_state.estado_fase = 'config
 if 'datos_fallo' not in st.session_state: st.session_state.datos_fallo = {}
 if 'config_prev' not in st.session_state: st.session_state.config_prev = ""
 
+# VARIABLE ESPECIAL PARA SELECCIÓN ÚNICA
+if 'examen_seleccion_unica' not in st.session_state: st.session_state.examen_seleccion_unica = None
+
 def actualizar_stats(familia, es_acierto):
     if familia not in st.session_state.stats_familia:
         st.session_state.stats_familia[familia] = {'aciertos': 0, 'total': 0}
@@ -172,14 +168,18 @@ def mostrar_tabla_progreso(return_string=False):
         st.dataframe(pd.DataFrame(datos_tabla), hide_index=True, use_container_width=True)
     return ""
 
+# Función para controlar la selección única (tipo Radio Button)
+def set_seleccion_unica(item_seleccionado):
+    st.session_state.examen_seleccion_unica = item_seleccionado
+
 # --- INTERFAZ PRINCIPAL ---
 st.title("🧪 Entrenador de Formulación")
 
-# INSERTAR ESCUDO DEBAJO DEL TÍTULO
+# INSERTAR ESCUDO
 try:
     st.image("image_0.png", width=100)
 except FileNotFoundError:
-    st.error("El archivo de imagen 'image_0.png' no se encontró. Asegúrate de que esté en el mismo directorio.")
+    pass
 
 # Mapeo de contenidos CSV vs Visualización
 cat_csv = df['COMPUESTO'].unique()
@@ -190,7 +190,7 @@ col_2_items = ["Compuestos Binarios", "Sales Dobles", "Oxoácidos"]
 col_3_items = ["Oxosales", "Sales Ácidas", "Oxosales Ácidas"]
 todos_items = col_1_items + col_2_items + col_3_items
 
-# Lógica de mapeo (busca coincidencias en el CSV)
+# Lógica de mapeo
 for deseada in todos_items:
     encontrado = False
     for real in cat_csv:
@@ -199,7 +199,7 @@ for deseada in todos_items:
             encontrado = True
             break
     if not encontrado:
-        mapa[deseada] = deseada # Fallback por si no encuentra
+        mapa[deseada] = deseada
 
 # ==========================================
 #  CONFIGURACIÓN Y SELECCIÓN
@@ -227,23 +227,41 @@ if st.session_state.estado_fase == 'configuracion':
 
         st.markdown("---")
         
-        # 2. CONTENIDOS (3 COLUMNAS ESPECÍFICAS)
+        # 2. CONTENIDOS (3 COLUMNAS - LÓGICA INTELIGENTE)
         st.write("**Selecciona los contenidos:**")
         
         col_A, col_B, col_C = st.columns(3)
         seleccion_contenidos = []
 
-        # Función para pintar checkboxes y guardar selección
-        def render_checkboxes(items, col):
+        # Función para pintar checkboxes dependiendo del modo
+        def render_smart_checkboxes(items, col):
             with col:
                 for item in items:
-                    # value=False asegura que no haya nada marcado por defecto
-                    if st.checkbox(item, value=False):
-                        seleccion_contenidos.append(item)
+                    if tipo_prueba == "Examen":
+                        # MODO EXAMEN: Comportamiento de Radio Button (Solo 1 posible)
+                        is_selected = (st.session_state.examen_seleccion_unica == item)
+                        # Usamos on_change para actualizar el estado cuando se hace click
+                        st.checkbox(
+                            item, 
+                            value=is_selected, 
+                            key=f"chk_{item}", 
+                            on_change=set_seleccion_unica, 
+                            args=(item,)
+                        )
+                        # Nota: Si el usuario desmarca el seleccionado, el estado se mantiene en la lógica
+                        # visualmente pero validaremos abajo.
+                    else:
+                        # MODO NORMAL: Selección Múltiple
+                        if st.checkbox(item, value=False, key=f"multi_{item}"):
+                            seleccion_contenidos.append(item)
 
-        render_checkboxes(col_1_items, col_A)
-        render_checkboxes(col_2_items, col_B)
-        render_checkboxes(col_3_items, col_C)
+        render_smart_checkboxes(col_1_items, col_A)
+        render_smart_checkboxes(col_2_items, col_B)
+        render_smart_checkboxes(col_3_items, col_C)
+        
+        # Si es modo Examen, llenamos la lista con la única selección guardada en session_state
+        if tipo_prueba == "Examen" and st.session_state.examen_seleccion_unica:
+             seleccion_contenidos = [st.session_state.examen_seleccion_unica]
         
         st.markdown("---")
         
@@ -257,7 +275,6 @@ if st.session_state.estado_fase == 'configuracion':
             
         with c_nom:
             st.write("**Nomenclaturas:**")
-            # Tres botones (checkboxes) uno encima del otro
             sis_trad = st.checkbox("Tradicional", value=True)
             sis_stoc = st.checkbox("Stock", value=True)
             sis_sist = st.checkbox("Sistemática", value=True)
@@ -290,8 +307,6 @@ if st.session_state.estado_fase == 'configuracion':
                 errores.append("⚠️ Selecciona un modo (Nombrar/Formular).")
             if not sistemas_activos:
                 errores.append("⚠️ Selecciona una nomenclatura.")
-            if tipo_prueba == "Examen" and len(seleccion_contenidos) > 1:
-                errores.append("⚠️ En 'Examen' solo puedes elegir 1 tema. Usa 'Examen Mezclado' para más.")
             
             if errores:
                 for e in errores: st.error(e)
@@ -317,7 +332,6 @@ else:
     filtros_csv = [mapa.get(x, x) for x in config["contenidos"]] # .get seguro
     df_juego = df[df['COMPUESTO'].isin(filtros_csv)]
     
-    # Si por algún motivo el filtrado deja vacío el DF (ej. nombres no coinciden)
     if df_juego.empty:
         st.error("No se encontraron preguntas para los temas seleccionados. Revisa el archivo CSV.")
         if st.button("Volver"):
