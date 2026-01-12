@@ -141,6 +141,7 @@ if 'contador_preguntas' not in st.session_state: st.session_state.contador_pregu
 if 'estado_fase' not in st.session_state: st.session_state.estado_fase = 'configuracion' 
 if 'datos_fallo' not in st.session_state: st.session_state.datos_fallo = {}
 if 'examen_seleccion_unica' not in st.session_state: st.session_state.examen_seleccion_unica = None
+if 'skips_used' not in st.session_state: st.session_state.skips_used = 0
 
 def actualizar_stats(familia, es_acierto):
     if familia not in st.session_state.stats_familia:
@@ -164,6 +165,24 @@ def mostrar_tabla_progreso(return_string=False):
         st.dataframe(pd.DataFrame(datos_tabla), hide_index=True, use_container_width=True)
     return ""
 
+def set_seleccion_unica(item_seleccionado):
+    st.session_state.examen_seleccion_unica = item_seleccionado
+    # Forzar desmarcado visual
+    for item in todos_items:
+        key = f"chk_{item}"
+        if item != item_seleccionado:
+            if key in st.session_state: st.session_state[key] = False
+        else:
+             st.session_state[key] = True
+
+# --- INTERFAZ - CABECERA ---
+if os.path.exists("image_0.png"):
+    col_l, col_c, col_r = st.columns([2, 4, 2])
+    with col_c:
+        st.image("image_0.png", width=220) 
+
+st.markdown("<h1 style='text-align: center; margin-top: -25px;'>🧪 Entrenador de Formulación</h1>", unsafe_allow_html=True)
+
 # Mapeo de contenidos
 cat_csv = df['COMPUESTO'].unique()
 mapa = {}
@@ -182,66 +201,35 @@ for deseada in todos_items:
     if not encontrado:
         mapa[deseada] = deseada
 
-# --- FUNCIÓN CORREGIDA PARA SELECCIÓN ÚNICA ---
-def set_seleccion_unica(item_seleccionado):
-    # Guardamos cuál es el seleccionado
-    st.session_state.examen_seleccion_unica = item_seleccionado
-    
-    # FORZAMOS el desmarcado visual de todos los demás checkboxes
-    for item in todos_items:
-        key = f"chk_{item}"
-        if item != item_seleccionado:
-            # Ponemos en False el estado interno del widget checkbox
-            if key in st.session_state:
-                st.session_state[key] = False
-        else:
-             # Nos aseguramos que el seleccionado esté en True
-             st.session_state[key] = True
-
-# --- INTERFAZ ---
-
-# CABECERA
-if os.path.exists("image_0.png"):
-    col_l, col_c, col_r = st.columns([2, 4, 2])
-    with col_c:
-        st.image("image_0.png", width=220) 
-
-st.markdown("<h1 style='text-align: center; margin-top: -25px;'>🧪 Entrenador de Formulación</h1>", unsafe_allow_html=True)
-
-
 # ==========================================
-#  CONFIGURACIÓN Y SELECCIÓN
+#  CONFIGURACIÓN
 # ==========================================
 if st.session_state.estado_fase == 'configuracion':
     with st.container(border=True):
         st.markdown("<h3 style='text-align: center;'>⚙️ Configuración</h3>", unsafe_allow_html=True)
         
-        # 1. TIPO DE PRUEBA
-        c_izq, c_cen, c_der = st.columns([1, 2, 1])
+        # 1. TIPO DE PRUEBA - UNA SOLA LINEA
+        # Usamos columnas muy anchas en el centro para que quepa "Examen (mezcla)"
+        c_izq, c_cen, c_der = st.columns([0.1, 9.8, 0.1])
         with c_cen:
-            # Si cambia el tipo, limpiamos selecciones para evitar conflictos
-            tipo_anterior = st.session_state.get("tipo_previo", "Práctica")
+            tipo_previo = st.session_state.get("tipo_previo", "Práctica")
             tipo_prueba = st.radio(
                 "Tipo de prueba",
-                ["Práctica", "Examen Mezclado", "Examen"],
+                ["Práctica", "Examen", "Examen (mezcla)"], # Nuevo orden y nombre
                 horizontal=True,
                 label_visibility="collapsed"
             )
-            # Resetear selección si cambia de modo
-            if tipo_prueba != tipo_anterior:
+            if tipo_prueba != tipo_previo:
                 st.session_state.examen_seleccion_unica = None
                 st.session_state.tipo_previo = tipo_prueba
-                # Limpiar checkboxes visuales
                 for item in todos_items:
                     if f"chk_{item}" in st.session_state: del st.session_state[f"chk_{item}"]
                     if f"multi_{item}" in st.session_state: del st.session_state[f"multi_{item}"]
                 st.rerun()
 
-        pedir_email = (tipo_prueba in ["Examen", "Examen Mezclado"])
-        email_ingresado = ""
-        if pedir_email:
-            st.info("🔒 Modo Examen: Se requiere correo institucional.")
-            email_ingresado = st.text_input("Tu Correo (@fomento.edu):", placeholder="nombre@alumno.fomento.edu")
+        # --- EMAIL SIEMPRE REQUERIDO ---
+        st.info("🔒 Acceso restringido: Se requiere correo institucional.")
+        email_ingresado = st.text_input("Tu Correo (@fomento.edu):", placeholder="nombre@alumno.fomento.edu")
 
         st.markdown("---")
         
@@ -254,18 +242,9 @@ if st.session_state.estado_fase == 'configuracion':
             with col:
                 for item in items:
                     if tipo_prueba == "Examen":
-                        # MODO EXAMEN: Selección Única Forzada
-                        # El value inicial lo sacamos del estado, pero el on_change es quien manda
                         is_checked = st.session_state.get(f"chk_{item}", False)
-                        st.checkbox(
-                            item, 
-                            value=is_checked, 
-                            key=f"chk_{item}", 
-                            on_change=set_seleccion_unica, 
-                            args=(item,)
-                        )
+                        st.checkbox(item, value=is_checked, key=f"chk_{item}", on_change=set_seleccion_unica, args=(item,))
                     else:
-                        # MODO MEZCLA / PRÁCTICA: Selección Múltiple Normal
                         if st.checkbox(item, value=False, key=f"multi_{item}"):
                             seleccion_contenidos.append(item)
 
@@ -273,13 +252,12 @@ if st.session_state.estado_fase == 'configuracion':
         render_smart_checkboxes(col_2_items, col_B)
         render_smart_checkboxes(col_3_items, col_C)
         
-        # Recogemos la selección única para el array final
         if tipo_prueba == "Examen" and st.session_state.examen_seleccion_unica:
              seleccion_contenidos = [st.session_state.examen_seleccion_unica]
         
         st.markdown("---")
         
-        # 3. AJUSTES TÉCNICOS
+        # 3. AJUSTES
         c_modo, c_nom, c_cant = st.columns(3)
         with c_modo:
             st.write("**Modo:**")
@@ -289,14 +267,17 @@ if st.session_state.estado_fase == 'configuracion':
             st.write("**Nomenclaturas:**")
             sis_trad = st.checkbox("Tradicional", value=True)
             sis_stoc = st.checkbox("Stock", value=True)
-            sis_sist = st.checkbox("Sistemática", value=True)
+            # CAMBIO: TEXTO PREF. MULTIPLICADORES
+            sis_sist = st.checkbox("Pref. Multiplicadores", value=True)
+            
             sistemas_activos = []
             if sis_trad: sistemas_activos.append("Tradicional")
             if sis_stoc: sistemas_activos.append("Stock")
-            if sis_sist: sistemas_activos.append("Sistemática")
+            if sis_sist: sistemas_activos.append("Pref. Multiplicadores")
+            
         with c_cant:
             st.write("**Cantidad:**")
-            if tipo_prueba in ["Examen", "Examen Mezclado"]:
+            if tipo_prueba in ["Examen", "Examen (mezcla)"]:
                 limite_preguntas = 20
                 st.text_input("Fijo", value="20 Preguntas", disabled=True, label_visibility="collapsed")
             else:
@@ -309,14 +290,15 @@ if st.session_state.estado_fase == 'configuracion':
         if st.button("🚀 COMENZAR", type="primary", use_container_width=True):
             errores = []
             
-            if pedir_email:
-                if not email_ingresado:
-                    errores.append("⚠️ Introduce tu correo electrónico.")
-                else:
-                    dominio_valido = email_ingresado.strip().endswith("@alumno.fomento.edu") or \
-                                     email_ingresado.strip().endswith("@fomento.edu")
-                    if not dominio_valido:
-                        errores.append("⛔ El correo debe ser institucional (@alumno.fomento.edu o @fomento.edu).")
+            # --- VALIDACIÓN DE CORREO UNIVERSAL ---
+            if not email_ingresado:
+                errores.append("⚠️ Introduce tu correo electrónico.")
+            else:
+                dominio_valido = email_ingresado.strip().endswith("@alumno.fomento.edu") or \
+                                 email_ingresado.strip().endswith("@fomento.edu")
+                if not dominio_valido:
+                    errores.append("⛔ Acceso denegado: El correo debe ser de @fomento.edu o @alumno.fomento.edu")
+            # --------------------------------------
 
             if not seleccion_contenidos:
                 errores.append("⚠️ Selecciona al menos un contenido.")
@@ -338,6 +320,7 @@ if st.session_state.estado_fase == 'configuracion':
                 }
                 st.session_state.aciertos = 0
                 st.session_state.fallos = 0
+                st.session_state.skips_used = 0
                 st.session_state.stats_familia = {}
                 st.session_state.contador_preguntas = 0
                 st.session_state.estado_fase = 'respondiendo'
@@ -358,10 +341,11 @@ else:
             st.rerun()
         st.stop()
 
+    # CAMBIO: Mapeo actualizado para "Pref. Multiplicadores"
     mapa_sistemas = {
         "Tradicional": "Nomenclatura Tradicional",
         "Stock": "Nomenclatura de Stock",
-        "Sistemática": "Nomenclatura Sistemática"
+        "Pref. Multiplicadores": "Nomenclatura Sistemática"
     }
     
     modos_logica = []
@@ -401,7 +385,7 @@ else:
         
         mostrar_tabla_progreso()
         
-        if config["tipo"] in ["Examen", "Examen Mezclado"]:
+        if config["tipo"] in ["Examen", "Examen (mezcla)"]:
             desglose = mostrar_tabla_progreso(return_string=True)
             with st.spinner("Enviando notas..."):
                 ok = enviar_correo_resultados(config["email_alumno"], porcentaje, aciertos, total_actual, desglose)
@@ -422,8 +406,15 @@ else:
             
             cols_deseadas = [mapa_sistemas[s] for s in config["sistemas"]]
             posibles = []
-            for col, disp in [('Nomenclatura Tradicional','Tradicional'), ('Nomenclatura de Stock','Stock'), ('Nomenclatura Sistemática','Sistemática')]:
-                if col in cols_deseadas and pd.notna(row[col]) and len(str(row[col]).strip()) > 1:
+            
+            # Ajuste en la lógica de selección para usar el nuevo nombre
+            check_list = []
+            if "Nomenclatura Tradicional" in cols_deseadas: check_list.append(('Nomenclatura Tradicional', 'Tradicional'))
+            if "Nomenclatura de Stock" in cols_deseadas: check_list.append(('Nomenclatura de Stock', 'Stock'))
+            if "Nomenclatura Sistemática" in cols_deseadas: check_list.append(('Nomenclatura Sistemática', 'Pref. Multiplicadores'))
+
+            for col, disp in check_list:
+                if pd.notna(row[col]) and len(str(row[col]).strip()) > 1:
                     posibles.append((col, disp))
             
             if not posibles:
@@ -456,8 +447,13 @@ else:
         k = f"r_{st.session_state.contador_preguntas}"
 
         c1, c2 = st.columns([4, 1])
+        
         with c2: 
-            if st.button("⏭️"): nueva_pregunta(); st.rerun()
+            skips_left = 3 - st.session_state.skips_used
+            if st.button(f"⏭️ ({skips_left})", disabled=(skips_left <= 0), use_container_width=True, help="Saltar pregunta (Máx 3)"): 
+                st.session_state.skips_used += 1
+                nueva_pregunta()
+                st.rerun()
             
         with c1:
             q_text = row[col_s] if "Formular" in modo else row['Fórmula']
