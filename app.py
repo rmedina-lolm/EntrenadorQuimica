@@ -4,7 +4,7 @@ import random
 import unicodedata
 import time
 import smtplib
-import os  # <--- IMPORTANTE: Necesario para comprobar si existe la imagen
+import os
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
@@ -142,9 +142,6 @@ if 'stats_familia' not in st.session_state: st.session_state.stats_familia = {}
 if 'contador_preguntas' not in st.session_state: st.session_state.contador_preguntas = 0
 if 'estado_fase' not in st.session_state: st.session_state.estado_fase = 'configuracion' 
 if 'datos_fallo' not in st.session_state: st.session_state.datos_fallo = {}
-if 'config_prev' not in st.session_state: st.session_state.config_prev = ""
-
-# VARIABLE ESPECIAL PARA SELECCIÓN ÚNICA
 if 'examen_seleccion_unica' not in st.session_state: st.session_state.examen_seleccion_unica = None
 
 def actualizar_stats(familia, es_acierto):
@@ -169,33 +166,30 @@ def mostrar_tabla_progreso(return_string=False):
         st.dataframe(pd.DataFrame(datos_tabla), hide_index=True, use_container_width=True)
     return ""
 
-# Función para controlar la selección única (tipo Radio Button)
 def set_seleccion_unica(item_seleccionado):
     st.session_state.examen_seleccion_unica = item_seleccionado
 
-# --- INTERFAZ PRINCIPAL ---
-st.title("🧪 Entrenador de Formulación")
+# --- INTERFAZ - CABECERA CON LOGO CENTRADO ---
 
-# --- CORRECCIÓN: CARGA SEGURA DE IMAGEN ---
-# Comprobamos si el archivo existe antes de intentar cargarlo
+# 1. LOGO CENTRADO ARRIBA
 if os.path.exists("image_0.png"):
-    st.image("image_0.png", width=100)
-else:
-    # Opcional: Mostrar un aviso solo si estamos depurando, o dejarlo en blanco
-    # st.warning("⚠️ No se encuentra 'image_0.png'. Sube el archivo al repositorio.")
-    pass 
-# -------------------------------------------
+    # Usamos 3 columnas para centrar la imagen en la del medio
+    col_l, col_c, col_r = st.columns([3, 2, 3])
+    with col_c:
+        st.image("image_0.png", width=120) 
+
+# 2. TÍTULO CENTRADO
+st.markdown("<h1 style='text-align: center;'>🧪 Entrenador de Formulación</h1>", unsafe_allow_html=True)
+
 
 # Mapeo de contenidos CSV vs Visualización
 cat_csv = df['COMPUESTO'].unique()
 mapa = {}
-# Definimos las columnas visuales solicitadas
 col_1_items = ["Óxidos", "Hidruros", "Hidróxidos"]
 col_2_items = ["Compuestos Binarios", "Sales Dobles", "Oxoácidos"]
 col_3_items = ["Oxosales", "Sales Ácidas", "Oxosales Ácidas"]
 todos_items = col_1_items + col_2_items + col_3_items
 
-# Lógica de mapeo
 for deseada in todos_items:
     encontrado = False
     for real in cat_csv:
@@ -213,7 +207,7 @@ if st.session_state.estado_fase == 'configuracion':
     with st.container(border=True):
         st.markdown("<h3 style='text-align: center;'>⚙️ Configuración</h3>", unsafe_allow_html=True)
         
-        # 1. TIPO DE PRUEBA (CENTRADO)
+        # 1. TIPO DE PRUEBA
         c_izq, c_cen, c_der = st.columns([1, 2, 1])
         with c_cen:
             tipo_prueba = st.radio(
@@ -227,34 +221,23 @@ if st.session_state.estado_fase == 'configuracion':
         pedir_email = (tipo_prueba in ["Examen", "Examen Mezclado"])
         email_ingresado = ""
         if pedir_email:
-            st.info("🔒 Modo Examen: Se requiere correo.")
-            email_ingresado = st.text_input("Tu Correo:", placeholder="alumno@ejemplo.com")
+            st.info("🔒 Modo Examen: Se requiere correo institucional.")
+            email_ingresado = st.text_input("Tu Correo (@fomento.edu):", placeholder="nombre@alumno.fomento.edu")
 
         st.markdown("---")
         
-        # 2. CONTENIDOS (3 COLUMNAS - LÓGICA INTELIGENTE)
+        # 2. CONTENIDOS
         st.write("**Selecciona los contenidos:**")
-        
         col_A, col_B, col_C = st.columns(3)
         seleccion_contenidos = []
 
-        # Función para pintar checkboxes dependiendo del modo
         def render_smart_checkboxes(items, col):
             with col:
                 for item in items:
                     if tipo_prueba == "Examen":
-                        # MODO EXAMEN: Comportamiento de Radio Button (Solo 1 posible)
                         is_selected = (st.session_state.examen_seleccion_unica == item)
-                        # Usamos on_change para actualizar el estado cuando se hace click
-                        st.checkbox(
-                            item, 
-                            value=is_selected, 
-                            key=f"chk_{item}", 
-                            on_change=set_seleccion_unica, 
-                            args=(item,)
-                        )
+                        st.checkbox(item, value=is_selected, key=f"chk_{item}", on_change=set_seleccion_unica, args=(item,))
                     else:
-                        # MODO NORMAL: Selección Múltiple
                         if st.checkbox(item, value=False, key=f"multi_{item}"):
                             seleccion_contenidos.append(item)
 
@@ -262,7 +245,6 @@ if st.session_state.estado_fase == 'configuracion':
         render_smart_checkboxes(col_2_items, col_B)
         render_smart_checkboxes(col_3_items, col_C)
         
-        # Si es modo Examen, llenamos la lista con la única selección guardada en session_state
         if tipo_prueba == "Examen" and st.session_state.examen_seleccion_unica:
              seleccion_contenidos = [st.session_state.examen_seleccion_unica]
         
@@ -270,23 +252,19 @@ if st.session_state.estado_fase == 'configuracion':
         
         # 3. AJUSTES TÉCNICOS
         c_modo, c_nom, c_cant = st.columns(3)
-        
         with c_modo:
             st.write("**Modo:**")
             modos = ["Nombrar", "Formular"]
             modos_activos = st.pills("Modo", options=modos, selection_mode="multi", default=modos, label_visibility="collapsed")
-            
         with c_nom:
             st.write("**Nomenclaturas:**")
             sis_trad = st.checkbox("Tradicional", value=True)
             sis_stoc = st.checkbox("Stock", value=True)
             sis_sist = st.checkbox("Sistemática", value=True)
-            
             sistemas_activos = []
             if sis_trad: sistemas_activos.append("Tradicional")
             if sis_stoc: sistemas_activos.append("Stock")
             if sis_sist: sistemas_activos.append("Sistemática")
-            
         with c_cant:
             st.write("**Cantidad:**")
             if tipo_prueba in ["Examen", "Examen Mezclado"]:
@@ -302,8 +280,18 @@ if st.session_state.estado_fase == 'configuracion':
         if st.button("🚀 COMENZAR", type="primary", use_container_width=True):
             # VALIDACIONES
             errores = []
-            if pedir_email and not email_ingresado:
-                errores.append("⚠️ Introduce tu correo electrónico.")
+            
+            # --- VALIDACIÓN DE CORREO ESTRICTA ---
+            if pedir_email:
+                if not email_ingresado:
+                    errores.append("⚠️ Introduce tu correo electrónico.")
+                else:
+                    dominio_valido = email_ingresado.strip().endswith("@alumno.fomento.edu") or \
+                                     email_ingresado.strip().endswith("@fomento.edu")
+                    if not dominio_valido:
+                        errores.append("⛔ El correo debe ser institucional (@alumno.fomento.edu o @fomento.edu).")
+            # -------------------------------------
+
             if not seleccion_contenidos:
                 errores.append("⚠️ Selecciona al menos un contenido.")
             if not modos_activos:
@@ -314,7 +302,6 @@ if st.session_state.estado_fase == 'configuracion':
             if errores:
                 for e in errores: st.error(e)
             else:
-                # Guardar configuración y arrancar
                 st.session_state.config_actual = {
                     "tipo": tipo_prueba,
                     "contenidos": seleccion_contenidos,
@@ -323,7 +310,10 @@ if st.session_state.estado_fase == 'configuracion':
                     "limite": limite_preguntas,
                     "email_alumno": email_ingresado
                 }
-                reiniciar_todo()
+                st.session_state.aciertos = 0
+                st.session_state.fallos = 0
+                st.session_state.stats_familia = {}
+                st.session_state.contador_preguntas = 0
                 st.session_state.estado_fase = 'respondiendo'
                 st.rerun()
 
@@ -332,11 +322,11 @@ if st.session_state.estado_fase == 'configuracion':
 # ==========================================
 else:
     config = st.session_state.config_actual
-    filtros_csv = [mapa.get(x, x) for x in config["contenidos"]] # .get seguro
+    filtros_csv = [mapa.get(x, x) for x in config["contenidos"]]
     df_juego = df[df['COMPUESTO'].isin(filtros_csv)]
     
     if df_juego.empty:
-        st.error("No se encontraron preguntas para los temas seleccionados. Revisa el archivo CSV.")
+        st.error("No se encontraron preguntas. Revisa CSV.")
         if st.button("Volver"):
             st.session_state.estado_fase = 'configuracion'
             st.rerun()
@@ -352,7 +342,7 @@ else:
     if "Nombrar" in config["modos"]: modos_logica.append("Nombrar (Fórmula ➡️ Nombre)")
     if "Formular" in config["modos"]: modos_logica.append("Formular (Nombre ➡️ Fórmula)")
 
-    # --- BARRA SUPERIOR ---
+    # BARRA SUPERIOR
     aciertos = st.session_state.aciertos
     fallos = st.session_state.fallos
     total_actual = aciertos + fallos
@@ -370,7 +360,7 @@ else:
             st.session_state.estado_fase = 'configuracion'
             st.rerun()
 
-    # --- FINAL DEL JUEGO ---
+    # FINAL JUEGO
     if total_actual >= limit_val and st.session_state.estado_fase == 'respondiendo':
         st.balloons()
         porcentaje = (aciertos / total_actual * 100) if total_actual > 0 else 0
@@ -390,14 +380,14 @@ else:
             with st.spinner("Enviando notas..."):
                 ok = enviar_correo_resultados(config["email_alumno"], porcentaje, aciertos, total_actual, desglose)
                 if ok: st.success("✅ Correo enviado al profesor.")
-                else: st.error("❌ No se pudo enviar el correo (Revisa configuración).")
+                else: st.error("❌ Error al enviar correo.")
 
         if st.button("🔄 Nuevo", type="primary"):
             st.session_state.estado_fase = 'configuracion'
             st.rerun()
         st.stop()
 
-    # --- LÓGICA PREGUNTA ---
+    # PREGUNTA
     def nueva_pregunta():
         try:
             familias = df_juego['COMPUESTO'].unique()
@@ -424,7 +414,6 @@ else:
 
     if 'pregunta' not in st.session_state: nueva_pregunta(); st.rerun()
 
-    # --- PANTALLA JUEGO ---
     if st.session_state.estado_fase == 'mostrar_fallo':
         d = st.session_state.datos_fallo
         st.subheader("❌ Incorrecto")
@@ -455,13 +444,10 @@ else:
                 raw = user.strip()
                 target = str(row['Fórmula'] if "Formular" in modo else row[col_s]).strip()
                 
-                # Normalización simple
                 ok = False
                 if "Formular" in modo:
-                    # Comparar fórmulas (limpiar subíndices visuales por si acaso)
                     ok = (limpiar_subindices(raw) == limpiar_subindices(target)) or (raw == target)
                 else:
-                    # Comparar nombres (normalizar tildes)
                     ok = normalizar_texto(raw) == normalizar_texto(target)
 
                 if ok:
