@@ -171,15 +171,17 @@ def set_seleccion_unica(item_seleccionado):
 
 # --- INTERFAZ - CABECERA CON LOGO CENTRADO ---
 
-# 1. LOGO CENTRADO ARRIBA
+# 1. LOGO CENTRADO ARRIBA (MÁS GRANDE)
 if os.path.exists("image_0.png"):
-    # Usamos 3 columnas para centrar la imagen en la del medio
-    col_l, col_c, col_r = st.columns([3, 2, 3])
+    # Ajustamos columnas para darle más espacio al centro
+    col_l, col_c, col_r = st.columns([2, 4, 2])
     with col_c:
-        st.image("image_0.png", width=120) 
+        # AUMENTADO TAMAÑO: width=220
+        st.image("image_0.png", width=220) 
 
-# 2. TÍTULO CENTRADO
-st.markdown("<h1 style='text-align: center;'>🧪 Entrenador de Formulación</h1>", unsafe_allow_html=True)
+# 2. TÍTULO CENTRADO (MENOS ESPACIO ARRIBA)
+# Añadido margin-top negativo para subir el título
+st.markdown("<h1 style='text-align: center; margin-top: -25px;'>🧪 Entrenador de Formulación</h1>", unsafe_allow_html=True)
 
 
 # Mapeo de contenidos CSV vs Visualización
