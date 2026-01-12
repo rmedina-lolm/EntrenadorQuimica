@@ -29,7 +29,6 @@ st.markdown("""
     .stApp header {visibility: hidden;} 
     div[data-testid="stPills"] {margin-bottom: 10px;}
     
-    /* Caja de Pregunta */
     .question-box {
         background-color: #ffffff;
         border: 2px solid #d1d5db;
@@ -51,7 +50,6 @@ st.markdown("""
     
     .sub-info { color: #555; font-size: 16px; margin-top: 5px; }
     
-    /* Resultados */
     .resultado-box {
         padding: 30px;
         border-radius: 15px;
@@ -166,25 +164,7 @@ def mostrar_tabla_progreso(return_string=False):
         st.dataframe(pd.DataFrame(datos_tabla), hide_index=True, use_container_width=True)
     return ""
 
-def set_seleccion_unica(item_seleccionado):
-    st.session_state.examen_seleccion_unica = item_seleccionado
-
-# --- INTERFAZ - CABECERA CON LOGO CENTRADO ---
-
-# 1. LOGO CENTRADO ARRIBA (MÁS GRANDE)
-if os.path.exists("image_0.png"):
-    # Ajustamos columnas para darle más espacio al centro
-    col_l, col_c, col_r = st.columns([2, 4, 2])
-    with col_c:
-        # AUMENTADO TAMAÑO: width=220
-        st.image("image_0.png", width=220) 
-
-# 2. TÍTULO CENTRADO (MENOS ESPACIO ARRIBA)
-# Añadido margin-top negativo para subir el título
-st.markdown("<h1 style='text-align: center; margin-top: -25px;'>🧪 Entrenador de Formulación</h1>", unsafe_allow_html=True)
-
-
-# Mapeo de contenidos CSV vs Visualización
+# Mapeo de contenidos
 cat_csv = df['COMPUESTO'].unique()
 mapa = {}
 col_1_items = ["Óxidos", "Hidruros", "Hidróxidos"]
@@ -202,6 +182,33 @@ for deseada in todos_items:
     if not encontrado:
         mapa[deseada] = deseada
 
+# --- FUNCIÓN CORREGIDA PARA SELECCIÓN ÚNICA ---
+def set_seleccion_unica(item_seleccionado):
+    # Guardamos cuál es el seleccionado
+    st.session_state.examen_seleccion_unica = item_seleccionado
+    
+    # FORZAMOS el desmarcado visual de todos los demás checkboxes
+    for item in todos_items:
+        key = f"chk_{item}"
+        if item != item_seleccionado:
+            # Ponemos en False el estado interno del widget checkbox
+            if key in st.session_state:
+                st.session_state[key] = False
+        else:
+             # Nos aseguramos que el seleccionado esté en True
+             st.session_state[key] = True
+
+# --- INTERFAZ ---
+
+# CABECERA
+if os.path.exists("image_0.png"):
+    col_l, col_c, col_r = st.columns([2, 4, 2])
+    with col_c:
+        st.image("image_0.png", width=220) 
+
+st.markdown("<h1 style='text-align: center; margin-top: -25px;'>🧪 Entrenador de Formulación</h1>", unsafe_allow_html=True)
+
+
 # ==========================================
 #  CONFIGURACIÓN Y SELECCIÓN
 # ==========================================
@@ -212,14 +219,24 @@ if st.session_state.estado_fase == 'configuracion':
         # 1. TIPO DE PRUEBA
         c_izq, c_cen, c_der = st.columns([1, 2, 1])
         with c_cen:
+            # Si cambia el tipo, limpiamos selecciones para evitar conflictos
+            tipo_anterior = st.session_state.get("tipo_previo", "Práctica")
             tipo_prueba = st.radio(
                 "Tipo de prueba",
                 ["Práctica", "Examen Mezclado", "Examen"],
                 horizontal=True,
                 label_visibility="collapsed"
             )
+            # Resetear selección si cambia de modo
+            if tipo_prueba != tipo_anterior:
+                st.session_state.examen_seleccion_unica = None
+                st.session_state.tipo_previo = tipo_prueba
+                # Limpiar checkboxes visuales
+                for item in todos_items:
+                    if f"chk_{item}" in st.session_state: del st.session_state[f"chk_{item}"]
+                    if f"multi_{item}" in st.session_state: del st.session_state[f"multi_{item}"]
+                st.rerun()
 
-        # Email si es examen
         pedir_email = (tipo_prueba in ["Examen", "Examen Mezclado"])
         email_ingresado = ""
         if pedir_email:
@@ -237,9 +254,18 @@ if st.session_state.estado_fase == 'configuracion':
             with col:
                 for item in items:
                     if tipo_prueba == "Examen":
-                        is_selected = (st.session_state.examen_seleccion_unica == item)
-                        st.checkbox(item, value=is_selected, key=f"chk_{item}", on_change=set_seleccion_unica, args=(item,))
+                        # MODO EXAMEN: Selección Única Forzada
+                        # El value inicial lo sacamos del estado, pero el on_change es quien manda
+                        is_checked = st.session_state.get(f"chk_{item}", False)
+                        st.checkbox(
+                            item, 
+                            value=is_checked, 
+                            key=f"chk_{item}", 
+                            on_change=set_seleccion_unica, 
+                            args=(item,)
+                        )
                     else:
+                        # MODO MEZCLA / PRÁCTICA: Selección Múltiple Normal
                         if st.checkbox(item, value=False, key=f"multi_{item}"):
                             seleccion_contenidos.append(item)
 
@@ -247,6 +273,7 @@ if st.session_state.estado_fase == 'configuracion':
         render_smart_checkboxes(col_2_items, col_B)
         render_smart_checkboxes(col_3_items, col_C)
         
+        # Recogemos la selección única para el array final
         if tipo_prueba == "Examen" and st.session_state.examen_seleccion_unica:
              seleccion_contenidos = [st.session_state.examen_seleccion_unica]
         
@@ -280,10 +307,8 @@ if st.session_state.estado_fase == 'configuracion':
         
         # BOTÓN DE INICIO
         if st.button("🚀 COMENZAR", type="primary", use_container_width=True):
-            # VALIDACIONES
             errores = []
             
-            # --- VALIDACIÓN DE CORREO ESTRICTA ---
             if pedir_email:
                 if not email_ingresado:
                     errores.append("⚠️ Introduce tu correo electrónico.")
@@ -292,7 +317,6 @@ if st.session_state.estado_fase == 'configuracion':
                                      email_ingresado.strip().endswith("@fomento.edu")
                     if not dominio_valido:
                         errores.append("⛔ El correo debe ser institucional (@alumno.fomento.edu o @fomento.edu).")
-            # -------------------------------------
 
             if not seleccion_contenidos:
                 errores.append("⚠️ Selecciona al menos un contenido.")
