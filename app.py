@@ -175,6 +175,12 @@ def mostrar_tabla_progreso(return_string=False):
 # --- INTERFAZ PRINCIPAL ---
 st.title("🧪 Entrenador de Formulación")
 
+# INSERTAR ESCUDO DEBAJO DEL TÍTULO
+try:
+    st.image("image_0.png", width=100)
+except FileNotFoundError:
+    st.error("El archivo de imagen 'image_0.png' no se encontró. Asegúrate de que esté en el mismo directorio.")
+
 # Mapeo de contenidos CSV vs Visualización
 cat_csv = df['COMPUESTO'].unique()
 mapa = {}
