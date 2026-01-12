@@ -5,6 +5,7 @@ import unicodedata
 import time
 import smtplib
 import os
+import streamlit.components.v1 as components # IMPORTANTE: Para el auto-foco
 from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 
@@ -114,6 +115,17 @@ def enviar_correo_resultados(alumno_email, nota_final, aciertos, total, desglose
         return True
     except: return False
 
+# Función JavaScript para poner el foco en el input
+def enfocar_input():
+    components.html("""
+        <script>
+            var input = window.parent.document.querySelector("input[type=text]");
+            if (input) {
+                input.focus();
+            }
+        </script>
+    """, height=0)
+
 # --- CARGA DE DATOS ---
 @st.cache_data
 def cargar_datos():
@@ -208,14 +220,13 @@ if st.session_state.estado_fase == 'configuracion':
     with st.container(border=True):
         st.markdown("<h3 style='text-align: center;'>⚙️ Configuración</h3>", unsafe_allow_html=True)
         
-        # 1. TIPO DE PRUEBA - UNA SOLA LINEA
-        # Usamos columnas muy anchas en el centro para que quepa "Examen (mezcla)"
+        # 1. TIPO DE PRUEBA
         c_izq, c_cen, c_der = st.columns([0.1, 9.8, 0.1])
         with c_cen:
             tipo_previo = st.session_state.get("tipo_previo", "Práctica")
             tipo_prueba = st.radio(
                 "Tipo de prueba",
-                ["Práctica", "Examen", "Examen (mezcla)"], # Nuevo orden y nombre
+                ["Práctica", "Examen", "Examen (mezcla)"], 
                 horizontal=True,
                 label_visibility="collapsed"
             )
@@ -227,9 +238,15 @@ if st.session_state.estado_fase == 'configuracion':
                     if f"multi_{item}" in st.session_state: del st.session_state[f"multi_{item}"]
                 st.rerun()
 
-        # --- EMAIL SIEMPRE REQUERIDO ---
-        st.info("🔒 Acceso restringido: Se requiere correo institucional.")
-        email_ingresado = st.text_input("Tu Correo (@fomento.edu):", placeholder="nombre@alumno.fomento.edu")
+        # --- LOGICA CORREO (SOLO SI NO ES PRÁCTICA) ---
+        es_examen = (tipo_prueba != "Práctica")
+        email_ingresado = ""
+        
+        if es_examen:
+            st.info("🔒 Acceso restringido: Se requiere correo institucional.")
+            email_ingresado = st.text_input("Tu Correo (@fomento.edu):", placeholder="nombre@alumno.fomento.edu")
+        else:
+            st.success("🔓 Modo Práctica Libre (No requiere correo)")
 
         st.markdown("---")
         
@@ -267,7 +284,6 @@ if st.session_state.estado_fase == 'configuracion':
             st.write("**Nomenclaturas:**")
             sis_trad = st.checkbox("Tradicional", value=True)
             sis_stoc = st.checkbox("Stock", value=True)
-            # CAMBIO: TEXTO PREF. MULTIPLICADORES
             sis_sist = st.checkbox("Pref. Multiplicadores", value=True)
             
             sistemas_activos = []
@@ -290,15 +306,16 @@ if st.session_state.estado_fase == 'configuracion':
         if st.button("🚀 COMENZAR", type="primary", use_container_width=True):
             errores = []
             
-            # --- VALIDACIÓN DE CORREO UNIVERSAL ---
-            if not email_ingresado:
-                errores.append("⚠️ Introduce tu correo electrónico.")
-            else:
-                dominio_valido = email_ingresado.strip().endswith("@alumno.fomento.edu") or \
-                                 email_ingresado.strip().endswith("@fomento.edu")
-                if not dominio_valido:
-                    errores.append("⛔ Acceso denegado: El correo debe ser de @fomento.edu o @alumno.fomento.edu")
-            # --------------------------------------
+            # --- VALIDACIÓN DE CORREO CONDICIONAL ---
+            if es_examen:
+                if not email_ingresado:
+                    errores.append("⚠️ Introduce tu correo electrónico para el Examen.")
+                else:
+                    dominio_valido = email_ingresado.strip().endswith("@alumno.fomento.edu") or \
+                                     email_ingresado.strip().endswith("@fomento.edu")
+                    if not dominio_valido:
+                        errores.append("⛔ Acceso denegado: El correo debe ser de @fomento.edu o @alumno.fomento.edu")
+            # ----------------------------------------
 
             if not seleccion_contenidos:
                 errores.append("⚠️ Selecciona al menos un contenido.")
@@ -316,7 +333,7 @@ if st.session_state.estado_fase == 'configuracion':
                     "modos": modos_activos,
                     "sistemas": sistemas_activos,
                     "limite": limite_preguntas,
-                    "email_alumno": email_ingresado
+                    "email_alumno": email_ingresado if es_examen else "Practica_Libre"
                 }
                 st.session_state.aciertos = 0
                 st.session_state.fallos = 0
@@ -341,7 +358,6 @@ else:
             st.rerun()
         st.stop()
 
-    # CAMBIO: Mapeo actualizado para "Pref. Multiplicadores"
     mapa_sistemas = {
         "Tradicional": "Nomenclatura Tradicional",
         "Stock": "Nomenclatura de Stock",
@@ -407,7 +423,6 @@ else:
             cols_deseadas = [mapa_sistemas[s] for s in config["sistemas"]]
             posibles = []
             
-            # Ajuste en la lógica de selección para usar el nuevo nombre
             check_list = []
             if "Nomenclatura Tradicional" in cols_deseadas: check_list.append(('Nomenclatura Tradicional', 'Tradicional'))
             if "Nomenclatura de Stock" in cols_deseadas: check_list.append(('Nomenclatura de Stock', 'Stock'))
@@ -462,6 +477,10 @@ else:
 
         with st.form("f"):
             user = st.text_input("Respuesta:", key=k, autocomplete="off")
+            # --- AUTOFOCO INYECTADO AQUÍ ---
+            enfocar_input()
+            # -------------------------------
+            
             if st.form_submit_button("Comprobar"):
                 raw = user.strip()
                 target = str(row['Fórmula'] if "Formular" in modo else row[col_s]).strip()
